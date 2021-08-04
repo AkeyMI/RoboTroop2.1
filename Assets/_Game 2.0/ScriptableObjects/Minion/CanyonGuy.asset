@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1090a4548270e404185dbd647323231b, type: 3}
+  m_Name: CanyonGuy
+  m_EditorClassIdentifier: 
+  minionName: "Ca\xF1on"
+  minionPrefab: {fileID: 8318428373976458458, guid: 1a8a3a6812cb90343bc8f117135a0b4e, type: 3}
+  bulletPrefab: {fileID: 8591236588811397447, guid: 8a8432442cfe8b042b965c691f606b05, type: 3}
+  minionUI: {fileID: 6399120743567731137, guid: bee7a5de191d78549bf50e3411393fa1, type: 3}
+  damage: 5
+  ammo: 3
+  timeToReload: 1.5
+  timeForAttack: 0.8
+  bulletSpeed: 15
