@@ -100,6 +100,7 @@ MonoBehaviour:
   spawnBullet: {fileID: 8318428374078878539}
   animator: {fileID: 3154622452791347591}
   data: {fileID: 11400000, guid: f132ec63a68bde1428a954d027b631ba, type: 2}
+  timeShootOff: 0.4
 --- !u!95 &3154622452791347591
 Animator:
   serializedVersion: 3

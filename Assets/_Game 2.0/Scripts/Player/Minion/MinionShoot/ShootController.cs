@@ -13,7 +13,7 @@ public class ShootController : MonoBehaviour
     //[SerializeField] ItemDistance item = default;
     [SerializeField] Animator animator;
     [SerializeField] MinionData data;
-
+    [SerializeField] float timeShootOff;
     private int currentAmmo;
     private bool isReloading = false;
 
@@ -64,7 +64,7 @@ public class ShootController : MonoBehaviour
     IEnumerator Shooting()
     {
         animator.SetBool("Shooting", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(timeShootOff);
         animator.SetBool("Shooting", false);
     }
     IEnumerator Reload()

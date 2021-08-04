@@ -20,4 +20,4 @@ MonoBehaviour:
   ammo: 3
   timeToReload: 1.5
   timeForAttack: 0.8
-  bulletSpeed: 15
+  bulletSpeed: 18

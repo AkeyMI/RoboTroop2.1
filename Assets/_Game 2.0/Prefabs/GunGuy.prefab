@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9163952667559671790}
   - component: {fileID: 5900316030859879715}
+  - component: {fileID: 3474001343974493048}
   m_Layer: 0
   m_Name: GunGuy
   m_TagString: Untagged
@@ -46,8 +47,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnBullet: {fileID: 6231163776040583893}
-  animator: {fileID: 0}
+  animator: {fileID: 3474001343974493048}
   data: {fileID: 11400000, guid: 6cd372752bdad4641b1335d54bf8627f, type: 2}
+  timeShootOff: 0.4
+--- !u!95 &3474001343974493048
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354599212422573440}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 77756c9e76ba27940bc03c2f0728acd5, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1ed3634aeee01c04c88f6d3c895376b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6231163776040583893
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +93,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6231163776040583893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.79}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9163952667559671790}
@@ -133,7 +154,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: GunGuy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 77756c9e76ba27940bc03c2f0728acd5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 77756c9e76ba27940bc03c2f0728acd5, type: 3}
 --- !u!4 &4687451447099228664 stripped
 Transform:
