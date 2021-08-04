@@ -35,7 +35,7 @@ public class WaveController : MonoBehaviour, IRoomActivables
     {
         currentWave++;
 
-        if (currentWave <= waves.Length)
+        if (currentWave < waves.Length)
         {
             waves[currentWave].Init(this);
             waves[currentWave].SpawnWave();
