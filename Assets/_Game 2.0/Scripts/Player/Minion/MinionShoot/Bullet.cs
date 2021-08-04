@@ -28,20 +28,16 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Player")) return;
+
         if (other.CompareTag("Enemy"))
         {
             other.GetComponent<EnemyController>().Damage(damage);
             Destroy(this.gameObject);
             Debug.Log("Enemy Hit");
         }
-        if (other.CompareTag("Player"))
-        {
-            return;
-        }
-        else
-        {
-            Instantiate<GameObject>(particulas).transform.position = this.transform.position;//Instanciar 
-            Destroy(this.gameObject);
-        }
+
+        Instantiate<GameObject>(particulas).transform.position = this.transform.position;//Instanciar 
+        Destroy(this.gameObject);
     }
 }

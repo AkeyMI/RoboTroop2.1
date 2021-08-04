@@ -18,8 +18,8 @@ TagManager:
   - Player
   - Nave
   - SheildNave
-  - 
-  - 
+  - Bullet
+  - RoomTrigger
   - 
   - 
   - 
