@@ -23,4 +23,12 @@ public class Room : MonoBehaviour
     {
         roomActivables = GetComponentsInChildren<IRoomActivables>();
     }
+
+    public void EndWave()
+    {
+        for (int i = 0; i < roomActivables.Length; i++)
+        {
+            roomActivables[i].Deactivate();
+        }
+    }
 }

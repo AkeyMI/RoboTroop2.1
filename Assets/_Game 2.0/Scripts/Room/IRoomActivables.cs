@@ -5,4 +5,6 @@ using UnityEngine;
 public interface IRoomActivables
 {
     void Activate();
+
+    void Deactivate();
 }

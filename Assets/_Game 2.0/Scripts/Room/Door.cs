@@ -14,7 +14,10 @@ public class Door : MonoBehaviour , IRoomActivables
     public void Activate()
     {
         animator.SetTrigger("Close");
-        throw new System.NotImplementedException();
     }
 
+    public void Deactivate()
+    {
+        animator.SetTrigger("Open");
+    }
 }

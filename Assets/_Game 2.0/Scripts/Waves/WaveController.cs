@@ -40,5 +40,14 @@ public class WaveController : MonoBehaviour, IRoomActivables
             waves[currentWave].Init(this);
             waves[currentWave].SpawnWave();
         }
+        else
+        {
+            GetComponentInParent<Room>().EndWave();
+        }
+    }
+
+    public void Deactivate()
+    {
+        Destroy(this.gameObject);
     }
 }
