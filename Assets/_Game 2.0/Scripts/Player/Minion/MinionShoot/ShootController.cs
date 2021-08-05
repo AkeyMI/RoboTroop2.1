@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShootController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class ShootController : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] MinionData data;
     [SerializeField] float timeShootOff;
+    [SerializeField] Image reloadBarImage = default;
+
     private int currentAmmo;
     private bool isReloading = false;
 
@@ -71,12 +74,24 @@ public class ShootController : MonoBehaviour
     {
         Debug.Log("Esta recargando");
         isReloading = true;
+        float currentTime = data.timeToReload;
+        reloadBarImage.enabled = true;
 
-        yield return new WaitForSeconds(data.timeToReload);
+        //yield return new WaitForSeconds(data.timeToReload);
+
+        while(currentTime > 0)
+        {
+            currentTime -= Time.deltaTime;
+            reloadBarImage.fillAmount = (currentTime / data.timeToReload);
+            yield return null;
+        }
 
         currentAmmo = data.ammo;
 
         isReloading = false;
+
+        reloadBarImage.enabled = false;
+        reloadBarImage.fillAmount = 1;
     }
 
     private void Shoot()
