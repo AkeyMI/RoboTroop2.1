@@ -286,7 +286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &276748396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,10 +617,6 @@ PrefabInstance:
     - target: {fileID: 8412652935086123990, guid: 56f56d263e4091240a7c6d2ce8a1a2c7, type: 3}
       propertyPath: m_Name
       value: Icono_Shield
-      objectReference: {fileID: 0}
-    - target: {fileID: 8412652935086123990, guid: 56f56d263e4091240a7c6d2ce8a1a2c7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f56d263e4091240a7c6d2ce8a1a2c7, type: 3}
@@ -1594,10 +1590,6 @@ PrefabInstance:
     - target: {fileID: 6399120743567731137, guid: bee7a5de191d78549bf50e3411393fa1, type: 3}
       propertyPath: m_Name
       value: "Icono_Ca\xF1on"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6399120743567731137, guid: bee7a5de191d78549bf50e3411393fa1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6399120743567731138, guid: bee7a5de191d78549bf50e3411393fa1, type: 3}
       propertyPath: m_Pivot.x

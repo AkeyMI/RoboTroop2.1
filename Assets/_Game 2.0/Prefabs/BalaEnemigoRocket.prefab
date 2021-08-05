@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  timeStun: 5
+  timeStun: 0.5
 --- !u!136 &6973955811041343475
 CapsuleCollider:
   m_ObjectHideFlags: 0
