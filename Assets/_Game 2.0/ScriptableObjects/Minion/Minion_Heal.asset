@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Minion_Heal
   m_EditorClassIdentifier: 
   minionName: Heal Minion
-  minionPrefab: {fileID: 0}
-  effect: {fileID: 0}
+  minionPrefab: {fileID: 3177547514708248692, guid: 5950d71bdacb9ee488059f55173d3dd2, type: 3}
+  effect: {fileID: 11400000, guid: ead14fe1c9832f24186a4650cb8b965f, type: 2}
   reloadUlti: 3

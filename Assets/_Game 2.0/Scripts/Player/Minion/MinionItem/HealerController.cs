@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class HealerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float timeForCure = 1f;
+
+    private MinionItemData data;
+
+    public void Init(MinionItemData itemData)
     {
-        
+        data = itemData;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        StartCoroutine(CureCoroutine());
+    }
+
+    private IEnumerator CureCoroutine()
+    {
+
+        yield return new WaitForSeconds(timeForCure);
+
+        data.effect.Apply();
+        Debug.Log("Hizo el efecto de curacion");
+
+        this.gameObject.SetActive(false);
+
+        //Destroy(this.gameObject);
     }
 }

@@ -39,6 +39,10 @@ public class MinionController : MonoBehaviour
         minionShield.transform.SetParent(minionArt.transform, false);
         minionShield.SetActive(false);
         //onChangeMinionShieldUi?.Invoke(minion2.minionUi);
+
+        itemData = minion3;
+        minionItem = Instantiate(minion3.minionPrefab, Vector3.zero, Quaternion.identity);
+        minionItem.SetActive(false);
     }
 
     private void Update()
@@ -70,8 +74,11 @@ public class MinionController : MonoBehaviour
 
         //canUseUlti = false;
         currentReloadUlti = itemData.reloadUlti;
-        Instantiate(itemData.minionPrefab, transform.position, Quaternion.identity);
-        itemData.effect.Apply();
+        //GameObject item = Instantiate(itemData.minionPrefab, transform.position, Quaternion.identity);
+        minionItem.SetActive(true);
+        minionItem.transform.position = spawnminionItem.transform.position;
+        minionItem.GetComponent<HealerController>().Init(itemData);
+        //itemData.effect.Apply();
     }
 
     private bool CanUseUlti()
@@ -134,7 +141,8 @@ public class MinionController : MonoBehaviour
         Destroy(minionItem);
         itemData = data;
         minionItem = Instantiate(itemData.minionPrefab, Vector3.zero, Quaternion.identity);
-        minionItem.transform.SetParent(minionArt.transform, false);
+        minionItem.SetActive(false);
+        //minionItem.transform.SetParent(minionArt.transform, false);
         currentReloadUlti = itemData.reloadUlti;
     }
 }
