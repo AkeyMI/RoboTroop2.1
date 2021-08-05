@@ -9,6 +9,7 @@ public class MinionController : MonoBehaviour
     [SerializeField] MinionDefenceData minion2 = default;
     [SerializeField] MinionItemData minion3 = default;
     [SerializeField] GameObject minionArt = default;
+    [SerializeField] GameObject spawnminionItem = default;
 
     public event Action<bool> onChangeMinion;
     public event Action<GameObject> onChangeMinionAtkUi;
@@ -69,6 +70,7 @@ public class MinionController : MonoBehaviour
 
         //canUseUlti = false;
         currentReloadUlti = itemData.reloadUlti;
+        Instantiate(itemData.minionPrefab, transform.position, Quaternion.identity);
         itemData.effect.Apply();
     }
 
