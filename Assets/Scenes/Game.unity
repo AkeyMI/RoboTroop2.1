@@ -1860,6 +1860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2463642210487357068, guid: 52e6ce3130d31534fb4a399c0ff6e988, type: 3}
+      propertyPath: minion1
+      value: 
+      objectReference: {fileID: 11400000, guid: 6cd372752bdad4641b1335d54bf8627f, type: 2}
     - target: {fileID: 2463642210487357069, guid: 52e6ce3130d31534fb4a399c0ff6e988, type: 3}
       propertyPath: m_RootOrder
       value: 4

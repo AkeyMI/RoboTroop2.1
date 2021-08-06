@@ -13,7 +13,7 @@ public class HealerController : MonoBehaviour
         data = itemData;
     }
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(CureCoroutine());
     }
