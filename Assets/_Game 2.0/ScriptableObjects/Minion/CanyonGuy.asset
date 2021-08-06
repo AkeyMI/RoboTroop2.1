@@ -18,6 +18,6 @@ MonoBehaviour:
   minionUI: {fileID: 6399120743567731137, guid: bee7a5de191d78549bf50e3411393fa1, type: 3}
   damage: 5
   ammo: 3
-  timeToReload: 1.5
+  timeToReload: 1
   timeForAttack: 0.8
   bulletSpeed: 18
