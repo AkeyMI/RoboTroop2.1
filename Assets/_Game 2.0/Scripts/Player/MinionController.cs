@@ -15,6 +15,7 @@ public class MinionController : MonoBehaviour
     public event Action<GameObject> onChangeMinionAtkUi;
     public event Action<GameObject> onChangeMinionShieldUi;
     public event Action<GameObject> onChangeMinionItemUi;
+    public event Action<int> onChangeFillAmountMinionItem;
 
     private GameObject minionAtk;
     private GameObject minionShield;
@@ -22,6 +23,7 @@ public class MinionController : MonoBehaviour
     private MinionItemData itemData;
 
     private int currentReloadUlti;
+    private int reloadUltiUi;
 
     private bool minionChange = false;
 
@@ -74,6 +76,8 @@ public class MinionController : MonoBehaviour
 
         //canUseUlti = false;
         currentReloadUlti = itemData.reloadUlti;
+        reloadUltiUi = 0;
+        onChangeFillAmountMinionItem?.Invoke(reloadUltiUi);
         //GameObject item = Instantiate(itemData.minionPrefab, transform.position, Quaternion.identity);
         minionItem.SetActive(true);
         minionItem.transform.position = spawnminionItem.transform.position;
@@ -96,6 +100,12 @@ public class MinionController : MonoBehaviour
     public void ReloadUlti()
     {
         currentReloadUlti--;
+        reloadUltiUi++;
+
+        if (reloadUltiUi >= 3)
+            reloadUltiUi = 3;
+
+        onChangeFillAmountMinionItem?.Invoke(reloadUltiUi);
     }
 
     public void ChangeAtkMinion(MinionData data)

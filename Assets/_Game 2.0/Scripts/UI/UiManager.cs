@@ -9,11 +9,15 @@ public class UiManager : MonoBehaviour
     [SerializeField] Image stunBarImage;
     [SerializeField] GameObject minion1Ui;
     [SerializeField] GameObject minion2Ui;
+    [SerializeField] GameObject minion3Ui;
     [SerializeField] GameObject minionIconParent;
+    [SerializeField] GameObject minionItemIconParent;
 
     private GameObject minionAtkImage;
     private GameObject minionShieldImage;
     private GameObject minionItemImage;
+
+    private Image minionItemFillAmount;
 
     private MinionController minionController;
 
@@ -27,6 +31,9 @@ public class UiManager : MonoBehaviour
         //minionController = FindObjectOfType<MinionController>().GetComponent<MinionController>();
         minionAtkImage = minion1Ui;
         minionShieldImage = minion2Ui;
+
+        minionItemImage = minion3Ui;
+        minionItemFillAmount = minionItemImage.GetComponentInChildren<MinionItemUi>().GetFillAmount();
     }
 
     private void OnEnable()
@@ -37,6 +44,8 @@ public class UiManager : MonoBehaviour
         minionController.onChangeMinionAtkUi += ChangeMinionAtkUi;
         minionController.onChangeMinionShieldUi += ChangeMinionShieldUi;
         minionController.onChangeMinionItemUi += ChangeMinionItemUi;
+
+        minionController.onChangeFillAmountMinionItem += FillAmountMinionItem;
     }
 
     private void OnDisable()
@@ -47,6 +56,8 @@ public class UiManager : MonoBehaviour
         minionController.onChangeMinionAtkUi -= ChangeMinionAtkUi;
         minionController.onChangeMinionShieldUi -= ChangeMinionShieldUi;
         minionController.onChangeMinionItemUi -= ChangeMinionItemUi;
+
+        minionController.onChangeFillAmountMinionItem -= FillAmountMinionItem;
     }
 
     private void ChangeUiMinion(bool minionToChange)
@@ -87,7 +98,16 @@ public class UiManager : MonoBehaviour
 
     private void ChangeMinionItemUi(GameObject icon)
     {
-        minionItemImage = icon;
+        Destroy(minionItemImage.gameObject);
+        minionItemImage = Instantiate(icon, minionItemIconParent.transform);
+        minionItemFillAmount = minionItemImage.GetComponentInChildren<MinionItemUi>().GetFillAmount();
+    }
+
+    private void FillAmountMinionItem(int amount)
+    {
+        float currentItemFillAmount = (float)amount / 3f;
+
+        minionItemFillAmount.fillAmount = currentItemFillAmount;
     }
 
     private void StartStunBar(float time)
