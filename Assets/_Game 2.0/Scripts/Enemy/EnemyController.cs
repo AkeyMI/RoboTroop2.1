@@ -13,6 +13,8 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     private WaveController waveController;
 
+    private bool isDead = false;
+
     public Rigidbody Rb => rb;
     public EnemyStats Stats => enemyStats;
 
@@ -90,8 +92,9 @@ public class EnemyController : MonoBehaviour, IDamagable
     {
         life -= amount;
 
-        if (life <= 0)
+        if (life <= 0 && !isDead)
         {
+            isDead = true;
             animator.SetTrigger("Hit");
             waveController.KilledEnemy();
             FindObjectOfType<MinionController>().ReloadUlti();

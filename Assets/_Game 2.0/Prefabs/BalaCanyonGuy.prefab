@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particulas: {fileID: 6766932777587085690, guid: c9bbad92ba8867f419eeed5097075f24, type: 3}
+  bulletEffect: {fileID: 11400000, guid: 8a51a7788d165ae4c8d33f8c0bfb77fe, type: 2}
 --- !u!54 &7488763556270888079
 Rigidbody:
   m_ObjectHideFlags: 0
