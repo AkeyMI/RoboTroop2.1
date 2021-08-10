@@ -23,7 +23,7 @@ public class MinionController : MonoBehaviour
     private MinionItemData itemData;
 
     private int currentReloadUlti;
-    private int reloadUltiUi;
+    private int reloadUltiUi = 3;
 
     private bool minionChange = false;
 

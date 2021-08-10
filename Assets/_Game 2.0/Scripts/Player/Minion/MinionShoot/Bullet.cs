@@ -7,6 +7,9 @@ public class Bullet : MonoBehaviour
     //[SerializeField] float speed = 8f;
     [SerializeField] GameObject particulas;
     [SerializeField] BulletEffect bulletEffect = default;
+    [SerializeField] AudioClip hitSound = default;
+    [SerializeField] AudioSource audioSource = default;
+    [SerializeField] GameObject sound = default;
     private int damage;
     private Rigidbody rb;
     private float currentSpeed;
@@ -40,9 +43,9 @@ public class Bullet : MonoBehaviour
             {
                 bulletEffect.Apply(this.gameObject, other.gameObject);
             }
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
             Debug.Log("Enemy Hit");
-            return;
+            //return;
         }
 
         if (bulletEffect != null)
@@ -51,6 +54,7 @@ public class Bullet : MonoBehaviour
         }
 
         Instantiate<GameObject>(particulas).transform.position = this.transform.position;//Instanciar 
+        Instantiate(sound);
         Destroy(this.gameObject);
     }
 }

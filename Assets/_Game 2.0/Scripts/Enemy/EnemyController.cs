@@ -9,6 +9,9 @@ public class EnemyController : MonoBehaviour, IDamagable
     [SerializeField] EnemyStats enemyStats = default;
     [SerializeField] NavMeshAgent agent = default;
     [SerializeField] Animator animator;
+    [SerializeField] AudioClip shootSound = default;
+    [SerializeField] AudioSource audioSource = default;
+    [SerializeField] GameObject sound = default;
     //private EnemyStats currentStats;
 
     private WaveController waveController;
@@ -52,7 +55,10 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     private void Update()
     {
-        currentState.Update(this);
+        if (!isDead)
+        {
+            currentState.Update(this);
+        }
         //CountDownToChangeType();
     }
 
@@ -77,6 +83,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     public void CreateBullet()
     {
         GameObject bullet = Instantiate(enemyStats.bullet, spawnPointBullet.transform.position, spawnPointBullet.transform.rotation);
+        audioSource.PlayOneShot(shootSound);
         bullet.GetComponent<BulletEnemy>().Init(enemyStats.damage);
         animator.SetBool("Shooting", true);
         StartCoroutine(Shooting());
@@ -98,6 +105,7 @@ public class EnemyController : MonoBehaviour, IDamagable
             animator.SetTrigger("Hit");
             waveController.KilledEnemy();
             FindObjectOfType<MinionController>().ReloadUlti();
+            Instantiate(sound);
             Destroy(this.gameObject);
         }
     }

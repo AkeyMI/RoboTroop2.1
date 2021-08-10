@@ -16,6 +16,8 @@ public class ShootController : MonoBehaviour
     [SerializeField] MinionData data;
     [SerializeField] float timeShootOff;
     [SerializeField] Image reloadBarImage = default;
+    [SerializeField] AudioClip shootSound = default;
+    [SerializeField] AudioSource audioSource = default;
 
     private int currentAmmo;
     private bool isReloading = false;
@@ -99,6 +101,7 @@ public class ShootController : MonoBehaviour
         if (Time.time > timeOfLastAttack)
         {
             GameObject bullet = Instantiate(data.bulletPrefab, spawnBullet.transform.position, spawnBullet.transform.rotation);
+            audioSource.PlayOneShot(shootSound);
             bullet.GetComponent<Bullet>().Init(data.damage, data.bulletSpeed);
             timeOfLastAttack = Time.time + data.timeForAttack;
             currentAmmo--;
