@@ -10,8 +10,23 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void BackToGame()
+    {
+        FindObjectOfType<UiManager>().ClosePauseMenu();
+    }
+
     public void CloseGame()
     {
         Application.Quit();
+    }
+
+    public void OpenCredits()
+    {
+        SceneManager.LoadScene(2);
     }
 }

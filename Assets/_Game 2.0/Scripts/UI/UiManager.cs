@@ -12,6 +12,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] GameObject minion3Ui;
     [SerializeField] GameObject minionIconParent;
     [SerializeField] GameObject minionItemIconParent;
+    [SerializeField] GameObject pauseMenu = default;
 
     private GameObject minionAtkImage;
     private GameObject minionShieldImage;
@@ -34,6 +35,21 @@ public class UiManager : MonoBehaviour
 
         minionItemImage = minion3Ui;
         minionItemFillAmount = minionItemImage.GetComponentInChildren<MinionItemUi>().GetFillAmount();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+    public void ClosePauseMenu()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private void OnEnable()
