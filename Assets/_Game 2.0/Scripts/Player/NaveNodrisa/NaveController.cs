@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class NaveController : MonoBehaviour, IDamagable
     [SerializeField] int shieldLife = 10;
     [SerializeField] GameObject shield = default;
     [SerializeField] NavMeshAgent agent = default;
+
+    public event Action<int, int> onLifeChange;
+    public event Action<int, int> onShieldChange;
 
     private int currentLife;
     private int currentShieldLife;
@@ -53,6 +57,8 @@ public class NaveController : MonoBehaviour, IDamagable
     {
         currentShieldLife -= amount;
 
+        onShieldChange?.Invoke(currentShieldLife, shieldLife);
+
         if(currentShieldLife <= 0)
         {
             shield.SetActive(false);
@@ -62,6 +68,8 @@ public class NaveController : MonoBehaviour, IDamagable
     public void Damage(int amount)
     {
         currentLife -= amount;
+
+        onLifeChange?.Invoke(currentLife, life);
 
         if(currentLife <= 0)
         {
@@ -73,7 +81,9 @@ public class NaveController : MonoBehaviour, IDamagable
     {
         currentLife += amount;
 
-        if(currentLife >= life)
+        onLifeChange?.Invoke(currentLife, life);
+
+        if (currentLife >= life)
         {
             currentLife = life;
         }
@@ -83,7 +93,9 @@ public class NaveController : MonoBehaviour, IDamagable
     {
         currentShieldLife += amount;
 
-        if(currentShieldLife >= shieldLife)
+        onShieldChange?.Invoke(currentShieldLife, shieldLife);
+
+        if (currentShieldLife >= shieldLife)
         {
             currentShieldLife = shieldLife;
         }

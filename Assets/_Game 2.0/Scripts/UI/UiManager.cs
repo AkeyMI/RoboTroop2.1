@@ -13,6 +13,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] GameObject minionIconParent;
     [SerializeField] GameObject minionItemIconParent;
     [SerializeField] GameObject pauseMenu = default;
+    [SerializeField] Image naveLifeImage = default;
+    [SerializeField] Image naveShieldLifeImage = default;
 
     private GameObject minionAtkImage;
     private GameObject minionShieldImage;
@@ -22,9 +24,13 @@ public class UiManager : MonoBehaviour
 
     private MinionController minionController;
 
+    private NaveController naveController;
+
     private void Awake()
     {
         minionController = FindObjectOfType<MinionController>().GetComponent<MinionController>();
+
+        naveController = FindObjectOfType<NaveController>().GetComponent<NaveController>();
     }
 
     private void Start()
@@ -62,6 +68,9 @@ public class UiManager : MonoBehaviour
         minionController.onChangeMinionItemUi += ChangeMinionItemUi;
 
         minionController.onChangeFillAmountMinionItem += FillAmountMinionItem;
+
+        naveController.onLifeChange += NaveLifeDamage;
+        naveController.onShieldChange += NaveShieldDamage;
     }
 
     private void OnDisable()
@@ -74,6 +83,9 @@ public class UiManager : MonoBehaviour
         minionController.onChangeMinionItemUi -= ChangeMinionItemUi;
 
         minionController.onChangeFillAmountMinionItem -= FillAmountMinionItem;
+
+        naveController.onLifeChange -= NaveLifeDamage;
+        naveController.onShieldChange -= NaveShieldDamage;
     }
 
     private void ChangeUiMinion(bool minionToChange)
@@ -124,6 +136,20 @@ public class UiManager : MonoBehaviour
         float currentItemFillAmount = (float)amount / 3f;
 
         minionItemFillAmount.fillAmount = currentItemFillAmount;
+    }
+
+    private void NaveLifeDamage(int amount, int data)
+    {
+        float currentlife = (float)amount / (float)data;
+
+        naveLifeImage.fillAmount = currentlife;
+    }
+
+    private void NaveShieldDamage(int amount, int data)
+    {
+        float currentlife = (float)amount / (float)data;
+
+        naveShieldLifeImage.fillAmount = currentlife;
     }
 
     private void StartStunBar(float time)
