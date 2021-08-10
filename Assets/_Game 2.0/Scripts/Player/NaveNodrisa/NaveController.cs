@@ -74,7 +74,7 @@ public class NaveController : MonoBehaviour, IDamagable
 
         if(currentLife <= 0)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(3);
         }
     }
 
