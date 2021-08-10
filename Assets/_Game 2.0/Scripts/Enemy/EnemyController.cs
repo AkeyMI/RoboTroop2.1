@@ -60,7 +60,6 @@ public class EnemyController : MonoBehaviour, IDamagable
         {
             currentState.Update(this);
         }
-        //CountDownToChangeType();
     }
 
     public void TransitionToState(EnemyBaseState state)
@@ -99,7 +98,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     public void Damage(int amount)
     {
         life -= amount;
-
+        Debug.Log("Enemigo Golpeado");
         if (life <= 0 && !isDead)
         {
             isDead = true;

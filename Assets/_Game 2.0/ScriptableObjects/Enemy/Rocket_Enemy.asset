@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rocket_Enemy
   m_EditorClassIdentifier: 
   life: 6
-  attackSpeed: 10
+  attackSpeed: 2.2
   distanceHunt: 15
   distanceAttack: 12
   speed: 10

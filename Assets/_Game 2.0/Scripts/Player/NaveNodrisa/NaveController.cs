@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class NaveController : MonoBehaviour, IDamagable
 {
@@ -73,7 +74,7 @@ public class NaveController : MonoBehaviour, IDamagable
 
         if(currentLife <= 0)
         {
-            //Dead
+            SceneManager.LoadScene(0);
         }
     }
 
