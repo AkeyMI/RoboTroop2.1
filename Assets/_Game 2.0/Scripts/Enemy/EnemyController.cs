@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     [SerializeField] AudioClip shootSound = default;
     [SerializeField] AudioSource audioSource = default;
     [SerializeField] GameObject sound = default;
+    [SerializeField] GameObject particulas = default;
     //private EnemyStats currentStats;
 
     private WaveController waveController;
@@ -106,6 +107,7 @@ public class EnemyController : MonoBehaviour, IDamagable
             waveController.KilledEnemy();
             FindObjectOfType<MinionController>().ReloadUlti();
             Instantiate(sound);
+            Instantiate<GameObject>(particulas).transform.position = this.transform.position;
             Destroy(this.gameObject);
         }
     }
