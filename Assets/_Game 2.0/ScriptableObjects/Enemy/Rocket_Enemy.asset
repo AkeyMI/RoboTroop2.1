@@ -9,7 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9f097630816061449625ab8bc9e149f, type: 3}
-  m_Name: Take_MachineGuy
+  m_Script: {fileID: 11500000, guid: 268f47a0ef87af645b42262846541fd4, type: 3}
+  m_Name: Rocket_Enemy
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 113e39616d0adc542835320e0d800db3, type: 2}
+  life: 6
+  attackSpeed: 10
+  distanceHunt: 15
+  distanceAttack: 12
+  speed: 10
+  bullet: {fileID: 4724464782366420276, guid: 35ddbea3833d26c41b3d2aaf03e7e1e4, type: 3}
+  damage: 3

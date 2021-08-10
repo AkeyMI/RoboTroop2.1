@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f097630816061449625ab8bc9e149f, type: 3}
   m_Name: Take_HavyMachineGuy
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: f7196e9b9ab460b409c18172b534823d, type: 2}
