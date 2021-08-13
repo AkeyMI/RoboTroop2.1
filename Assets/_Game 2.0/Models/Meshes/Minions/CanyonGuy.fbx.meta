@@ -13,6 +13,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_CanyonBody
+    second: {fileID: 2100000, guid: 7275211dde8867b4db08d89f3edf65d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_CanyonFace
     second: {fileID: 2100000, guid: 39a2bd4c983a86641985f673c79b3bd3, type: 2}
   - first:

@@ -76,6 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3202649823848935473}
   - component: {fileID: 7609039924946948736}
+  - component: {fileID: 8523307303935073619}
   m_Layer: 0
   m_Name: HavyMachinGuy
   m_TagString: Untagged
@@ -113,10 +114,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnBullet: {fileID: 630008773522171503}
-  animator: {fileID: 0}
+  animator: {fileID: 8523307303935073619}
   data: {fileID: 11400000, guid: f7196e9b9ab460b409c18172b534823d, type: 2}
-  timeShootOff: 0
+  timeShootOff: 0.03
   reloadBarImage: {fileID: 6524119463669961124}
+  shootSound: {fileID: 0}
+  audioSource: {fileID: 0}
+--- !u!95 &8523307303935073619
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3202649823848935472}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9a79e50bac7560b4a909b94371807339, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3348595437839335063
 GameObject:
   m_ObjectHideFlags: 0
