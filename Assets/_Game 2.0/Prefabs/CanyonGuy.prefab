@@ -324,12 +324,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnBullet: {fileID: 8318428374078878539}
-  animator: {fileID: 3154622452791347591}
   data: {fileID: 11400000, guid: f132ec63a68bde1428a954d027b631ba, type: 2}
   timeShootOff: 0.4
   reloadBarImage: {fileID: 1507376781}
   shootSound: {fileID: 8300000, guid: 41a56faba77d11543bc34458b7a55842, type: 3}
   audioSource: {fileID: 4581608522900179501}
+  automatic: 0
 --- !u!95 &3154622452791347591
 Animator:
   serializedVersion: 3
@@ -530,7 +530,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanyonGuy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5866666021909216657, guid: 7358ea26d91d0444192625984d309d13, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 7358ea26d91d0444192625984d309d13, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7358ea26d91d0444192625984d309d13, type: 3}
 --- !u!4 &1321571962035119132 stripped
 Transform:

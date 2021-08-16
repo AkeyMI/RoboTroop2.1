@@ -7,7 +7,8 @@ public class ShieldController : MonoBehaviour
     [SerializeField] GameObject shield = default;
     [SerializeField] int lifeShield = 15;
     [SerializeField] float timeToReloadShield = 5f;
-    [SerializeField] Animator animator;
+    
+    Animator animator;
 
     private int currentLifeShield;
     private bool shieldIsBroken;
@@ -17,6 +18,7 @@ public class ShieldController : MonoBehaviour
     private void Start()
     {
         shield.GetComponent<Shield>().Init(this);
+        animator = GetComponent<Animator>();
         currentLifeShield = lifeShield;
     }
 

@@ -116,10 +116,11 @@ MonoBehaviour:
   spawnBullet: {fileID: 630008773522171503}
   animator: {fileID: 8523307303935073619}
   data: {fileID: 11400000, guid: f7196e9b9ab460b409c18172b534823d, type: 2}
-  timeShootOff: 0.03
+  timeShootOff: 0.05
   reloadBarImage: {fileID: 6524119463669961124}
   shootSound: {fileID: 0}
   audioSource: {fileID: 0}
+  automatic: 1
 --- !u!95 &8523307303935073619
 Animator:
   serializedVersion: 3
@@ -130,7 +131,7 @@ Animator:
   m_GameObject: {fileID: 3202649823848935472}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
-  m_Controller: {fileID: 9100000, guid: 9a79e50bac7560b4a909b94371807339, type: 2}
+  m_Controller: {fileID: 9100000, guid: 37805ccbc2d7ce0419f7cb5df7649d29, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -382,7 +383,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: HavyMachineGuy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5866666021909216657, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
 --- !u!4 &3525989722411504712 stripped
 Transform:

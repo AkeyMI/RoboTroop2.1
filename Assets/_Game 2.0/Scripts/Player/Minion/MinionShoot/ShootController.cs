@@ -12,13 +12,13 @@ public class ShootController : MonoBehaviour
     //[SerializeField] float timeToReload = 1f;
     //[SerializeField] int damage = 1;
     //[SerializeField] ItemDistance item = default;
-    [SerializeField] Animator animator;
     [SerializeField] MinionData data;
     [SerializeField] float timeShootOff;
     [SerializeField] Image reloadBarImage = default;
     [SerializeField] AudioClip shootSound = default;
     [SerializeField] AudioSource audioSource = default;
-
+    [SerializeField] bool automatic;    
+    Animator animator;
     private int currentAmmo;
     private bool isReloading = false;
 
@@ -27,6 +27,7 @@ public class ShootController : MonoBehaviour
     private void Start()
     {
         //currentAmmo = item.ammo;
+        animator = GetComponent<Animator>();
         currentAmmo = data.ammo;
     }
 
@@ -35,6 +36,7 @@ public class ShootController : MonoBehaviour
         //if (!CanShoot()) return;
 
         ShootOrReload();
+
     }
 
     private void OnEnable()
@@ -46,6 +48,7 @@ public class ShootController : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            
             if (isReloading)
             {
                 return;
@@ -53,6 +56,8 @@ public class ShootController : MonoBehaviour
 
             if (currentAmmo > 0)
             {
+                if (automatic) 
+                    animator.SetBool("Shooting", true);
                 Shoot();
             }
             else
@@ -60,11 +65,15 @@ public class ShootController : MonoBehaviour
                 StartCoroutine(Reload());
             }
         }
+        else 
+            if(automatic) 
+                animator.SetBool("Shooting", false);
 
         if (Input.GetKeyDown(KeyCode.R) && currentAmmo < data.ammo)
         {
             StartCoroutine(Reload());
         }
+
     }
     IEnumerator Shooting()
     {
@@ -74,6 +83,9 @@ public class ShootController : MonoBehaviour
     }
     IEnumerator Reload()
     {
+        if (automatic)
+            animator.SetBool("Shooting", false);
+
         Debug.Log("Esta recargando");
         isReloading = true;
         float currentTime = data.timeToReload;
@@ -105,7 +117,8 @@ public class ShootController : MonoBehaviour
             bullet.GetComponent<Bullet>().Init(data.damage, data.bulletSpeed);
             timeOfLastAttack = Time.time + data.timeForAttack;
             currentAmmo--;
-            StartCoroutine(Shooting());
+            if (!automatic)
+                StartCoroutine(Shooting());
         }
     }
 

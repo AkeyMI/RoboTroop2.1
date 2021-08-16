@@ -54,6 +54,7 @@ MonoBehaviour:
   reloadBarImage: {fileID: 8153367648194926188}
   shootSound: {fileID: 8300000, guid: 41a56faba77d11543bc34458b7a55842, type: 3}
   audioSource: {fileID: 2044059825702105189}
+  automatic: 1
 --- !u!82 &2044059825702105189
 AudioSource:
   m_ObjectHideFlags: 0

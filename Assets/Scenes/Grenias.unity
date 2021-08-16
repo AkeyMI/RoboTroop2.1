@@ -1448,7 +1448,7 @@ PrefabInstance:
     - target: {fileID: 2463642210487357068, guid: 52e6ce3130d31534fb4a399c0ff6e988, type: 3}
       propertyPath: minion1
       value: 
-      objectReference: {fileID: 11400000, guid: f132ec63a68bde1428a954d027b631ba, type: 2}
+      objectReference: {fileID: 11400000, guid: f7196e9b9ab460b409c18172b534823d, type: 2}
     - target: {fileID: 2463642210487357069, guid: 52e6ce3130d31534fb4a399c0ff6e988, type: 3}
       propertyPath: m_RootOrder
       value: 4
