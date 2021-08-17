@@ -16,6 +16,7 @@ public class MinionController : MonoBehaviour
     public event Action<GameObject> onChangeMinionShieldUi;
     public event Action<GameObject> onChangeMinionItemUi;
     public event Action<int> onChangeFillAmountMinionItem;
+    public event Action onMinionItemNoUsable;
 
     private GameObject minionAtk;
     private GameObject minionShield;
@@ -72,7 +73,11 @@ public class MinionController : MonoBehaviour
 
     private void UseMinion()
     {
-        if (!CanUseUlti()) return;
+        if (!CanUseUlti())
+        {
+            onMinionItemNoUsable?.Invoke();
+            return;
+        }
 
         //canUseUlti = false;
         currentReloadUlti = itemData.reloadUlti;

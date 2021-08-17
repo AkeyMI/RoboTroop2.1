@@ -43,7 +43,11 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        if (stunStatus.IsStunned) return;
+        if (stunStatus.IsStunned)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
 
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");

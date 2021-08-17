@@ -3589,6 +3589,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 664650176}
     m_Modifications:
+    - target: {fileID: 947703004086057776, guid: 2b4f1e6689b3cf14ba4e21028f21964e, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.89
+      objectReference: {fileID: 0}
     - target: {fileID: 947703004339123691, guid: 2b4f1e6689b3cf14ba4e21028f21964e, type: 3}
       propertyPath: m_Name
       value: Icono_Heal

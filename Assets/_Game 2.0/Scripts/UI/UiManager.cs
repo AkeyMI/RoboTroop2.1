@@ -71,6 +71,8 @@ public class UiManager : MonoBehaviour
 
         naveController.onLifeChange += NaveLifeDamage;
         naveController.onShieldChange += NaveShieldDamage;
+
+        minionController.onMinionItemNoUsable += MinionItemNotUsable;
     }
 
     private void OnDisable()
@@ -86,6 +88,23 @@ public class UiManager : MonoBehaviour
 
         naveController.onLifeChange -= NaveLifeDamage;
         naveController.onShieldChange -= NaveShieldDamage;
+
+        minionController.onMinionItemNoUsable -= MinionItemNotUsable;
+    }
+
+    private void MinionItemNotUsable()
+    {
+        StartCoroutine(MinionItemRed());
+    }
+
+    private IEnumerator MinionItemRed()
+    {
+        Image item = minionItemImage.GetComponent<Image>();
+        item.color = Color.red;
+
+        yield return new WaitForSeconds(0.2f);
+
+        item.color = Color.white;
     }
 
     private void ChangeUiMinion(bool minionToChange)
