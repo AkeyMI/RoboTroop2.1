@@ -6265,8 +6265,8 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 0}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0.99276, g: 0.99276, b: 0.99276, a: 1}
+        key1: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 0.9137255}
+        key2: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 0.8627451}
         key3: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 0}
         key4: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -9784,7 +9784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4094374706197966959}
   m_Layer: 0
-  m_Name: ParticulaAuraSanador
+  m_Name: P_AuraSanador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
