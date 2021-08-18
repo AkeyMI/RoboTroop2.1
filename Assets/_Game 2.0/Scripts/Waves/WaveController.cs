@@ -17,6 +17,7 @@ public class WaveController : MonoBehaviour, IRoomActivables
 
     public void Activate()
     {
+        Debug.Log("Primera wave");
         waves[0].Init(this);
         waves[0].SpawnWave();
     }
@@ -27,6 +28,7 @@ public class WaveController : MonoBehaviour, IRoomActivables
 
         if(enemyCount <= 0)
         {
+            Debug.Log("Siguiente wave");
             NextWave();
         }
     }
@@ -39,6 +41,7 @@ public class WaveController : MonoBehaviour, IRoomActivables
         {
             waves[currentWave].Init(this);
             waves[currentWave].SpawnWave();
+            Debug.Log(currentWave);
         }
         else
         {

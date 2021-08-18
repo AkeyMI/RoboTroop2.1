@@ -7,6 +7,7 @@ public class MinionItemData : ScriptableObject
 {
     public string minionName = default;
     public GameObject minionPrefab = default;
+    public GameObject minionUi = default;
     public Effect effect = default;
     public int reloadUlti = 3;
 }

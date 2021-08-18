@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85b629e37a0c3314eb3ab612d8b8b62e, type: 3}
-  m_Name: Minion_Heal
+  m_Name: Kamikase
   m_EditorClassIdentifier: 
-  minionName: Heal Minion
-  minionPrefab: {fileID: 3177547514708248692, guid: 5950d71bdacb9ee488059f55173d3dd2, type: 3}
-  minionUi: {fileID: 947703004339123691, guid: 2b4f1e6689b3cf14ba4e21028f21964e, type: 3}
-  effect: {fileID: 11400000, guid: ead14fe1c9832f24186a4650cb8b965f, type: 2}
-  reloadUlti: 3
+  minionName: Kamikase
+  minionPrefab: {fileID: 4463914186474880870, guid: 892f537a36879df499e1c542d1c4a95c, type: 3}
+  minionUi: {fileID: 1749372274868014181, guid: fa10060d61d45f746b0754011cf28b3e, type: 3}
+  effect: {fileID: 0}
+  reloadUlti: 5

@@ -5,8 +5,11 @@ using UnityEngine;
 public class HealerController : MonoBehaviour
 {
     [SerializeField] float timeForCure = 1f;
+    [SerializeField] MinionItemData data = default;
 
-    private MinionItemData data;
+    private bool firstTime = true;
+
+    //private MinionItemData data;
 
     public void Init(MinionItemData itemData)
     {
@@ -15,6 +18,12 @@ public class HealerController : MonoBehaviour
 
     private void OnEnable()
     {
+        if(firstTime)
+        {
+            firstTime = false;
+            return;
+        }
+
         StartCoroutine(CureCoroutine());
     }
 

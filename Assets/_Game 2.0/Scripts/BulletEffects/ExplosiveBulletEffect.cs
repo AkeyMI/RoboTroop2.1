@@ -16,7 +16,7 @@ public class ExplosiveBulletEffect : BulletEffect
             if (enemy.CompareTag("Enemy"))
             {
                 enemy.GetComponent<EnemyController>().Damage(bullet.GetComponent<Bullet>().Damage / 2);
-                Debug.Log(bullet.GetComponent<Bullet>().Damage / 2);
+                //Debug.Log(bullet.GetComponent<Bullet>().Damage / 2);
             }
         }
     }

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeForCure: 3.5
+  data: {fileID: 11400000, guid: 5b1047ed03ff1624cb31ea5a98b27491, type: 2}
 --- !u!1001 &3177547514429755173
 PrefabInstance:
   m_ObjectHideFlags: 0

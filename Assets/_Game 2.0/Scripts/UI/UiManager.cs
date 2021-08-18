@@ -150,9 +150,9 @@ public class UiManager : MonoBehaviour
         minionItemFillAmount = minionItemImage.GetComponentInChildren<MinionItemUi>().GetFillAmount();
     }
 
-    private void FillAmountMinionItem(int amount)
+    private void FillAmountMinionItem(int amount, int minionReloadUlti)
     {
-        float currentItemFillAmount = (float)amount / 3f;
+        float currentItemFillAmount = (float)amount / (float)minionReloadUlti;
 
         minionItemFillAmount.fillAmount = currentItemFillAmount;
     }

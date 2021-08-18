@@ -4,23 +4,49 @@ using UnityEngine;
 
 public class KamikaseController : MonoBehaviour
 {
-    [SerializeField] float timeForSpawnKamikases = 1f;
+    [SerializeField] int KamikaseCount = 4;
+    [SerializeField] float radiusForSpawn = 2f;
+    [SerializeField] GameObject kamikasePrefab = default;
 
-    private MinionItemData data;
+    private bool firstTime = true;
 
-    public void Init(MinionItemData itemData)
-    {
-        data = itemData;
-    }
+    //private MinionItemData data;
+
+    //public void Init(MinionItemData itemData)
+    //{
+    //    data = itemData;
+    //}
 
     private void OnEnable()
     {
-        StartCoroutine(KamiCoroutine());
+        if(firstTime)
+        {
+            firstTime = false;
+            return;
+        }
+
+        SpawnKamikases();
     }
 
-    private IEnumerator KamiCoroutine()
+    private void SpawnKamikases()
     {
-        yield return new WaitForSeconds(timeForSpawnKamikases);
+        for(int i = 0; i < KamikaseCount; i ++)
+        {
+            var radians = 2 * Mathf.PI / KamikaseCount * i;
 
+            var vertical = Mathf.Sin(radians);
+            var horizontal = Mathf.Cos(radians);
+
+            var spawnDir = new Vector3(horizontal, 0, vertical);
+
+            var point = new Vector3(this.transform.position.x, 0, this.transform.position.z);
+
+            var spawnPos = point + spawnDir * radiusForSpawn;
+
+            Instantiate(kamikasePrefab, spawnPos, Quaternion.identity);
+        }
+
+        this.gameObject.SetActive(false);
+        //Destroy(this.gameObject);
     }
 }

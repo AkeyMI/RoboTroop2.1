@@ -15,7 +15,7 @@ public class MinionController : MonoBehaviour
     public event Action<GameObject> onChangeMinionAtkUi;
     public event Action<GameObject> onChangeMinionShieldUi;
     public event Action<GameObject> onChangeMinionItemUi;
-    public event Action<int> onChangeFillAmountMinionItem;
+    public event Action<int, int> onChangeFillAmountMinionItem;
     public event Action onMinionItemNoUsable;
 
     private GameObject minionAtk;
@@ -82,11 +82,11 @@ public class MinionController : MonoBehaviour
         //canUseUlti = false;
         currentReloadUlti = itemData.reloadUlti;
         reloadUltiUi = 0;
-        onChangeFillAmountMinionItem?.Invoke(reloadUltiUi);
+        onChangeFillAmountMinionItem?.Invoke(reloadUltiUi, itemData.reloadUlti);
         //GameObject item = Instantiate(itemData.minionPrefab, transform.position, Quaternion.identity);
-        minionItem.SetActive(true);
         minionItem.transform.position = spawnminionItem.transform.position;
-        minionItem.GetComponent<HealerController>().Init(itemData);
+        minionItem.SetActive(true);
+        //minionItem.GetComponent<HealerController>().Init(itemData);
         //itemData.effect.Apply();
     }
 
@@ -107,10 +107,10 @@ public class MinionController : MonoBehaviour
         currentReloadUlti--;
         reloadUltiUi++;
 
-        if (reloadUltiUi >= 3)
-            reloadUltiUi = 3;
+        if (reloadUltiUi >= itemData.reloadUlti)
+            reloadUltiUi = itemData.reloadUlti;
 
-        onChangeFillAmountMinionItem?.Invoke(reloadUltiUi);
+        onChangeFillAmountMinionItem?.Invoke(reloadUltiUi, itemData.reloadUlti);
     }
 
     public void ChangeAtkMinion(MinionData data)
@@ -159,5 +159,8 @@ public class MinionController : MonoBehaviour
         minionItem.SetActive(false);
         //minionItem.transform.SetParent(minionArt.transform, false);
         currentReloadUlti = itemData.reloadUlti;
+        reloadUltiUi = 0;
+        onChangeMinionItemUi?.Invoke(data.minionUi);
+        onChangeFillAmountMinionItem?.Invoke(reloadUltiUi, itemData.reloadUlti);
     }
 }
