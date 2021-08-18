@@ -2,9 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Stunable : MonoBehaviour
 {
+    [SerializeField] Image stunBarImage = default;
+
     public bool IsStunned { get; private set; }
 
     public event Action<float> onStunStarted;
@@ -19,12 +22,25 @@ public class Stunable : MonoBehaviour
 
     private IEnumerator StunTimeCoroutine(float time)
     {
-        IsStunned = true;
-        onStunStarted?.Invoke(time);
+        float currentTime = time;
+        stunBarImage.enabled = true;
 
-        yield return new WaitForSeconds(time);
+        while(currentTime > 0)
+        {
+            currentTime -= Time.deltaTime;
+            stunBarImage.fillAmount = (currentTime / time);
+            yield return null;
+        }
 
-        IsStunned = false;
-        onStunFinished?.Invoke();
+        stunBarImage.enabled = false;
+        stunBarImage.fillAmount = 1;
+
+        //IsStunned = true;
+        //onStunStarted?.Invoke(time);
+
+        //yield return new WaitForSeconds(time);
+
+        //IsStunned = false;
+        //onStunFinished?.Invoke();
     }
 }

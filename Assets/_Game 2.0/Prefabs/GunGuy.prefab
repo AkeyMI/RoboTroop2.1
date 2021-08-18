@@ -49,7 +49,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnBullet: {fileID: 6231163776040583893}
-  animator: {fileID: 3474001343974493048}
   data: {fileID: 11400000, guid: 6cd372752bdad4641b1335d54bf8627f, type: 2}
   timeShootOff: 0.25
   reloadBarImage: {fileID: 5031335433219866611}

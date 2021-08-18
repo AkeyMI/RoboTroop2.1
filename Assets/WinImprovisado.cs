@@ -11,7 +11,7 @@ public class WinImprovisado : MonoBehaviour
     {
         if(cosa == null)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(4);
         }
     }
 }
