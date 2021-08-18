@@ -6,7 +6,7 @@ public class BulletEnemy : MonoBehaviour
 {
     [SerializeField] float speed = 8f;
     [SerializeField] float timeStun = 1f;
-
+    [SerializeField] GameObject particulas;
     private int damage;
     private Rigidbody rb;
 
@@ -48,7 +48,7 @@ public class BulletEnemy : MonoBehaviour
         {
             other.GetComponent<Shield>().ShieldHit(damage);
         }
-
+        Instantiate<GameObject>(particulas).transform.position = this.transform.position;
         Destroy(this.gameObject);
     }
 }

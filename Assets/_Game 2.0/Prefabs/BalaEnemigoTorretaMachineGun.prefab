@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   timeStun: 0.5
+  particulas: {fileID: 6766932777587085690, guid: 827162bc8bf11204ba430b2af0deeb00, type: 3}
 --- !u!65 &7784559027808549620
 BoxCollider:
   m_ObjectHideFlags: 0

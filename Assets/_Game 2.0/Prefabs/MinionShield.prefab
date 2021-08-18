@@ -48,7 +48,6 @@ MonoBehaviour:
   shield: {fileID: 8102649761704986917}
   lifeShield: 15
   timeToReloadShield: 5
-  animator: {fileID: 8424167663333644736}
 --- !u!95 &8424167663333644736
 Animator:
   serializedVersion: 3
@@ -153,6 +152,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 66347d91dd201a04bba16a9f2498c5ae, type: 2}
+    - target: {fileID: 7512281513308713651, guid: 5265b9be272dfa6409aac5288734acff, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7512281513308713651, guid: 5265b9be272dfa6409aac5288734acff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7803407436844761574, guid: 5265b9be272dfa6409aac5288734acff, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -4833,7 +4833,7 @@ GameObject:
   - component: {fileID: 4094374706197966959}
   - component: {fileID: 998340793430969165}
   m_Layer: 0
-  m_Name: P_BalaMachineGunDestoyed
+  m_Name: P_B_MachineGunDestoyed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
