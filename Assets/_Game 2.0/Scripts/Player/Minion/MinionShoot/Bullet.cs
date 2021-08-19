@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour
         }
 
         Instantiate<GameObject>(particulas).transform.position = this.transform.position;//Instanciar 
-        //Instantiate(sound);
+        Instantiate(sound);
         Destroy(this.gameObject);
     }
 }

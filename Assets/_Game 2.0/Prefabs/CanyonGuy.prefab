@@ -327,7 +327,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: f132ec63a68bde1428a954d027b631ba, type: 2}
   timeShootOff: 0.4
   reloadBarImage: {fileID: 1507376781}
-  shootSound: {fileID: 8300000, guid: 41a56faba77d11543bc34458b7a55842, type: 3}
+  shootSound: {fileID: 8300000, guid: 173bb6b1377640c41af8500c36e1a032, type: 3}
   audioSource: {fileID: 4581608522900179501}
   automatic: 0
 --- !u!95 &3154622452791347591

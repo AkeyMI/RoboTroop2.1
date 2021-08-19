@@ -82,7 +82,7 @@ MonoBehaviour:
   bulletEffect: {fileID: 11400000, guid: 8a51a7788d165ae4c8d33f8c0bfb77fe, type: 2}
   hitSound: {fileID: 8300000, guid: 1b1d78cb9b2dfd94cbd234bdbd37dace, type: 3}
   audioSource: {fileID: 8406783349477258574}
-  sound: {fileID: 6361788185030146134, guid: d8f898272396e204fb4745c75b04c74c, type: 3}
+  sound: {fileID: 6361788185030146134, guid: 61ff58b6f0f67854986b049128212285, type: 3}
 --- !u!54 &7488763556270888079
 Rigidbody:
   m_ObjectHideFlags: 0
