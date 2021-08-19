@@ -3,7 +3,12 @@ guid: 4752f765e773a2049ae6f9986cdcf2cb
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TeslaMat
+    second: {fileID: 2100000, guid: 877c139684806f74eae1473f5a5b3c75, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
