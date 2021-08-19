@@ -1693,6 +1693,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MachineGuy
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 968f58b389e2a804cb6472ac4daf343b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 61de3eb47cfc7254fa57fec03af3e8b0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 968f58b389e2a804cb6472ac4daf343b, type: 3}
 --- !u!1001 &1758330284
