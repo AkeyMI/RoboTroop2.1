@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
@@ -10,12 +10,18 @@ public class Item : MonoBehaviour
 
     [SerializeField] float distanceToActivate = 2f;
     [SerializeField] Effect[] effects;
+    [SerializeField] Image eImage = default;
+
+    private bool isClose;
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        CheckIfThereIsPlayer();
+
+        if(Input.GetKeyDown(KeyCode.E) && isClose)
         {
-            CheckIfThereIsPlayer();
+            //CheckIfThereIsPlayer();
+            Use();
         }
     }
 
@@ -26,7 +32,14 @@ public class Item : MonoBehaviour
         {
             if (player.CompareTag("Player"))
             {
-                Use();
+                //Use();
+                eImage.enabled = true;
+                isClose = true;
+            }
+            else
+            {
+                eImage.enabled = false;
+                isClose = false;
             }
         }
     }
