@@ -176,7 +176,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2899601352362565811}
-  - component: {fileID: 9141560424727968457}
   m_Layer: 0
   m_Name: Enemigo_Torreta_Machingun
   m_TagString: Untagged
@@ -200,25 +199,6 @@ Transform:
   m_Father: {fileID: 3438442704786040234}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!95 &9141560424727968457
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2555410973177444873}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 0e7b4379b29a0754aa62508bdb8be8ee, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3150898450371591558
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +212,7 @@ GameObject:
   - component: {fileID: 6547512981640986059}
   - component: {fileID: 7539964607420210203}
   - component: {fileID: 2099326514094747229}
+  - component: {fileID: 2398793689013638090}
   m_Layer: 0
   m_Name: PrefabCabeza
   m_TagString: Untagged
@@ -401,6 +382,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2398793689013638090
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150898450371591558}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 0e7b4379b29a0754aa62508bdb8be8ee, type: 3}
+  m_Controller: {fileID: 9100000, guid: 62fbc255d415cd247a47c39e2782c524, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3438442704786040232
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3438442704786040234}
   m_Layer: 0
-  m_Name: Enemy_torreta1
+  m_Name: Enemy_torreta_Machinegun
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
