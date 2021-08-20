@@ -13,11 +13,14 @@ public class EnemyController : MonoBehaviour, IDamagable
     [SerializeField] AudioSource audioSource = default;
     [SerializeField] GameObject sound = default;
     [SerializeField] GameObject particulas = default;
+    [SerializeField] bool isATorreta = default;
     //private EnemyStats currentStats;
 
     private WaveController waveController;
 
     private bool isDead = false;
+
+    public bool IsATorreta => isATorreta;
 
     public Rigidbody Rb => rb;
     public EnemyStats Stats => enemyStats;

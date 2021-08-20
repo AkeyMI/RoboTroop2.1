@@ -5,6 +5,7 @@ using UnityEngine;
 public class SimpleSpawner : MonoBehaviour
 {
     [SerializeField] GameObject prefab = default;
+    [SerializeField] bool isATorreta = default;
 
     private WaveController waveController;
 
@@ -16,7 +17,14 @@ public class SimpleSpawner : MonoBehaviour
     public void Spawn()
     {
         GameObject go = Instantiate(prefab, transform.position, transform.rotation);
-        go.GetComponent<EnemyController>().Init(waveController);
+        if(!isATorreta)
+        { 
+            go.GetComponent<EnemyController>().Init(waveController);
+        }
+        else
+        {
+            go.GetComponentInChildren<EnemyController>().Init(waveController);
+        }
     }
 
     private void OnDrawGizmos()

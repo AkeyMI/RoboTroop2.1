@@ -57,8 +57,11 @@ public class EnemyHuntState : EnemyBaseState
         //enemyController.transform.LookAt(newPosition);
         //enemyController.transform.position += newDirection * speed;
 
-        agent = enemyController.Agent;
+        if (!enemyController.IsATorreta)
+        {
+            agent = enemyController.Agent;
 
-        agent.SetDestination(player.transform.position);
+            agent.SetDestination(player.transform.position);
+        }
     }
 }
