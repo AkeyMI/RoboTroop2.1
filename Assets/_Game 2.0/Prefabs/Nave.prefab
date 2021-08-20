@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 5583059808156569560}
   - component: {fileID: 5583059808156569567}
   m_Layer: 8
-  m_Name: Sphere
+  m_Name: Shield
   m_TagString: ShieldNave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 5583059808676931106}
   - component: {fileID: 5583059808676931105}
   m_Layer: 7
-  m_Name: Sphere
+  m_Name: Nave
   m_TagString: Nave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

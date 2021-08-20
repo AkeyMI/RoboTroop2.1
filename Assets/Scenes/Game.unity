@@ -1036,7 +1036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5583059808676931114, guid: 76b476a72c40bca4c974cf1a728f74f0, type: 3}
       propertyPath: m_Name
-      value: Sphere
+      value: Nave
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b476a72c40bca4c974cf1a728f74f0, type: 3}
@@ -4673,7 +4673,7 @@ PrefabInstance:
     - target: {fileID: 2463642210487357068, guid: 52e6ce3130d31534fb4a399c0ff6e988, type: 3}
       propertyPath: minion1
       value: 
-      objectReference: {fileID: 11400000, guid: 113e39616d0adc542835320e0d800db3, type: 2}
+      objectReference: {fileID: 11400000, guid: 6cd372752bdad4641b1335d54bf8627f, type: 2}
     - target: {fileID: 2463642210487357069, guid: 52e6ce3130d31534fb4a399c0ff6e988, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4811,7 +4811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 24, z: -14}
+  m_FollowOffset: {x: 0, y: 22, z: -12}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -17629,8 +17629,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337499643}
-  m_LocalRotation: {x: 0.48564297, y: 0.000000036842977, z: -0.000000020468319, w: 0.8741573}
-  m_LocalPosition: {x: -0.7100067, y: 25, z: -9.350002}
+  m_LocalRotation: {x: 0.49740368, y: -1e-45, z: 1e-45, w: 0.8675192}
+  m_LocalPosition: {x: -0.7100067, y: 23, z: -7.3500023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -22712,8 +22712,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767250295}
-  m_LocalRotation: {x: 0.48564297, y: 0.000000036842977, z: -0.000000020468319, w: 0.8741573}
-  m_LocalPosition: {x: -0.7100067, y: 25, z: -9.350002}
+  m_LocalRotation: {x: 0.49740368, y: -1e-45, z: 1e-45, w: 0.8675192}
+  m_LocalPosition: {x: -0.7100067, y: 23, z: -7.3500023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414423310}
