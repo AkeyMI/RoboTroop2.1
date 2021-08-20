@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3177547514708248699}
   - component: {fileID: 3177547514708248698}
+  - component: {fileID: 8715042026720674787}
   m_Layer: 0
   m_Name: Healer
   m_TagString: Untagged
@@ -47,6 +48,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeForCure: 3.5
   data: {fileID: 11400000, guid: 5b1047ed03ff1624cb31ea5a98b27491, type: 2}
+--- !u!95 &8715042026720674787
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177547514708248692}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 9cc1f45cb6fc25e4aa3257a12315f9ce, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9e8142c77772adf418cb844ad49dda68, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3177547514429755173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,7 +126,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9e8142c77772adf418cb844ad49dda68, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 9cc1f45cb6fc25e4aa3257a12315f9ce, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9cc1f45cb6fc25e4aa3257a12315f9ce, type: 3}
 --- !u!4 &3139664096606005454 stripped
 Transform:

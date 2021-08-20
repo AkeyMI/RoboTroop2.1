@@ -18,4 +18,10 @@ public class SimpleSpawner : MonoBehaviour
         GameObject go = Instantiate(prefab, transform.position, transform.rotation);
         go.GetComponent<EnemyController>().Init(waveController);
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, 0.5f);
+    }
 }

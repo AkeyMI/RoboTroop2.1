@@ -7,10 +7,15 @@ public class HealerController : MonoBehaviour
     [SerializeField] float timeForCure = 1f;
     [SerializeField] MinionItemData data = default;
 
+    Animator ac;
     private bool firstTime = true;
 
     //private MinionItemData data;
-
+    private void Start()
+    {
+        ac = GetComponent<Animator>();
+        ac.SetBool("Heal", true);
+    }
     public void Init(MinionItemData itemData)
     {
         data = itemData;
