@@ -39,4 +39,11 @@ public class Item : MonoBehaviour
         }
         Destroy(this.gameObject);
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, distanceToActivate);
+    }
+
 }
