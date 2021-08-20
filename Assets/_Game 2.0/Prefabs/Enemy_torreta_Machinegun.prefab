@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 2398793689013638090}
   m_Layer: 0
   m_Name: PrefabCabeza
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,7 +860,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6941067337389035966}
-  m_LocalRotation: {x: -0, y: -0.7071067, z: -0, w: 0.7071069}
+  m_LocalRotation: {x: -0, y: -0.00000032782555, z: -0, w: 1}
   m_LocalPosition: {x: -0.09232125, y: 3.557286, z: 4.6568956}
   m_LocalScale: {x: 3.557286, y: 3.557286, z: 3.557286}
   m_Children: []
