@@ -1242,6 +1242,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 436a535f9f064e04cbc2f930810fac75, type: 2}
+    - target: {fileID: 5583059808156569565, guid: 76b476a72c40bca4c974cf1a728f74f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5583059808676931110, guid: 76b476a72c40bca4c974cf1a728f74f0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1290,6 +1294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nave
       objectReference: {fileID: 0}
+    - target: {fileID: 5583059808676931115, guid: 76b476a72c40bca4c974cf1a728f74f0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 6c4998a1c0c136841afaf7933d919ad5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b476a72c40bca4c974cf1a728f74f0, type: 3}
 --- !u!1001 &55240373
