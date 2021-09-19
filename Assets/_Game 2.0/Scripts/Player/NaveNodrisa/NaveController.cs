@@ -11,6 +11,7 @@ public class NaveController : MonoBehaviour, IDamagable
     [SerializeField] int shieldLife = 10;
     [SerializeField] GameObject shield = default;
     [SerializeField] NavMeshAgent agent = default;
+    [SerializeField] Transform mainObjective;
 
     public event Action<int, int> onLifeChange;
     public event Action<int, int> onShieldChange;
@@ -51,7 +52,7 @@ public class NaveController : MonoBehaviour, IDamagable
 
     private void MoveNave()
     {
-        agent.SetDestination(player.transform.position);
+        agent.SetDestination(mainObjective.position);
     }
 
     public void ShieldDamage(int amount)
