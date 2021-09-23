@@ -11,6 +11,8 @@ public class MinionController : MonoBehaviour
     [SerializeField] GameObject minionArt = default;
     [SerializeField] GameObject spawnminionItem = default;
 
+    private Queue<GameObject> atkMinions =  new Queue<GameObject>();
+
     public event Action<bool> onChangeMinion;
     public event Action<GameObject> onChangeMinionAtkUi;
     public event Action<GameObject> onChangeMinionShieldUi;
@@ -22,6 +24,8 @@ public class MinionController : MonoBehaviour
     private GameObject minionShield;
     private GameObject minionItem;
     private MinionItemData itemData;
+
+    private GameObject takentAtkMinion;
 
     private int currentReloadUlti;
     private int reloadUltiUi = 3;
@@ -36,6 +40,7 @@ public class MinionController : MonoBehaviour
     {
         minionAtk = Instantiate(minion1.minionPrefab, Vector3.zero, Quaternion.identity);
         minionAtk.transform.SetParent(minionArt.transform, false);
+        atkMinions.Enqueue(minionAtk);
         //onChangeMinionAtkUi?.Invoke(minion1.minionUI);
 
         minionShield = Instantiate(minion2.minionPrefab, Vector3.zero, Quaternion.identity);
@@ -115,20 +120,37 @@ public class MinionController : MonoBehaviour
 
     public void ChangeAtkMinion(MinionData data)
     {
-        if (minionAtk.activeSelf)
-        {
-            Destroy(minionAtk);
-            minionAtk = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
-            minionAtk.transform.SetParent(minionArt.transform, false);
-        }
-        else
-        {
-            Destroy(minionAtk);
-            minionAtk = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
-            minionAtk.transform.SetParent(minionArt.transform, false);
-            minionAtk.SetActive(false);
-        }
+        //if (minionAtk.activeSelf)
+        //{
+        //    Destroy(minionAtk);
+        //    minionAtk = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
+        //    minionAtk.transform.SetParent(minionArt.transform, false);
+        //}
+        //else
+        //{
+        //    Destroy(minionAtk);
+        //    minionAtk = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
+        //    minionAtk.transform.SetParent(minionArt.transform, false);
+        //    minionAtk.SetActive(false);
+        //}
 
+        takentAtkMinion = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
+        takentAtkMinion.SetActive(false);
+
+        atkMinions.Enqueue(takentAtkMinion);
+
+        //onChangeMinionAtkUi?.Invoke(data.minionUI);
+    }
+
+    public void NextMinion()
+    {
+        Destroy(minionAtk);
+        atkMinions.Dequeue();
+
+        minionAtk = atkMinions.Peek();
+        minionAtk.transform.SetParent(minionArt.transform, false);
+        minionAtk.SetActive(true);
+        MinionData data = minionAtk.GetComponent<ShootController>().Data;
         onChangeMinionAtkUi?.Invoke(data.minionUI);
     }
 

@@ -15,4 +15,5 @@ public class MinionData : ScriptableObject
     public float timeToReload = 1f;
     public float timeForAttack = 0.5f;
     public float bulletSpeed = 15f;
+    public int life = 1;
 }

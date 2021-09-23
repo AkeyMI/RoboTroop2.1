@@ -30,7 +30,7 @@ public class Item : MonoBehaviour
         Collider[] players = Physics.OverlapSphere(this.transform.position, distanceToActivate);
         foreach (var player in players)
         {
-            if (player.CompareTag("Player"))
+            if (player.CompareTag("Player") || player.CompareTag("AtkMinion"))
             {
                 //Use();
                 eImage.enabled = true;
