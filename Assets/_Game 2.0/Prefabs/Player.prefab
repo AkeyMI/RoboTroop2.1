@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &45603494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 45603495}
+  m_Layer: 6
+  m_Name: Nave Main Objective
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &45603495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45603494}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2463642212173215777}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &326007695
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +171,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2463642212173215777}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1678493376
 GameObject:
@@ -234,6 +264,7 @@ GameObject:
   - component: {fileID: 2463642210487357066}
   - component: {fileID: 2463642210487357068}
   - component: {fileID: 2463642210487357059}
+  - component: {fileID: 1612188676}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -372,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b45c6b896904a458a88ffc0a6f682b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minion1: {fileID: 11400000, guid: 6cd372752bdad4641b1335d54bf8627f, type: 2}
+  minion1: {fileID: 11400000, guid: f7196e9b9ab460b409c18172b534823d, type: 2}
   minion2: {fileID: 11400000, guid: a9f107eca3170a44fb02557ed617b30c, type: 2}
   minion3: {fileID: 11400000, guid: 5b1047ed03ff1624cb31ea5a98b27491, type: 2}
   minionArt: {fileID: 2463642212173215789}
@@ -390,6 +421,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stunBarImage: {fileID: 1678493377}
+--- !u!208 &1612188676
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463642210487357067}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.8, y: 1, z: 0.8}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2463642212173215789
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +464,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 45603495}
   - {fileID: 553780567}
   m_Father: {fileID: 2463642210487357069}
   m_RootOrder: 0
