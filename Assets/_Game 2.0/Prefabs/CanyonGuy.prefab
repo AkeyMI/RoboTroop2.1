@@ -323,7 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ea4e359e321d04cabfeccf5d0e43be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnBullet: {fileID: 8318428374078878539}
+  spawnBullet:
+  - {fileID: 8318428374078878539}
   data: {fileID: 11400000, guid: f132ec63a68bde1428a954d027b631ba, type: 2}
   timeShootOff: 0.4
   reloadBarImage: {fileID: 1507376781}

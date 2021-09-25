@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShootController : MonoBehaviour, IDamagable
 {
     //[SerializeField] GameObject bulletPrefab = default;
-    [SerializeField] GameObject spawnBullet = default;
+    [SerializeField] GameObject[] spawnBullet = default;
     //[SerializeField] float timeForAttack = 0.5f;
     //[SerializeField] int ammo = 5;
     //[SerializeField] float timeToReload = 1f;
@@ -122,13 +122,18 @@ public class ShootController : MonoBehaviour, IDamagable
     {
         if (Time.time > timeOfLastAttack)
         {
-            GameObject bullet = Instantiate(data.bulletPrefab, spawnBullet.transform.position, spawnBullet.transform.rotation);
-            audioSource.PlayOneShot(shootSound);
-            bullet.GetComponent<Bullet>().Init(data.damage, data.bulletSpeed);
-            timeOfLastAttack = Time.time + data.timeForAttack;
-            currentAmmo--;
-            if (!automatic)
-                StartCoroutine(Shooting());
+            
+            for (int i=0; i < spawnBullet.Length; i++)
+            {
+                GameObject bullet = Instantiate(data.bulletPrefab, spawnBullet[i].transform.position, spawnBullet[i].transform.rotation);
+                bullet.GetComponent<Bullet>().Init(data.damage, data.bulletSpeed);
+            }
+                audioSource.PlayOneShot(shootSound);
+
+                timeOfLastAttack = Time.time + data.timeForAttack;
+                currentAmmo--;
+                if (!automatic)
+                    StartCoroutine(Shooting());
         }
     }
 
