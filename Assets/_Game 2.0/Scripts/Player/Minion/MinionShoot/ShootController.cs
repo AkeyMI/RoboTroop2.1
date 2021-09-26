@@ -17,7 +17,9 @@ public class ShootController : MonoBehaviour, IDamagable
     [SerializeField] Image reloadBarImage = default;
     [SerializeField] AudioClip shootSound = default;
     [SerializeField] AudioSource audioSource = default;
-    [SerializeField] bool automatic;    
+    [SerializeField] bool automatic;
+    [SerializeField] int bulletsXShoot;
+    [SerializeField] float timeBetweenShoots;
     Animator animator;
     private int currentAmmo;
     private bool isReloading = false;
@@ -122,19 +124,44 @@ public class ShootController : MonoBehaviour, IDamagable
     {
         if (Time.time > timeOfLastAttack)
         {
-            
-            for (int i=0; i < spawnBullet.Length; i++)
+            if (bulletsXShoot > 1)
             {
-                GameObject bullet = Instantiate(data.bulletPrefab, spawnBullet[i].transform.position, spawnBullet[i].transform.rotation);
-                bullet.GetComponent<Bullet>().Init(data.damage, data.bulletSpeed);
+                Debug.Log("Simon");
+                StartCoroutine(Rafaga());
             }
+            else
+            {
+                for (int i = 0; i < spawnBullet.Length; i++)
+                {
+                    GameObject bullet = Instantiate(data.bulletPrefab, spawnBullet[i].transform.position, spawnBullet[i].transform.rotation);
+                    bullet.GetComponent<Bullet>().Init(data.damage, data.bulletSpeed);
+                }
                 audioSource.PlayOneShot(shootSound);
-
                 timeOfLastAttack = Time.time + data.timeForAttack;
                 currentAmmo--;
                 if (!automatic)
                     StartCoroutine(Shooting());
+            }
         }
+    }
+
+    IEnumerator Rafaga()
+    {
+        for (int i = 0; i < bulletsXShoot; i++)
+        {
+            for (int y = 0; y < spawnBullet.Length; y++)
+            {
+                GameObject bullet = Instantiate(data.bulletPrefab, spawnBullet[y].transform.position, spawnBullet[y].transform.rotation);
+                bullet.GetComponent<Bullet>().Init(data.damage, data.bulletSpeed);
+            }
+            audioSource.PlayOneShot(shootSound);
+            timeOfLastAttack = Time.time + data.timeForAttack;
+            currentAmmo--;
+            if (!automatic)
+                StartCoroutine(Shooting());
+            yield return new WaitForSeconds(timeBetweenShoots);
+        }
+
     }
 
     public void Damage(int amount)
