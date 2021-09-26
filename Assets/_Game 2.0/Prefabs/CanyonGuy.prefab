@@ -331,6 +331,8 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 173bb6b1377640c41af8500c36e1a032, type: 3}
   audioSource: {fileID: 4581608522900179501}
   automatic: 0
+  bulletsXShoot: 0
+  timeBetweenShoots: 0
 --- !u!95 &3154622452791347591
 Animator:
   serializedVersion: 3

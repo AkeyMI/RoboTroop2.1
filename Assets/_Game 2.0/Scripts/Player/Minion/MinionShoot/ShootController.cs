@@ -126,7 +126,6 @@ public class ShootController : MonoBehaviour, IDamagable
         {
             if (bulletsXShoot > 1)
             {
-                Debug.Log("Simon");
                 StartCoroutine(Rafaga());
             }
             else
