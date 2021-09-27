@@ -196,10 +196,10 @@ public class CharacterController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        //Gizmos.color = Color.red;
 
-        Gizmos.DrawLine(origin, hitPoint);
+        //Gizmos.DrawLine(origin, hitPoint);
 
-        Gizmos.DrawSphere(hitPoint, 0.2f);
+        //Gizmos.DrawSphere(hitPoint, 0.2f);
     }
 }

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1090a4548270e404185dbd647323231b, type: 3}
-  m_Name: SemigunGuy
+  m_Name: TriplegunGuy
   m_EditorClassIdentifier: 
-  minionName: SemigunGuy
-  minionPrefab: {fileID: 1354599212422573440, guid: 34df3e96e7263844a918681c0c460e05, type: 3}
-  bulletPrefab: {fileID: 8591236588811397447, guid: 1883c9a2a0ccb2149bc11daf7a00c674, type: 3}
+  minionName: TriplegunGuy
+  minionPrefab: {fileID: 1354599212422573440, guid: 98c4b92db020f22468894d7b0dae7b20, type: 3}
+  bulletPrefab: {fileID: 8591236588811397447, guid: a6d23b0f3c6d50d49be0aef177872b0d, type: 3}
   minionUI: {fileID: 5264934700255517403, guid: 22176c9d560e6ae4baf55ebab90cbb9f, type: 3}
-  damage: 1
-  ammo: 15
+  damage: 2
+  ammo: 5
   timeToReload: 1
-  timeForAttack: 0.6
+  timeForAttack: 0.5
   bulletSpeed: 25
   life: 1
