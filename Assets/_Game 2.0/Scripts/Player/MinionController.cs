@@ -10,6 +10,7 @@ public class MinionController : MonoBehaviour
     [SerializeField] MinionItemData minion3 = default;
     [SerializeField] GameObject minionArt = default;
     [SerializeField] GameObject spawnminionItem = default;
+    [SerializeField] int maxMinionsInQueue = 5;
 
     private Queue<GameObject> atkMinions =  new Queue<GameObject>();
 
@@ -24,6 +25,8 @@ public class MinionController : MonoBehaviour
     private GameObject minionShield;
     private GameObject minionItem;
     private MinionItemData itemData;
+
+    private int currentMaxMinionsInQueue;
 
     private GameObject takentAtkMinion;
 
@@ -51,6 +54,8 @@ public class MinionController : MonoBehaviour
         itemData = minion3;
         minionItem = Instantiate(minion3.minionPrefab, Vector3.zero, Quaternion.identity);
         minionItem.SetActive(false);
+
+        currentMaxMinionsInQueue = 0;
     }
 
     private void Update()
@@ -134,10 +139,19 @@ public class MinionController : MonoBehaviour
         //    minionAtk.SetActive(false);
         //}
 
-        takentAtkMinion = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
-        takentAtkMinion.SetActive(false);
+        if (currentMaxMinionsInQueue < maxMinionsInQueue)
+        {
+            takentAtkMinion = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
+            takentAtkMinion.SetActive(false);
 
-        atkMinions.Enqueue(takentAtkMinion);
+            atkMinions.Enqueue(takentAtkMinion);
+
+            currentMaxMinionsInQueue++;
+        }
+        else
+        {
+
+        }
 
         //onChangeMinionAtkUi?.Invoke(data.minionUI);
     }

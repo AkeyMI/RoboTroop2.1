@@ -48,6 +48,10 @@ public class BulletEnemy : MonoBehaviour
         {
             other.GetComponent<Shield>().ShieldHit(damage);
         }
+        else if(other.CompareTag("AtkMinion"))
+        {
+            other.GetComponent<ShootController>().Damage(damage);
+        }
         Instantiate<GameObject>(particulas).transform.position = this.transform.position;
         Destroy(this.gameObject);
     }

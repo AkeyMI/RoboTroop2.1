@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7542961979783443073}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpawnBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5714722470129005805}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ReloadBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,9 +78,10 @@ GameObject:
   - component: {fileID: 7609039924946948736}
   - component: {fileID: 8523307303935073619}
   - component: {fileID: 1414125877907084634}
-  m_Layer: 0
+  - component: {fileID: 2460524613651373627}
+  m_Layer: 11
   m_Name: HavyMachinGuy
-  m_TagString: Untagged
+  m_TagString: AtkMinion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,6 +123,8 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 41a56faba77d11543bc34458b7a55842, type: 3}
   audioSource: {fileID: 1414125877907084634}
   automatic: 1
+  bulletsXShoot: 0
+  timeBetweenShoots: 0
 --- !u!95 &8523307303935073619
 Animator:
   serializedVersion: 3
@@ -237,6 +240,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &2460524613651373627
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3202649823848935472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3348595437839335063
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +264,7 @@ GameObject:
   - component: {fileID: 1815487178347885615}
   - component: {fileID: 3310123700662199387}
   - component: {fileID: 6524119463669961124}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +341,7 @@ GameObject:
   - component: {fileID: 3003889024438277383}
   - component: {fileID: 7773469955199837590}
   - component: {fileID: 4722987965394401052}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,6 +448,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3202649823848935473}
     m_Modifications:
+    - target: {fileID: -8943995561445966497, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -476,13 +496,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5386194544167388679, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
       propertyPath: m_Name
       value: HavyMachineGuy
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472595817671426750, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809147990981217438, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151099082041948003, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367291230181258372, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5866666021909216657, guid: 17eb4fe920f7719428c884d62a2ab769, type: 3}
