@@ -20,6 +20,7 @@ public class ShootController : MonoBehaviour, IDamagable
     [SerializeField] bool automatic;
     [SerializeField] int bulletsXShoot;
     [SerializeField] float timeBetweenShoots;
+    [SerializeField] Mesh gizmoMesh;
     Animator animator;
     private int currentAmmo;
     private bool isReloading = false;
@@ -130,9 +131,9 @@ public class ShootController : MonoBehaviour, IDamagable
             }
             else
             {
-                for (int i = 0; i < spawnBullet.Length; i++)
+                foreach (GameObject i in spawnBullet)
                 {
-                    GameObject bullet = Instantiate(data.bulletPrefab, spawnBullet[i].transform.position, spawnBullet[i].transform.rotation);
+                    GameObject bullet = Instantiate(data.bulletPrefab, i.transform.position, i.transform.rotation);
                     bullet.GetComponent<Bullet>().Init(data.damage, data.bulletSpeed);
                 }
                 audioSource.PlayOneShot(shootSound);
@@ -148,9 +149,9 @@ public class ShootController : MonoBehaviour, IDamagable
     {
         for (int i = 0; i < bulletsXShoot; i++)
         {
-            for (int y = 0; y < spawnBullet.Length; y++)
+            foreach (GameObject y in spawnBullet)
             {
-                GameObject bullet = Instantiate(data.bulletPrefab, spawnBullet[y].transform.position, spawnBullet[y].transform.rotation);
+                GameObject bullet = Instantiate(data.bulletPrefab, y.transform.position, y.transform.rotation);
                 bullet.GetComponent<Bullet>().Init(data.damage, data.bulletSpeed);
             }
             audioSource.PlayOneShot(shootSound);
@@ -182,4 +183,14 @@ public class ShootController : MonoBehaviour, IDamagable
     //{
     //    this.item = (ItemDistance)item;
     //}
+
+    private void OnDrawGizmos()
+    {
+        foreach (GameObject f in spawnBullet)
+        {
+            Gizmos.DrawMesh(gizmoMesh, f.transform.position, f.transform.rotation);
+            Gizmos.color = Color.yellow;
+        }
+    }
+
 }

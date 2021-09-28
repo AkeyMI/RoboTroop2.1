@@ -59,6 +59,7 @@ MonoBehaviour:
   automatic: 1
   bulletsXShoot: 0
   timeBetweenShoots: 0
+  gizmoMesh: {fileID: 5247717548940950464, guid: c77debadc4733314296f7624e23295ba, type: 3}
 --- !u!82 &2044059825702105189
 AudioSource:
   m_ObjectHideFlags: 0
