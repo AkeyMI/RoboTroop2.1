@@ -21,4 +21,4 @@ MonoBehaviour:
   timeToReload: 1
   timeForAttack: 0.6
   bulletSpeed: 25
-  life: 1
+  life: 3

@@ -98,8 +98,7 @@ public class ShootController : MonoBehaviour, IDamagable
     {
         if (automatic)
             animator.SetBool("Shooting", false);
-
-        Debug.Log("Esta recargando");
+       
         isReloading = true;
         float currentTime = data.timeToReload;
         reloadBarImage.enabled = true;
