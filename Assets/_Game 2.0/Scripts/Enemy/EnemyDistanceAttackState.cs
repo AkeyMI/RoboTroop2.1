@@ -12,10 +12,13 @@ public class EnemyDistanceAttackState : EnemyBaseState
     public override void EnterState(EnemyController enemy)
     {
         enemyController = enemy;
+        //playerCollider = enemyController.ObjectToAttack;
     }
 
     public override void Update(EnemyController enemy)
     {
+        playerCollider = enemyController.ObjectToAttack;
+
         PlayerStillCloseToAttack();
         CountDownToAttack();
 
@@ -27,20 +30,37 @@ public class EnemyDistanceAttackState : EnemyBaseState
 
     private void PlayerStillCloseToAttack()
     {
-        Collider[] players = Physics.OverlapSphere(enemyController.transform.position, enemyController.Stats.distanceAttack);
+        //Collider[] players = Physics.OverlapSphere(enemyController.transform.position, enemyController.Stats.distanceAttack);
 
-        foreach (var player in players)
+        //foreach (var player in players)
+        //{
+        //    if (player.CompareTag("Nave"))
+        //    {
+        //        thereIsNotPLayer = false;
+        //        playerCollider = player;
+        //        break;
+        //    }
+        //    else if(player.CompareTag("AtkMinion"))
+        //    {
+        //        thereIsNotPLayer = false;
+        //        playerCollider = player;
+        //        break;
+        //    }
+        //    else
+        //    {
+        //        thereIsNotPLayer = true;
+        //    }
+        //}
+
+        float dist = Vector3.Distance(playerCollider.transform.position, enemyController.transform.position);
+
+        if (dist <= enemyController.Stats.distanceAttack)
         {
-            if (player.CompareTag("Nave"))
-            {
-                thereIsNotPLayer = false;
-                playerCollider = player;
-                break;
-            }
-            else
-            {
-                thereIsNotPLayer = true;
-            }
+            thereIsNotPLayer = false;
+        }
+        else
+        {
+            thereIsNotPLayer = true;
         }
 
         if (thereIsNotPLayer)

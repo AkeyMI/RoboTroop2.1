@@ -16,35 +16,50 @@ public class EnemyHuntState : EnemyBaseState
     public override void EnterState(EnemyController enemy)
     {
         enemyController = enemy;
+        //enemyController.LocatePLayer();
         Debug.Log("Entro en caza");
     }
 
     public override void Update(EnemyController enemy)
     {
-        PlayerIsCloseToAttack();
         WereIsThePLayer();
+        PlayerIsCloseToAttack();
 
         HuntingPLayer(playercol);
     }
 
     private void WereIsThePLayer()
     {
-        NaveController player = enemyController.LocatePLayer();
+        //NaveController player = enemyController.LocatePLayer();
 
-        playercol = player.GetComponent<Collider>();
+        //enemyController.LocatePLayer();
+        playercol = enemyController.ObjectToAttack;
+
+        //playercol = player.GetComponent<Collider>();
     }
 
     private void PlayerIsCloseToAttack()
     {
-        Collider[] players = Physics.OverlapSphere(enemyController.transform.position, enemyController.Stats.distanceAttack);
+        //Collider[] players = Physics.OverlapSphere(enemyController.transform.position, enemyController.Stats.distanceAttack);
 
-        foreach (var player in players)
+        //foreach (var player in players)
+        //{
+        //    if (player.CompareTag("Nave"))
+        //    {
+        //        //ChangeToAttack();
+        //        enemyController.TransitionToState(enemyController.AttackDistanceState);
+        //    }
+        //    else if(player.CompareTag("AtkMinion"))
+        //    {
+        //        enemyController.TransitionToState(enemyController.AttackDistanceState);
+        //    }
+        //}
+
+        float dist = Vector3.Distance(playercol.transform.position, enemyController.transform.position);
+
+        if(dist <= enemyController.Stats.distanceAttack)
         {
-            if (player.CompareTag("Nave"))
-            {
-                //ChangeToAttack();
-                enemyController.TransitionToState(enemyController.AttackDistanceState);
-            }
+            enemyController.TransitionToState(enemyController.AttackDistanceState);
         }
     }
 

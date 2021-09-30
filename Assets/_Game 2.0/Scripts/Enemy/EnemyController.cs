@@ -41,6 +41,10 @@ public class EnemyController : MonoBehaviour, IDamagable
     public readonly EnemyDistanceAttackState AttackDistanceState = new EnemyDistanceAttackState();
     //public readonly EnemyMeleeAttackState AttackMeleeState = new EnemyMeleeAttackState();
 
+    private Collider objectToAttack;
+
+    public Collider ObjectToAttack => objectToAttack;
+
     private void Start()
     {
         //currentStats = enemyFusionStats.enemyFusionStats[0];
@@ -49,6 +53,7 @@ public class EnemyController : MonoBehaviour, IDamagable
         //ChangeSpawnPoint(this.gameObject.transform.position);
         TransitionToState(HuntState);
         animator = this.GetComponent<Animator>();
+        LocatePLayer();
     }
 
     public void Init(WaveController waveController)
@@ -76,11 +81,25 @@ public class EnemyController : MonoBehaviour, IDamagable
     //    positionSpawn = new Vector3(vec.x, vec.y, vec.z);
     //}
 
-    public NaveController LocatePLayer()
+    public void LocatePLayer()
     {
         NaveController nave = FindObjectOfType<NaveController>();
 
-        return nave;
+        CharacterController player = FindObjectOfType<CharacterController>();
+
+        float enemyNave = Vector3.Distance(nave.transform.position, this.transform.position);
+        float enemyPlayer = Vector3.Distance(player.transform.position, this.transform.position);
+
+        if(enemyNave < enemyPlayer)
+        {
+            objectToAttack = nave.GetComponent<Collider>();
+            //return nave.GetComponent<Collider>();
+        }
+        else
+        {
+            objectToAttack = player.GetComponent<Collider>();
+            //return player.GetComponent<Collider>();
+        }
     }
 
     public void CreateBullet()
@@ -101,6 +120,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     public void Damage(int amount)
     {
         life -= amount;
+        objectToAttack = FindObjectOfType<CharacterController>().GetComponent<Collider>();
         Debug.Log("Enemigo Golpeado");
         if (life <= 0 && !isDead)
         {
