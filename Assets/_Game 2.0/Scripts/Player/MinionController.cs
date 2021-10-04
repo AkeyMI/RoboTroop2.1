@@ -13,6 +13,7 @@ public class MinionController : MonoBehaviour
     [SerializeField] int maxMinionsInQueue = 5;
 
     private Queue<GameObject> atkMinions =  new Queue<GameObject>();
+    private Queue<GameObject> atkMinionsBox = new Queue<GameObject>();
 
     public event Action<bool> onChangeMinion;
     public event Action<GameObject> onChangeMinionAtkUi;
@@ -150,7 +151,10 @@ public class MinionController : MonoBehaviour
         }
         else
         {
+            takentAtkMinion = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
+            takentAtkMinion.SetActive(false);
 
+            atkMinionsBox.Enqueue(takentAtkMinion);
         }
 
         //onChangeMinionAtkUi?.Invoke(data.minionUI);
