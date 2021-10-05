@@ -11,6 +11,7 @@ public class Item : MonoBehaviour
     [SerializeField] float distanceToActivate = 2f;
     [SerializeField] Effect[] effects;
     [SerializeField] Image eImage = default;
+    [SerializeField] bool autoCollect = false;
 
     private bool isClose;
 
@@ -18,11 +19,11 @@ public class Item : MonoBehaviour
     {
         CheckIfThereIsPlayer();
 
-        if(Input.GetKeyDown(KeyCode.E) && isClose)
+        if((Input.GetKeyDown(KeyCode.E) || autoCollect) && isClose)
         {
-            //CheckIfThereIsPlayer();
             Use();
         }
+
     }
 
     private void CheckIfThereIsPlayer()
@@ -32,14 +33,17 @@ public class Item : MonoBehaviour
         {
             if (player.CompareTag("Player") || player.CompareTag("AtkMinion"))
             {
-                //Use();
-                eImage.enabled = true;
                 isClose = true;
+                if (eImage != null)
+                    eImage.enabled = true;
+                
             }
             else
             {
-                eImage.enabled = false;
                 isClose = false;
+                if (eImage != null)
+                    eImage.enabled = false;
+                
             }
         }
     }
