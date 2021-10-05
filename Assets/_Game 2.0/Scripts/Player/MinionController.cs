@@ -13,7 +13,7 @@ public class MinionController : MonoBehaviour
     [SerializeField] int maxMinionsInQueue = 5;
 
     private Queue<GameObject> atkMinions =  new Queue<GameObject>();
-    private Queue<GameObject> atkMinionsBox = new Queue<GameObject>();
+    private List<MinionData> atkMinionsBox = new List<MinionData>();
 
     public event Action<bool> onChangeMinion;
     public event Action<GameObject> onChangeMinionAtkUi;
@@ -124,6 +124,12 @@ public class MinionController : MonoBehaviour
         onChangeFillAmountMinionItem?.Invoke(reloadUltiUi, itemData.reloadUlti);
     }
 
+    public List<MinionData> GetMinionDataList()
+    {
+        //Agregar los minions de la mochila
+        return atkMinionsBox;
+    }
+
     public void ChangeAtkMinion(MinionData data)
     {
         //if (minionAtk.activeSelf)
@@ -151,10 +157,10 @@ public class MinionController : MonoBehaviour
         }
         else
         {
-            takentAtkMinion = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
-            takentAtkMinion.SetActive(false);
+            //takentAtkMinion = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
+            //takentAtkMinion.SetActive(false);
 
-            atkMinionsBox.Enqueue(takentAtkMinion);
+            atkMinionsBox.Add(data);
         }
 
         //onChangeMinionAtkUi?.Invoke(data.minionUI);

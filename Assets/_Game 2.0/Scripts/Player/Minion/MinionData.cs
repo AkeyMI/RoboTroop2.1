@@ -9,6 +9,7 @@ public class MinionData : ScriptableObject
     public GameObject minionPrefab = default;
     public GameObject bulletPrefab = default;
     public GameObject minionUI = default;
+    public Sprite sprite = default;
 
     public int damage = 1;
     public int ammo = 5;

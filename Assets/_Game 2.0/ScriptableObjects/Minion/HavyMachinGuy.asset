@@ -16,6 +16,7 @@ MonoBehaviour:
   minionPrefab: {fileID: 3202649823848935472, guid: ef2fa117ddb30a241806f7004980b3c6, type: 3}
   bulletPrefab: {fileID: 8591236588811397447, guid: 01e2919579571624cabf7027e66c9986, type: 3}
   minionUI: {fileID: 7151635177934203147, guid: d03f9d5fa34e43d4181ff2c8abd702ff, type: 3}
+  sprite: {fileID: 21300000, guid: 933a1933de146da4aa018c2fe4305ffc, type: 3}
   damage: 1
   ammo: 20
   timeToReload: 1.5
