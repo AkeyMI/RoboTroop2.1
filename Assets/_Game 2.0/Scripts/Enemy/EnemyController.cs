@@ -125,7 +125,6 @@ public class EnemyController : MonoBehaviour, IDamagable
     {
         life -= amount;
         objectToAttack = FindObjectOfType<CharacterController>().GetComponent<Collider>();
-        Debug.Log("Enemigo Golpeado");
         if (life <= 0 && !isDead)
         {
             isDead = true;
