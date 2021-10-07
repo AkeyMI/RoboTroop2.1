@@ -43,16 +43,22 @@ public class Bullet : MonoBehaviour
             {
                 bulletEffect.Apply(this.gameObject, other.gameObject);
             }
-            //Destroy(this.gameObject);
-            Debug.Log("Enemy Hit");
-            //return;
+            Destruction();
         }
 
-        if (bulletEffect != null)
+        if(other.CompareTag("Obj"))
         {
-            bulletEffect.Apply(this.gameObject, other.gameObject);
+            other.GetComponent<DestructibleObject>().Damage(damage, transform);
+            Destruction();
         }
 
+        if (other.CompareTag("Walls"))
+            Destruction();
+
+    }
+
+    public void Destruction()
+    {
         Instantiate<GameObject>(particulas).transform.position = this.transform.position;//Instanciar 
         Instantiate(sound);
         Destroy(this.gameObject);

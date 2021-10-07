@@ -9,6 +9,9 @@ TagManager:
   - ShieldNave
   - MinionShield
   - AtkMinion
+  - Obj
+  - Ground
+  - Walls
   layers:
   - Default
   - TransparentFX

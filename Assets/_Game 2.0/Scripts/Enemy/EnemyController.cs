@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour, IDamagable
 {
-    [SerializeField] GameObject spawnPointBullet = default;
+    [SerializeField] GameObject [] spawnPointBullet = default;
     [SerializeField] EnemyStats enemyStats = default;
     [SerializeField] NavMeshAgent agent = default;
     [SerializeField] Animator animator;
@@ -104,9 +104,13 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     public void CreateBullet()
     {
-        GameObject bullet = Instantiate(enemyStats.bullet, spawnPointBullet.transform.position, spawnPointBullet.transform.rotation);
+        foreach (GameObject go in spawnPointBullet)
+        {
+            GameObject bullet = Instantiate(enemyStats.bullet, go.transform.position, go.transform.rotation); 
+            bullet.GetComponent<BulletEnemy>().Init(enemyStats.damage);
+        }
+
         audioSource.PlayOneShot(shootSound);
-        bullet.GetComponent<BulletEnemy>().Init(enemyStats.damage);
         animator.SetBool("Shooting", true);
         StartCoroutine(Shooting());
     }
