@@ -7,11 +7,13 @@ public class DestructibleObject : MonoBehaviour
     [SerializeField] int life;
     [SerializeField] GameObject [] lod;
     bool isdead = false;
-    int l;
-
+    int a;
+    int b;
     private void Start()
     {
-        l = life;
+        a = life;
+        b = lod.Length - 1;
+        life = life * lod.Length;
     }
     public void Damage(int f, Transform or)
     {
@@ -23,16 +25,17 @@ public class DestructibleObject : MonoBehaviour
                 GetComponent<BoxCollider>().enabled = false;
                 isdead = true;
             }
-            for (int i = l - 1; i >= life; i--)
+            
+            if (life <= (b*a) )
             {
-                if (i >= 0)
+                Rigidbody[] rb = lod[b].GetComponentsInChildren<Rigidbody>();
+                foreach (Rigidbody t in rb)
                 {
-                    lod[i].GetComponent<Rigidbody>().isKinematic = false;
-                    lod[i].GetComponent<Rigidbody>().AddForce(or.forward * 5, ForceMode.VelocityChange);
+                    t.isKinematic = false;
+                    t.AddForce(or.forward * 5, ForceMode.VelocityChange);
                 }
+                b--;
             }
-            l = life;
-
         }
     }
 
