@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Torreta_Machingun
   m_EditorClassIdentifier: 
   life: 4
-  attackSpeed: 1
+  attackSpeed: 0.5
   distanceHunt: 10
   distanceAttack: 15
   speed: 0

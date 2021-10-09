@@ -308,7 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76b1c8cb47f5144386101f6c6f93598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPointBullet: {fileID: 6941067337389035966}
+  spawnPointBullet:
+  - {fileID: 6941067337389035966}
   enemyStats: {fileID: 11400000, guid: 6f943f5137fed324b93db11173948c4f, type: 2}
   agent: {fileID: 0}
   animator: {fileID: 0}

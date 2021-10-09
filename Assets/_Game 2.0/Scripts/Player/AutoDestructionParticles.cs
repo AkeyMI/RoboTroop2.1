@@ -7,6 +7,8 @@ public class AutoDestructionParticles : MonoBehaviour
     [SerializeField] float lifeTime;
     void Start()
     {
+        if (lifeTime == 0)
+            lifeTime = 5;
         StartCoroutine(AutoDestruction(lifeTime));
     }
 
