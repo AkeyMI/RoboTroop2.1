@@ -16,6 +16,7 @@ public class CameraController : MonoBehaviour
     {
         CinemachineBasicMultiChannelPerlin camNoise = cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         camNoise.m_AmplitudeGain = intensity;
+        camNoise.m_FrequencyGain = intensity;
         shaketimer = time;
     }
 
@@ -28,6 +29,7 @@ public class CameraController : MonoBehaviour
             {
                 CinemachineBasicMultiChannelPerlin camNoise = cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
                 camNoise.m_AmplitudeGain = 0f;
+                camNoise.m_FrequencyGain = 0f;
             }
         }
     }

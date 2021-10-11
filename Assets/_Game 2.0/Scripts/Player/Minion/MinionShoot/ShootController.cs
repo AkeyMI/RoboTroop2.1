@@ -15,6 +15,7 @@ public class ShootController : MonoBehaviour, IDamagable
     [SerializeField] int bulletsXShoot;
     [SerializeField] float timeBetweenShoots;
     [SerializeField] Mesh gizmoMesh;
+    [SerializeField] float shotShakeIntensity;
     Animator animator;
     private int currentAmmo;
     private bool isReloading = false;
@@ -131,7 +132,7 @@ public class ShootController : MonoBehaviour, IDamagable
                 audioSource.PlayOneShot(shootSound);
                 timeOfLastAttack = Time.time + data.timeForAttack;
                 currentAmmo--;
-                cam.Shake(3f, 0.15f);
+                cam.Shake(shotShakeIntensity, 0.1f);
                 if (!automatic)
                     StartCoroutine(Shooting());
             }
@@ -150,7 +151,7 @@ public class ShootController : MonoBehaviour, IDamagable
             audioSource.PlayOneShot(shootSound);
             timeOfLastAttack = Time.time + data.timeForAttack;
             currentAmmo--;
-            cam.Shake(3f, 0.15f);
+            cam.Shake(shotShakeIntensity, 0.1f);
             if (!automatic)
                 StartCoroutine(Shooting());
             yield return new WaitForSeconds(timeBetweenShoots);

@@ -126,6 +126,7 @@ MonoBehaviour:
   bulletsXShoot: 0
   timeBetweenShoots: 0
   gizmoMesh: {fileID: 5247717548940950464, guid: c77debadc4733314296f7624e23295ba, type: 3}
+  shotShakeIntensity: 2.5
 --- !u!95 &8523307303935073619
 Animator:
   serializedVersion: 3
