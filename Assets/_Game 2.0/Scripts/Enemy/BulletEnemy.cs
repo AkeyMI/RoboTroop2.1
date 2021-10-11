@@ -6,10 +6,10 @@ public class BulletEnemy : MonoBehaviour
 {
     [SerializeField] float speed = 8f;
     [SerializeField] float timeStun = 1f;
-    [SerializeField] GameObject particulas;
+    [SerializeField] int particulas;
     private int damage;
     private Rigidbody rb;
-
+    SpawnerPool sp;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -23,6 +23,7 @@ public class BulletEnemy : MonoBehaviour
     private void Start()
     {
         rb.velocity = transform.forward * speed;
+        sp = FindObjectOfType<SpawnerPool>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,7 +53,7 @@ public class BulletEnemy : MonoBehaviour
         {
             other.GetComponent<ShootController>().Damage(damage);
         }
-        Instantiate<GameObject>(particulas).transform.position = this.transform.position;
+        sp.GetParticle(particulas, transform.position);
         Destroy(this.gameObject);
     }
 }

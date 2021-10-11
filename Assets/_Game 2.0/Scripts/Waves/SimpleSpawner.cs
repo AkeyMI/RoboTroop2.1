@@ -6,9 +6,13 @@ public class SimpleSpawner : MonoBehaviour
 {
     [SerializeField] GameObject prefab = default;
     [SerializeField] bool isATorreta = default;
-    [SerializeField] GameObject particle;
+    [SerializeField] int particle;
     private WaveController waveController;
-
+    SpawnerPool sp;
+    private void Start()
+    {
+        sp = FindObjectOfType<SpawnerPool>();
+    }
     public void Init(WaveController waveController)
     {
         this.waveController = waveController;
@@ -27,7 +31,7 @@ public class SimpleSpawner : MonoBehaviour
 
     IEnumerator Spawning ()
     {
-        Instantiate(particle, transform.position, Quaternion.identity);
+        sp.GetParticle(particle, transform.position);
         yield return new WaitForSeconds(.5f);
         GameObject go = Instantiate(prefab, transform.position, transform.rotation);
         if (!isATorreta)

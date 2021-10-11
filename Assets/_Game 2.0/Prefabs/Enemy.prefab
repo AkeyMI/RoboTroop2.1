@@ -138,7 +138,7 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: fd6c4b7a78ffd7e45aeca2848b176024, type: 3}
   audioSource: {fileID: 6649333643887989601}
   sound: {fileID: 9221009860981528530, guid: ee3ac88f4553f2d408a95562181f0f78, type: 3}
-  particulas: {fileID: 6766932777587085690, guid: 5e3118651512c8549983a9458bf24ccd, type: 3}
+  particulas: 10
   isATorreta: 0
 --- !u!195 &7116771531642242373
 NavMeshAgent:
