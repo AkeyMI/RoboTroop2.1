@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     //[SerializeField] float speed = 8f;
-    [SerializeField] GameObject particulas;
+    [SerializeField] int particulas;
     [SerializeField] BulletEffect bulletEffect = default;
     [SerializeField] AudioClip hitSound = default;
     [SerializeField] AudioSource audioSource = default;
@@ -13,12 +13,13 @@ public class Bullet : MonoBehaviour
     private int damage;
     private Rigidbody rb;
     private float currentSpeed;
-
+    SpawnerPool sp;
     public int Damage => damage;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        sp = FindObjectOfType<SpawnerPool>();
     }
 
     public void Init(int amount, float speed)
@@ -59,7 +60,7 @@ public class Bullet : MonoBehaviour
 
     public void Destruction()
     {
-        Instantiate<GameObject>(particulas).transform.position = this.transform.position;//Instanciar 
+        sp.GetParticle(particulas, transform.position);
         Instantiate(sound);
         Destroy(this.gameObject);
     }
