@@ -5,13 +5,7 @@ using UnityEngine.UI;
 
 public class ShootController : MonoBehaviour, IDamagable
 {
-    //[SerializeField] GameObject bulletPrefab = default;
     [SerializeField] GameObject[] spawnBullet = default;
-    //[SerializeField] float timeForAttack = 0.5f;
-    //[SerializeField] int ammo = 5;
-    //[SerializeField] float timeToReload = 1f;
-    //[SerializeField] int damage = 1;
-    //[SerializeField] ItemDistance item = default;
     [SerializeField] MinionData data;
     [SerializeField] float timeShootOff;
     [SerializeField] Image reloadBarImage = default;
@@ -24,6 +18,7 @@ public class ShootController : MonoBehaviour, IDamagable
     Animator animator;
     private int currentAmmo;
     private bool isReloading = false;
+    CameraController cam;
 
     public MinionData Data => data;
 
@@ -33,7 +28,7 @@ public class ShootController : MonoBehaviour, IDamagable
 
     private void Start()
     {
-        //currentAmmo = item.ammo;
+        cam = FindObjectOfType<CameraController>();
         animator = GetComponent<Animator>();
         currentAmmo = data.ammo;
         currentLife = data.life;
@@ -41,7 +36,6 @@ public class ShootController : MonoBehaviour, IDamagable
 
     private void Update()
     {
-        //if (!CanShoot()) return;
 
         ShootOrReload();
 
@@ -103,7 +97,6 @@ public class ShootController : MonoBehaviour, IDamagable
         float currentTime = data.timeToReload;
         reloadBarImage.enabled = true;
 
-        //yield return new WaitForSeconds(data.timeToReload);
 
         while(currentTime > 0)
         {
@@ -138,6 +131,7 @@ public class ShootController : MonoBehaviour, IDamagable
                 audioSource.PlayOneShot(shootSound);
                 timeOfLastAttack = Time.time + data.timeForAttack;
                 currentAmmo--;
+                cam.Shake(3f, 0.15f);
                 if (!automatic)
                     StartCoroutine(Shooting());
             }
@@ -156,6 +150,7 @@ public class ShootController : MonoBehaviour, IDamagable
             audioSource.PlayOneShot(shootSound);
             timeOfLastAttack = Time.time + data.timeForAttack;
             currentAmmo--;
+            cam.Shake(3f, 0.15f);
             if (!automatic)
                 StartCoroutine(Shooting());
             yield return new WaitForSeconds(timeBetweenShoots);
@@ -177,11 +172,6 @@ public class ShootController : MonoBehaviour, IDamagable
     {
         FindObjectOfType<MinionController>().NextMinion();
     }
-
-    //public void ChangeItem(Item item)
-    //{
-    //    this.item = (ItemDistance)item;
-    //}
 
     private void OnDrawGizmos()
     {
