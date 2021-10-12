@@ -27,6 +27,7 @@ public class ObjectPooling : MonoBehaviour
 
         GameObject parent = new GameObject();
         parent.name = objToPool.name + "Pool";
+        parent.transform.SetParent(FindObjectOfType<SpawnerPool>().transform);
         parents.Add(id, parent);
 
         pool.Add(id, new Queue<GameObject>());

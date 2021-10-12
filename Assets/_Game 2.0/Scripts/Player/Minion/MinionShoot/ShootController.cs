@@ -19,7 +19,7 @@ public class ShootController : MonoBehaviour, IDamagable
     Animator animator;
     private int currentAmmo;
     private bool isReloading = false;
-    CameraController cam;
+ 
 
     public MinionData Data => data;
 
@@ -29,7 +29,7 @@ public class ShootController : MonoBehaviour, IDamagable
 
     private void Start()
     {
-        cam = FindObjectOfType<CameraController>();
+        
         animator = GetComponent<Animator>();
         currentAmmo = data.ammo;
         currentLife = data.life;
@@ -131,8 +131,7 @@ public class ShootController : MonoBehaviour, IDamagable
                 }
                 audioSource.PlayOneShot(shootSound);
                 timeOfLastAttack = Time.time + data.timeForAttack;
-                currentAmmo--;
-                cam.Shake(shotShakeIntensity, 0.1f);
+                currentAmmo--;               
                 if (!automatic)
                     StartCoroutine(Shooting());
             }
@@ -151,7 +150,6 @@ public class ShootController : MonoBehaviour, IDamagable
             audioSource.PlayOneShot(shootSound);
             timeOfLastAttack = Time.time + data.timeForAttack;
             currentAmmo--;
-            cam.Shake(shotShakeIntensity, 0.1f);
             if (!automatic)
                 StartCoroutine(Shooting());
             yield return new WaitForSeconds(timeBetweenShoots);

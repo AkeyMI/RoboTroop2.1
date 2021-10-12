@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     [SerializeField] GameObject sound = default;
     [SerializeField] int particulas;
     [SerializeField] bool isATorreta = default;
+    CameraController cam;
     SpawnerPool sp;
 
     private WaveController waveController;
@@ -55,6 +56,7 @@ public class EnemyController : MonoBehaviour, IDamagable
         animator = this.GetComponent<Animator>();
         LocatePLayer();
         sp = FindObjectOfType<SpawnerPool>();
+        cam = FindObjectOfType<CameraController>();
     }
 
     public void Init(WaveController waveController)
@@ -134,6 +136,7 @@ public class EnemyController : MonoBehaviour, IDamagable
             FindObjectOfType<MinionController>().ReloadUlti();
             Instantiate(sound);
             sp.GetParticle(particulas, transform.position);
+            cam.Shake(3.5f, 0.1f);
             Destroy(this.gameObject);
         }
     }
