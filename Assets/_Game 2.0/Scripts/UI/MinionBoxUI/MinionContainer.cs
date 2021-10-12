@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class MinionContainer : MonoBehaviour, IDropHandler
 {
-    private bool containerIsOccupied;
     private MinionUiBox minionUiBox;
 
     public void OnDrop(PointerEventData eventData)
@@ -13,8 +12,16 @@ public class MinionContainer : MonoBehaviour, IDropHandler
         if(eventData.pointerDrag != null)
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
-            minionUiBox = eventData.pointerDrag.GetComponent<MinionUiBox>();
-            //minionUiBox.transform.SetParent(this.transform, false);
+            MinionUiBox newMinionUiBox = eventData.pointerDrag.GetComponent<MinionUiBox>();
+            if (minionUiBox != null)
+            {
+                minionUiBox.SetMinionContainer(newMinionUiBox.MContainer);
+                minionUiBox.transform.SetParent(newMinionUiBox.MContainer.transform, false);
+            }
+            newMinionUiBox.transform.SetParent(this.transform, false);
+            newMinionUiBox.SetMinionContainer(this);
+
+            minionUiBox = newMinionUiBox;
         }
     }
 
@@ -22,6 +29,6 @@ public class MinionContainer : MonoBehaviour, IDropHandler
     {
         minionUiBox = GetComponentInChildren<MinionUiBox>();
         minionUiBox.SetMinionData(data);
-        containerIsOccupied = true;
+        minionUiBox.SetMinionContainer(this);
     }
 }

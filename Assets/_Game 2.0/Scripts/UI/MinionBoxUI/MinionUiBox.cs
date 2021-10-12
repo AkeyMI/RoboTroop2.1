@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MinionUiBox : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class MinionUiBox : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerUpHandler
 {
     [SerializeField] Image image = default;
+
+    public MinionContainer MContainer => mContainer;
+
+    private MinionContainer mContainer;
 
     private MinionData minionData;
 
@@ -25,6 +29,11 @@ public class MinionUiBox : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         //Modificar UI con la data sprite
         minionData = data;
         image.sprite = data.sprite;
+    }
+
+    public void SetMinionContainer(MinionContainer minionContainer)
+    {
+        mContainer = minionContainer;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -47,5 +56,16 @@ public class MinionUiBox : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         Debug.Log("OnPointerDown");
+        transform.SetParent(canvas.transform);
+        transform.SetAsLastSibling();
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if(transform.parent.GetComponent<MinionContainer>() == null)
+        {
+            transform.SetParent(mContainer.transform, false);
+            rectTransform.anchoredPosition = Vector3.zero;
+        }
     }
 }
