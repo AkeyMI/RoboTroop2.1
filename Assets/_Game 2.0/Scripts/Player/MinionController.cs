@@ -58,7 +58,7 @@ public class MinionController : MonoBehaviour
         minionItem = Instantiate(minion3.minionPrefab, Vector3.zero, Quaternion.identity);
         minionItem.SetActive(false);
 
-        currentMaxMinionsInQueue = 0;
+        currentMaxMinionsInQueue = 1;
     }
 
     private void Update()
@@ -163,6 +163,7 @@ public class MinionController : MonoBehaviour
             atkMinions.Enqueue(takentAtkMinion);
 
             currentMaxMinionsInQueue++;
+            Debug.Log(currentMaxMinionsInQueue);
         }
         else
         {
@@ -177,8 +178,10 @@ public class MinionController : MonoBehaviour
 
     public void NextMinion()
     {
+        atkMinionsList.Remove(minionAtk.GetComponent<ShootController>().Data);
         Destroy(minionAtk);
         atkMinions.Dequeue();
+        currentMaxMinionsInQueue--;
 
         minionAtk = atkMinions.Peek();
         minionAtk.transform.SetParent(minionArt.transform, false);
