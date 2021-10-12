@@ -16,6 +16,7 @@ public class ComputerMinions : MonoBehaviour
     {
         MinionController minionController = FindObjectOfType<MinionController>();
         BoxMInion boxMInion = FindObjectOfType<BoxMInion>();
-        boxMInion.CreateBoxElements(minionController.GetMinionDataList());
+        boxMInion.CreateBoxElements(minionController.GetMinionBoxDataList());
+        boxMInion.CreateInElements(minionController.GetMinionDataList());
     }
 }
