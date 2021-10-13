@@ -4,29 +4,23 @@ using UnityEngine;
 
 public class SpawnerPool : MonoBehaviour
 {
-    [SerializeField] SpawnData[] spData;
+    [SerializeField] SpawnData[] particleData;
 
     private void Awake()
     {
-        for (int i = 0; i < spData.Length; i++)
+        foreach(SpawnData sp in particleData)
         {
-            if(spData[i].prefab !=null)
-                ObjectPooling.PreLoad(spData[i].prefab , 1);
+            if(sp.prefab !=null)
+                ObjectPooling.PreLoad(sp.prefab , 1);
         }
-
-        //foreach (GameObject go in )
-        //{
-        //   if(go != null)
-        //        ObjectPooling.PreLoad(go, 1);
-        //}
     }
 
     public void GetParticle(int i , Vector3 t)
     {
-        GameObject c = ObjectPooling.GetObj(spData[i].prefab);
+        GameObject c = ObjectPooling.GetObj(particleData[i].prefab);
         c.transform.position = t;
         c.GetComponentInChildren<ParticleSystem>().Play();
-        StartCoroutine (Despawn(spData[i].prefab, c, spData[i].timeDestroy));
+        StartCoroutine (Despawn(particleData[i].prefab, c, particleData[i].timeDestroy));
     }
 
     IEnumerator Despawn(GameObject prefab,GameObject instance , float i)

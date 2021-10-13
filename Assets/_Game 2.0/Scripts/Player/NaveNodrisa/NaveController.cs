@@ -21,7 +21,7 @@ public class NaveController : MonoBehaviour, IDamagable
     private CharacterController player;
 
     private Stunable stunStatus;
-
+    CameraController cam;
     private void Awake()
     {
         stunStatus = GetComponent<Stunable>();
@@ -33,6 +33,7 @@ public class NaveController : MonoBehaviour, IDamagable
         currentShieldLife = shieldLife;
         player = FindObjectOfType<CharacterController>();
         mainObjective = GameObject.Find("Nave Main Objective").transform;
+        cam = FindObjectOfType<CameraController>();
     }
 
     private void Update()
@@ -62,7 +63,9 @@ public class NaveController : MonoBehaviour, IDamagable
 
         onShieldChange?.Invoke(currentShieldLife, shieldLife);
 
-        if(currentShieldLife <= 0)
+        cam.Shake(2, 0.1f);
+
+        if (currentShieldLife <= 0)
         {
             shield.SetActive(false);
         }
@@ -74,6 +77,7 @@ public class NaveController : MonoBehaviour, IDamagable
 
         onLifeChange?.Invoke(currentLife, life);
 
+        cam.Shake(2.5f, 0.1f);
         if(currentLife <= 0)
         {
             SceneManager.LoadScene(3);

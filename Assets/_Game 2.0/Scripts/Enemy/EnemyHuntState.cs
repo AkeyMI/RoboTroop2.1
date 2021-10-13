@@ -17,7 +17,7 @@ public class EnemyHuntState : EnemyBaseState
     {
         enemyController = enemy;
         //enemyController.LocatePLayer();
-        Debug.Log("Entro en caza");
+        //Debug.Log("Entro en caza");
     }
 
     public override void Update(EnemyController enemy)

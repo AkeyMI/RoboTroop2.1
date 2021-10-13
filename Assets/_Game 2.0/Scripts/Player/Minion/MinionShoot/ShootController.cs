@@ -19,7 +19,7 @@ public class ShootController : MonoBehaviour, IDamagable
     Animator animator;
     private int currentAmmo;
     private bool isReloading = false;
- 
+    CameraController cam;
 
     public MinionData Data => data;
 
@@ -29,7 +29,7 @@ public class ShootController : MonoBehaviour, IDamagable
 
     private void Start()
     {
-        
+        cam = FindObjectOfType<CameraController>();
         animator = GetComponent<Animator>();
         currentAmmo = data.ammo;
         currentLife = data.life;
@@ -160,6 +160,7 @@ public class ShootController : MonoBehaviour, IDamagable
     public void Damage(int amount)
     {
         currentLife -= amount;
+        cam.Shake(3, 0.1f);
 
         if(currentLife <= 0)
         {

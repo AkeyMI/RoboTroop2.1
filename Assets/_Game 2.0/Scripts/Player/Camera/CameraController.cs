@@ -6,12 +6,14 @@ using Cinemachine;
 public class CameraController : MonoBehaviour
 {
     CinemachineVirtualCamera cam;
+    float distnce;
     
     float shaketimer;
     void Awake()
     {
         cam = GetComponent<CinemachineVirtualCamera>();
     }
+
     public void Shake (float intensity, float time)
     {
         CinemachineBasicMultiChannelPerlin camNoise = cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
@@ -19,10 +21,23 @@ public class CameraController : MonoBehaviour
         camNoise.m_FrequencyGain = intensity;
         shaketimer = time;
     }
+    public void Offset(float i)
+    {
+        distnce = +i;
+
+        if (distnce > 5)
+            distnce = 5;
+
+        if (distnce < 0)
+            distnce = 0;
+
+    }
 
     private void FixedUpdate()
     {
-        if(shaketimer > 0)
+        CinemachineTransposer camOffset = cam.GetCinemachineComponent<CinemachineTransposer>();
+
+        if (shaketimer > 0)
         {
             shaketimer -= Time.fixedDeltaTime;
             if(shaketimer <= 0)
@@ -32,6 +47,16 @@ public class CameraController : MonoBehaviour
                 camNoise.m_FrequencyGain = 0f;
             }
         }
+        if (camOffset.m_FollowOffset.y < 17 + distnce)
+        {
+            camOffset.m_FollowOffset += new Vector3(0, Time.fixedDeltaTime, -1 * Time.fixedDeltaTime);
+        }
+
+        if (camOffset.m_FollowOffset.y > 17 + distnce)
+        {
+            camOffset.m_FollowOffset -= new Vector3(0, Time.fixedDeltaTime, -1 * Time.fixedDeltaTime);
+        }
+
     }
 
 }

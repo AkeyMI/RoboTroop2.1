@@ -57,6 +57,7 @@ public class EnemyController : MonoBehaviour, IDamagable
         LocatePLayer();
         sp = FindObjectOfType<SpawnerPool>();
         cam = FindObjectOfType<CameraController>();
+        cam.Offset(1);
     }
 
     public void Init(WaveController waveController)
@@ -137,6 +138,7 @@ public class EnemyController : MonoBehaviour, IDamagable
             Instantiate(sound);
             sp.GetParticle(particulas, transform.position);
             cam.Shake(3.5f, 0.1f);
+            cam.Offset(-1);
             Destroy(this.gameObject);
         }
     }
