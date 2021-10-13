@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132739983544931774}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -43,33 +43,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f8259b68183f2468602fc890f4fda4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particulas:
-  - {fileID: 6766932777587085690, guid: 56219c8bde1d97e428990529cc484031, type: 3}
-  - {fileID: 6766932777587085690, guid: 9b1eb850e260891418e4226130de6798, type: 3}
-  - {fileID: 6766932777587085690, guid: 98d4d639f8334db4e82890f2650223d5, type: 3}
-  - {fileID: 6766932777587085690, guid: c9bbad92ba8867f419eeed5097075f24, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 6766932777587085690, guid: 5e3118651512c8549983a9458bf24ccd, type: 3}
-  - {fileID: 6766932777587085690, guid: 827162bc8bf11204ba430b2af0deeb00, type: 3}
-  - {fileID: 6766932777587085690, guid: 3da8a9edb24fe584b97a42a5b5a21a6e, type: 3}
-  - {fileID: 6766932777587085690, guid: 069c0130d0879b440a68584a5408bf9e, type: 3}
-  lifeTimeParticles:
-  - 0.45
-  - 0.3
-  - 0.3
-  - 0.5
-  - 0.3
-  - 0.3
-  - 0.3
-  - 0.3
-  - 0.3
-  - 0
-  - 1.1
-  - 0.6
-  - 0.7
-  - 0.5
+  spData:
+  - prefab: {fileID: 6766932777587085690, guid: 56219c8bde1d97e428990529cc484031, type: 3}
+    timeDestroy: 0.45
+  - prefab: {fileID: 6766932777587085690, guid: 9b1eb850e260891418e4226130de6798, type: 3}
+    timeDestroy: 0.3
+  - prefab: {fileID: 6766932777587085690, guid: 98d4d639f8334db4e82890f2650223d5, type: 3}
+    timeDestroy: 0.3
+  - prefab: {fileID: 6766932777587085690, guid: c9bbad92ba8867f419eeed5097075f24, type: 3}
+    timeDestroy: 0.5
+  - prefab: {fileID: 0}
+    timeDestroy: 0
+  - prefab: {fileID: 0}
+    timeDestroy: 0
+  - prefab: {fileID: 0}
+    timeDestroy: 0
+  - prefab: {fileID: 0}
+    timeDestroy: 0
+  - prefab: {fileID: 0}
+    timeDestroy: 0
+  - prefab: {fileID: 0}
+    timeDestroy: 0
+  - prefab: {fileID: 6766932777587085690, guid: 5e3118651512c8549983a9458bf24ccd, type: 3}
+    timeDestroy: 1.1
+  - prefab: {fileID: 6766932777587085690, guid: 827162bc8bf11204ba430b2af0deeb00, type: 3}
+    timeDestroy: 0.6
+  - prefab: {fileID: 6766932777587085690, guid: 3da8a9edb24fe584b97a42a5b5a21a6e, type: 3}
+    timeDestroy: 0.7
+  - prefab: {fileID: 6766932777587085690, guid: 069c0130d0879b440a68584a5408bf9e, type: 3}
+    timeDestroy: 0.5
+  - prefab: {fileID: 0}
+    timeDestroy: 0
