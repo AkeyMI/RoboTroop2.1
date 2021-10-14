@@ -23,13 +23,15 @@ public class CameraController : MonoBehaviour
     }
     public void Offset(float i)
     {
-        distnce = +i;
+        distnce += i;
 
-        if (distnce > 5)
-            distnce = 5;
+        if (distnce > 4)
+            distnce = 4;
 
         if (distnce < 0)
             distnce = 0;
+
+        Debug.Log(distnce);
 
     }
 
@@ -49,12 +51,12 @@ public class CameraController : MonoBehaviour
         }
         if (camOffset.m_FollowOffset.y < 17 + distnce)
         {
-            camOffset.m_FollowOffset += new Vector3(0, Time.fixedDeltaTime, -1 * Time.fixedDeltaTime);
+            camOffset.m_FollowOffset += new Vector3(0, Time.fixedDeltaTime * 2,Time.fixedDeltaTime * -2f);
         }
 
         if (camOffset.m_FollowOffset.y > 17 + distnce)
         {
-            camOffset.m_FollowOffset -= new Vector3(0, Time.fixedDeltaTime, -1 * Time.fixedDeltaTime);
+            camOffset.m_FollowOffset -= new Vector3(0, Time.fixedDeltaTime * 2, Time.fixedDeltaTime * -2f);
         }
 
     }
