@@ -157,10 +157,10 @@ public class MinionController : MonoBehaviour
         if (currentMaxMinionsInQueue < maxMinionsInQueue)
         {
             atkMinionsList.Add(data);
-            takentAtkMinion = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
-            takentAtkMinion.SetActive(false);
+            //takentAtkMinion = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
+            //takentAtkMinion.SetActive(false);
 
-            atkMinions.Enqueue(takentAtkMinion);
+            //atkMinions.Enqueue(takentAtkMinion);
 
             currentMaxMinionsInQueue++;
             Debug.Log(currentMaxMinionsInQueue);
@@ -180,14 +180,15 @@ public class MinionController : MonoBehaviour
     {
         atkMinionsList.Remove(minionAtk.GetComponent<ShootController>().Data);
         Destroy(minionAtk);
-        atkMinions.Dequeue();
+        //atkMinions.Dequeue();
+        minionAtk = Instantiate(atkMinionsList[0].minionPrefab);
         currentMaxMinionsInQueue--;
 
-        minionAtk = atkMinions.Peek();
+        //minionAtk = atkMinions.Peek();
         minionAtk.transform.SetParent(minionArt.transform, false);
-        minionAtk.SetActive(true);
-        MinionData data = minionAtk.GetComponent<ShootController>().Data;
-        onChangeMinionAtkUi?.Invoke(data.minionUI);
+        //minionAtk.SetActive(true);
+        //MinionData data = minionAtk.GetComponent<ShootController>().Data;
+        onChangeMinionAtkUi?.Invoke(atkMinionsList[0].minionUI);
     }
 
     public void ChangeShieldMinion(MinionDefenceData data)
