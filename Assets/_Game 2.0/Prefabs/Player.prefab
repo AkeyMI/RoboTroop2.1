@@ -390,6 +390,7 @@ MonoBehaviour:
   groundRaycastMask:
     serializedVersion: 2
     m_Bits: 8
+  dashKey: 324
   dashefect: {fileID: 6236392201276572014}
 --- !u!114 &2463642210487357068
 MonoBehaviour:
@@ -403,11 +404,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b45c6b896904a458a88ffc0a6f682b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minion1: {fileID: 11400000, guid: f7196e9b9ab460b409c18172b534823d, type: 2}
+  minion1: {fileID: 11400000, guid: 6cd372752bdad4641b1335d54bf8627f, type: 2}
   minion2: {fileID: 11400000, guid: a9f107eca3170a44fb02557ed617b30c, type: 2}
   minion3: {fileID: 11400000, guid: 5b1047ed03ff1624cb31ea5a98b27491, type: 2}
   minionArt: {fileID: 2463642212173215789}
   spawnminionItem: {fileID: 553780566}
+  maxMinionsInQueue: 5
+  shieldKey: 304
+  ultiKey: 113
 --- !u!114 &2463642210487357059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,7 +432,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2463642210487357067}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 0
   m_Extents: {x: 0.8, y: 1, z: 0.8}
