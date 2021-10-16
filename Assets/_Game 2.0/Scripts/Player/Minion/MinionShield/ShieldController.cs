@@ -26,17 +26,17 @@ public class ShieldController : MonoBehaviour
     {
         if (!shieldIsBroken)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
+            //if (Input.GetMouseButtonDown(0))
+            //{
                 animator.SetBool("HoldingShield", true);
                 UseShield();
-            }
+            //}
 
-            if (Input.GetMouseButtonUp(0))
-            {
-                animator.SetBool("HoldingShield", false);
-                OffShield();
-            }
+            //if (Input.GetMouseButtonUp(0))
+            //{
+            //    animator.SetBool("HoldingShield", false);
+            //    OffShield();
+            //}
         }
         else
         {

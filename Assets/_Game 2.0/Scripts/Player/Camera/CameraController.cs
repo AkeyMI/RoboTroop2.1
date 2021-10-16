@@ -49,12 +49,12 @@ public class CameraController : MonoBehaviour
                 camNoise.m_FrequencyGain = 0f;
             }
         }
-        if (camOffset.m_FollowOffset.y < 17 + distnce)
+        if (camOffset.m_FollowOffset.y < 18 + distnce)
         {
             camOffset.m_FollowOffset += new Vector3(0, Time.fixedDeltaTime * 2,Time.fixedDeltaTime * -2f);
         }
 
-        if (camOffset.m_FollowOffset.y > 17 + distnce)
+        if (camOffset.m_FollowOffset.y > 18 + distnce)
         {
             camOffset.m_FollowOffset -= new Vector3(0, Time.fixedDeltaTime * 2, Time.fixedDeltaTime * -2f);
         }

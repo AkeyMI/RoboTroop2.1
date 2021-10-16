@@ -12,7 +12,7 @@ public class MinionController : MonoBehaviour
     [SerializeField] GameObject spawnminionItem = default;
     [SerializeField] int maxMinionsInQueue = 5;
 
-    private Queue<GameObject> atkMinions =  new Queue<GameObject>();
+    private Queue<GameObject> atkMinions = new Queue<GameObject>();
     private List<MinionData> atkMinionsList = new List<MinionData>();
     private List<MinionData> atkMinionsBox = new List<MinionData>();
 
@@ -39,6 +39,9 @@ public class MinionController : MonoBehaviour
 
     private bool canUseUlti;
 
+    [SerializeField] KeyCode shieldKey;
+    [SerializeField] KeyCode ultiKey;
+
     //private bool firstItemMinion = true;
 
     private void Start()
@@ -63,15 +66,15 @@ public class MinionController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
+        if(Input.GetKeyDown(shieldKey))
             ChangeMinion();
-        }
+        
+        if(Input.GetKeyUp(shieldKey))
+            ChangeMinion();       
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
+        if(Input.GetKeyDown(ultiKey))
             UseMinion();
-        }
+        
     }
 
     private void ChangeMinion()

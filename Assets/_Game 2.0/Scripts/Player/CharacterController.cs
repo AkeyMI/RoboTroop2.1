@@ -12,6 +12,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] float timeBetweenDash = 1f;
     [SerializeField] GameObject minionArt = default;
     [SerializeField] LayerMask groundRaycastMask = default;
+    [SerializeField] KeyCode dashKey;
 
     public bool IsGrounded { get; private set; }
     public bool IsOnDash { get; private set; }
@@ -55,7 +56,7 @@ public class CharacterController : MonoBehaviour
         movementInput = new Vector3(h, 0f, v);
         movementVelocity = movementInput.normalized * speed;
 
-        if (Input.GetMouseButtonDown(1) && !IsOnDash && canDash)
+        if (Input.GetKeyDown(dashKey) && !IsOnDash && canDash)
         {
             if (movementInput.x != 0 || movementInput.z != 0)
             {
