@@ -60,6 +60,8 @@ public class BoxMInion : MonoBehaviour
             if(mContainerArray[i].MinionUiBox.Data != null)
             {
                 atkMinionsList.Add(mContainerArray[i].MinionUiBox.Data);
+                MinionUiBox minionUiBox = mContainerArray[i].GetComponentInChildren<MinionUiBox>();
+                Destroy(minionUiBox.gameObject);
             }
         }
 
@@ -68,6 +70,7 @@ public class BoxMInion : MonoBehaviour
             if (containerBox[i].MinionUiBox.Data != null)
             {
                 atkMinionsBoxList.Add(containerBox[i].MinionUiBox.Data);
+                Destroy(containerBox[i].gameObject);
             }
         }
 
