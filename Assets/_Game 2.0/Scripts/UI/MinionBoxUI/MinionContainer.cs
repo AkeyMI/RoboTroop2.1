@@ -19,6 +19,11 @@ public class MinionContainer : MonoBehaviour, IDropHandler
             {
                 minionUiBox.SetMinionContainer(newMinionUiBox.MContainer);
                 minionUiBox.transform.SetParent(newMinionUiBox.MContainer.transform, false);
+                newMinionUiBox.MContainer.SetNewMinionUiBox(minionUiBox);
+            }
+            else
+            {
+                newMinionUiBox.MContainer.SetNewMinionUiBox(null);
             }
             newMinionUiBox.transform.SetParent(this.transform, false);
             newMinionUiBox.SetMinionContainer(this);
@@ -32,5 +37,10 @@ public class MinionContainer : MonoBehaviour, IDropHandler
         minionUiBox = GetComponentInChildren<MinionUiBox>();
         minionUiBox.SetMinionData(data);
         minionUiBox.SetMinionContainer(this);
+    }
+
+    public void SetNewMinionUiBox(MinionUiBox newMinion)
+    {
+        minionUiBox = newMinion;
     }
 }

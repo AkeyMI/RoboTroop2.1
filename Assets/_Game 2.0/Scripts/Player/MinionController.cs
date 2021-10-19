@@ -13,8 +13,8 @@ public class MinionController : MonoBehaviour
     [SerializeField] int maxMinionsInQueue = 5;
 
     private Queue<GameObject> atkMinions = new Queue<GameObject>();
-    private List<MinionData> atkMinionsList = new List<MinionData>();
-    private List<MinionData> atkMinionsBox = new List<MinionData>();
+    public List<MinionData> atkMinionsList = new List<MinionData>();
+    public List<MinionData> atkMinionsBox = new List<MinionData>();
 
     public event Action<bool> onChangeMinion;
     public event Action<GameObject> onChangeMinionAtkUi;

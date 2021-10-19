@@ -45,7 +45,8 @@ public class BoxMInion : MonoBehaviour
             else
             {
                 MinionUiBox mUiBox = mContainerArray[i].GetComponentInChildren<MinionUiBox>();
-                Destroy(mUiBox.gameObject);
+                if (mUiBox != null) 
+                 Destroy(mUiBox.gameObject);
             }
         }
     }
@@ -57,21 +58,24 @@ public class BoxMInion : MonoBehaviour
 
         for(int i = 0; i < mContainerArray.Length; i++)
         {
-            if(mContainerArray[i].MinionUiBox.Data != null)
+            if(mContainerArray[i].MinionUiBox?.Data != null)
             {
                 atkMinionsList.Add(mContainerArray[i].MinionUiBox.Data);
                 MinionUiBox minionUiBox = mContainerArray[i].GetComponentInChildren<MinionUiBox>();
-                Destroy(minionUiBox.gameObject);
+                if(minionUiBox != null)
+                    Destroy(minionUiBox.gameObject);
             }
+
+            mContainerArray[i].SetNewMinionUiBox(null);
         }
 
         for (int i = 0; i < containerBox.Length; i++)
         {
-            if (containerBox[i].MinionUiBox.Data != null)
+            if (containerBox[i].MinionUiBox?.Data != null)
             {
                 atkMinionsBoxList.Add(containerBox[i].MinionUiBox.Data);
-                Destroy(containerBox[i].gameObject);
             }
+            Destroy(containerBox[i].gameObject);
         }
 
         MinionController minionController = FindObjectOfType<MinionController>();
