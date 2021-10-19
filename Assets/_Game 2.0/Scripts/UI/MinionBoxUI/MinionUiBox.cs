@@ -10,6 +10,8 @@ public class MinionUiBox : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public MinionContainer MContainer => mContainer;
 
+    public MinionData Data => minionData;
+
     private MinionContainer mContainer;
 
     private MinionData minionData;

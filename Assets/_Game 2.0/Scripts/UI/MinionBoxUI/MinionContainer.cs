@@ -7,6 +7,8 @@ public class MinionContainer : MonoBehaviour, IDropHandler
 {
     private MinionUiBox minionUiBox;
 
+    public MinionUiBox MinionUiBox => minionUiBox;
+
     public void OnDrop(PointerEventData eventData)
     {
         if(eventData.pointerDrag != null)

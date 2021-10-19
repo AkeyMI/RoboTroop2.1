@@ -12,9 +12,6 @@ public class BoxMInion : MonoBehaviour
 
     private MinionContainer[] containerBox;
 
-    private List<MinionData> atkMinionsList = new List<MinionData>();
-    private List<MinionData> atkMinionsBoxList = new List<MinionData>();
-
     public Canvas GetCanvas => canvas;
 
     public void CreateBoxElements(List<MinionData> datas)
@@ -55,6 +52,28 @@ public class BoxMInion : MonoBehaviour
 
     public void DoneEditing()
     {
+        List<MinionData> atkMinionsList = new List<MinionData>();
+        List<MinionData> atkMinionsBoxList = new List<MinionData>();
 
+        for(int i = 0; i < mContainerArray.Length; i++)
+        {
+            if(mContainerArray[i].MinionUiBox.Data != null)
+            {
+                atkMinionsList.Add(mContainerArray[i].MinionUiBox.Data);
+            }
+        }
+
+        for (int i = 0; i < containerBox.Length; i++)
+        {
+            if (containerBox[i].MinionUiBox.Data != null)
+            {
+                atkMinionsBoxList.Add(containerBox[i].MinionUiBox.Data);
+            }
+        }
+
+        MinionController minionController = FindObjectOfType<MinionController>();
+
+        minionController.SendMinionBoxList(atkMinionsBoxList);
+        minionController.SendMinionList(atkMinionsList);
     }
 }

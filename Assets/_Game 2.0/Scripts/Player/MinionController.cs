@@ -141,6 +141,25 @@ public class MinionController : MonoBehaviour
         return atkMinionsList;
     }
 
+    public void SendMinionBoxList(List<MinionData> list)
+    {
+        atkMinionsBox.Clear();
+        atkMinionsBox = list;
+    }
+
+    public void SendMinionList(List<MinionData> list)
+    {
+        atkMinionsList.Clear();
+        atkMinionsList = list;
+
+        Destroy(minionAtk);
+        minionAtk = Instantiate(atkMinionsList[0].minionPrefab);
+        minionAtk.transform.SetParent(minionArt.transform, false);
+        onChangeMinionAtkUi?.Invoke(atkMinionsList[0].minionUI);
+
+        currentMaxMinionsInQueue = atkMinionsList.Count;
+    }
+
     public void ChangeAtkMinion(MinionData data)
     {
         //if (minionAtk.activeSelf)
@@ -183,7 +202,6 @@ public class MinionController : MonoBehaviour
     {
         atkMinionsList.Remove(minionAtk.GetComponent<ShootController>().Data);
         Destroy(minionAtk);
-        //atkMinions.Dequeue();
         minionAtk = Instantiate(atkMinionsList[0].minionPrefab);
         currentMaxMinionsInQueue--;
 
