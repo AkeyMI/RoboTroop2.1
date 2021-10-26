@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObjectPooling : MonoBehaviour
 {
@@ -60,6 +61,11 @@ public class ObjectPooling : MonoBehaviour
     {
         int id = objToPool.GetInstanceID();
 
+        if (!pool.ContainsKey (id))
+        {
+            PreLoad(objToPool, 1);
+        }
+
         if (pool[id].Count == 0)
         {
             CreateObj(objToPool);
@@ -77,5 +83,16 @@ public class ObjectPooling : MonoBehaviour
 
         pool[id].Enqueue(objToRecicle);
         objToRecicle.SetActive(false);
+    } 
+
+    public static void ClearDictionary(Scene s, LoadSceneMode load)
+    {
+        pool.Clear();
+        parents.Clear();
+    }
+
+    public void OnEnable()
+    {
+        SceneManager.sceneLoaded += ClearDictionary;
     }
 }

@@ -6,7 +6,7 @@ public class SpawnerPool : MonoBehaviour
 {
     [SerializeField] SpawnData[] particleData;
 
-    private void Awake()
+    private void Start()
     {
         foreach(SpawnData sp in particleData)
         {
