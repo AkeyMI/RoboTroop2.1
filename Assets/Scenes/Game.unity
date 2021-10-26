@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.172768, g: 0.21589167, b: 0.29782546, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19560,7 +19560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2003178407542109683, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.899994
+      value: 0.100001216
       objectReference: {fileID: 0}
     - target: {fileID: 2003178407542109683, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19568,7 +19568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2003178407542109683, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.599995
+      value: 1.4000025
       objectReference: {fileID: 0}
     - target: {fileID: 2003178407542109683, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22686,6 +22686,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ca1d3cfa2cce7409b6e515e16c86d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceToActivate: 2
+  eImage: {fileID: 0}
+  boxMinions: {fileID: 0}
 --- !u!1 &1445957602
 GameObject:
   m_ObjectHideFlags: 0
@@ -27004,8 +27007,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 328212535}
   m_HandleRect: {fileID: 328212534}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -31548,6 +31551,7 @@ MonoBehaviour:
   - {fileID: 94248299}
   - {fileID: 979496176}
   - {fileID: 473965092}
+  minionUiBoxPrefab: {fileID: 0}
 --- !u!1 &2051620798
 GameObject:
   m_ObjectHideFlags: 0
