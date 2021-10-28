@@ -17,7 +17,9 @@ public class MinionController : MonoBehaviour
     public List<MinionData> atkMinionsBox = new List<MinionData>();
 
     public event Action<bool> onChangeMinion;
-    public event Action<GameObject> onChangeMinionAtkUi;
+    public event Action onChangeMinionAtkUi;
+    public event Action onClearList;
+    public event Action<GameObject> onAddMinionsAtkUi;
     public event Action<GameObject> onChangeMinionShieldUi;
     public event Action<GameObject> onChangeMinionItemUi;
     public event Action<int, int> onChangeFillAmountMinionItem;
@@ -50,6 +52,7 @@ public class MinionController : MonoBehaviour
         minionAtk.transform.SetParent(minionArt.transform, false);
         atkMinions.Enqueue(minionAtk);
         atkMinionsList.Add(minion1);
+        onAddMinionsAtkUi?.Invoke(minion1.minionUI);
         //onChangeMinionAtkUi?.Invoke(minion1.minionUI);
 
         minionShield = Instantiate(minion2.minionPrefab, Vector3.zero, Quaternion.identity);
@@ -152,10 +155,15 @@ public class MinionController : MonoBehaviour
         atkMinionsList.Clear();
         atkMinionsList = list;
 
+        onClearList?.Invoke();
+
         Destroy(minionAtk);
         minionAtk = Instantiate(atkMinionsList[0].minionPrefab);
         minionAtk.transform.SetParent(minionArt.transform, false);
-        onChangeMinionAtkUi?.Invoke(atkMinionsList[0].minionUI);
+        for (int i = 0; i < atkMinionsList.Count; i++)
+        {
+            onAddMinionsAtkUi?.Invoke(atkMinionsList[i].minionUI);
+        }
 
         currentMaxMinionsInQueue = atkMinionsList.Count;
     }
@@ -179,6 +187,7 @@ public class MinionController : MonoBehaviour
         if (currentMaxMinionsInQueue < maxMinionsInQueue)
         {
             atkMinionsList.Add(data);
+            onAddMinionsAtkUi?.Invoke(data.minionUI);
             //takentAtkMinion = Instantiate(data.minionPrefab, Vector3.zero, Quaternion.identity);
             //takentAtkMinion.SetActive(false);
 
@@ -194,8 +203,6 @@ public class MinionController : MonoBehaviour
 
             atkMinionsBox.Add(data);
         }
-
-        //onChangeMinionAtkUi?.Invoke(data.minionUI);
     }
 
     public void NextMinion()
@@ -209,7 +216,7 @@ public class MinionController : MonoBehaviour
         minionAtk.transform.SetParent(minionArt.transform, false);
         //minionAtk.SetActive(true);
         //MinionData data = minionAtk.GetComponent<ShootController>().Data;
-        onChangeMinionAtkUi?.Invoke(atkMinionsList[0].minionUI);
+        onChangeMinionAtkUi?.Invoke();
     }
 
     public void ChangeShieldMinion(MinionDefenceData data)

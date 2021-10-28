@@ -26,6 +26,8 @@ public class UiManager : MonoBehaviour
 
     private NaveController naveController;
 
+    private List<GameObject> uiMinionsList = new List<GameObject>();
+
     private void Awake()
     {
         minionController = FindObjectOfType<MinionController>().GetComponent<MinionController>();
@@ -67,6 +69,9 @@ public class UiManager : MonoBehaviour
         minionController.onChangeMinionShieldUi += ChangeMinionShieldUi;
         minionController.onChangeMinionItemUi += ChangeMinionItemUi;
 
+        minionController.onAddMinionsAtkUi += AddMinionAtkUi;
+        minionController.onClearList += ClearList;
+
         minionController.onChangeFillAmountMinionItem += FillAmountMinionItem;
 
         naveController.onLifeChange += NaveLifeDamage;
@@ -83,6 +88,9 @@ public class UiManager : MonoBehaviour
         minionController.onChangeMinionAtkUi -= ChangeMinionAtkUi;
         minionController.onChangeMinionShieldUi -= ChangeMinionShieldUi;
         minionController.onChangeMinionItemUi -= ChangeMinionItemUi;
+
+        minionController.onAddMinionsAtkUi -= AddMinionAtkUi;
+        minionController.onClearList -= ClearList;
 
         minionController.onChangeFillAmountMinionItem -= FillAmountMinionItem;
 
@@ -113,19 +121,38 @@ public class UiManager : MonoBehaviour
         minionShieldImage.SetActive(!minionToChange);
     }
 
-    private void ChangeMinionAtkUi(GameObject icon)
+    private void ClearList()
     {
-        if(minionAtkImage.activeSelf)
+        for(int i = 0; i < uiMinionsList.Count; i++)
         {
-            Destroy(minionAtkImage.gameObject);
-            minionAtkImage = Instantiate(icon, minionIconParent.transform);
+            Destroy(uiMinionsList[i].gameObject);
         }
-        else
-        {
-            Destroy(minionAtkImage.gameObject);
-            minionAtkImage = Instantiate(icon, minionIconParent.transform);
-            minionAtkImage.SetActive(false);
-        }
+
+        uiMinionsList.Clear();
+        uiMinionsList = new List<GameObject>();
+    }
+
+    private void ChangeMinionAtkUi()
+    {
+        //if(minionAtkImage.activeSelf)
+        //{
+        //    Destroy(minionAtkImage.gameObject);
+        //    minionAtkImage = Instantiate(icon, minionIconParent.transform);
+        //}
+        //else
+        //{
+        //    Destroy(minionAtkImage.gameObject);
+        //    minionAtkImage = Instantiate(icon, minionIconParent.transform);
+        //    minionAtkImage.SetActive(false);
+        //}
+
+        Destroy(uiMinionsList[0].gameObject);
+    }
+
+    private void AddMinionAtkUi(GameObject icon)
+    {
+        minionAtkImage = Instantiate(icon, minionIconParent.transform);
+        uiMinionsList.Add(minionAtkImage);
     }
 
     private void ChangeMinionShieldUi(GameObject icon)
