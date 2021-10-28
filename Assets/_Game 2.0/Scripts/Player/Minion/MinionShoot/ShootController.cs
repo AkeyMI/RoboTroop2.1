@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,12 +28,15 @@ public class ShootController : MonoBehaviour, IDamagable
 
     private int currentLife;
 
+    private MinionController minionController;
+
     private void Start()
     {
         cam = FindObjectOfType<CameraController>();
         animator = GetComponent<Animator>();
         currentAmmo = data.ammo;
         currentLife = data.life;
+        minionController = FindObjectOfType<MinionController>();
     }
 
     private void Update()
@@ -160,6 +164,7 @@ public class ShootController : MonoBehaviour, IDamagable
     public void Damage(int amount)
     {
         currentLife -= amount;
+        minionController.ChangeMinionLife(currentLife, data.life);
         cam.Shake(3, 0.1f);
 
         if(currentLife <= 0)

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UiManager : MonoBehaviour
 {
@@ -14,11 +15,15 @@ public class UiManager : MonoBehaviour
     [SerializeField] GameObject minionItemIconParent;
     [SerializeField] GameObject pauseMenu = default;
     [SerializeField] Image naveLifeImage = default;
+    [SerializeField] Image minionLifeImage = default;
+    [SerializeField] TMP_Text minionLifetext = default;
+    [SerializeField] GameObject minionIconLifeParent = default;
     [SerializeField] Image naveShieldLifeImage = default;
 
     private GameObject minionAtkImage;
     private GameObject minionShieldImage;
     private GameObject minionItemImage;
+    private GameObject minionAtkLifeImage;
 
     private Image minionItemFillAmount;
 
@@ -64,6 +69,10 @@ public class UiManager : MonoBehaviour
     {
         //stunable.onStunStarted += StartStunBar;
         //stunable.onStunFinished += StopStun;
+        minionController.onLifeChange += MinionLifeDamage;
+
+        minionController.onResetMinionStatus += ResetMinionStatus;
+
         minionController.onChangeMinion += ChangeUiMinion;
         minionController.onChangeMinionAtkUi += ChangeMinionAtkUi;
         minionController.onChangeMinionShieldUi += ChangeMinionShieldUi;
@@ -84,6 +93,10 @@ public class UiManager : MonoBehaviour
     {
         //stunable.onStunStarted -= StartStunBar;
         //stunable.onStunFinished -= StopStun;
+        minionController.onLifeChange -= MinionLifeDamage;
+
+        minionController.onResetMinionStatus -= ResetMinionStatus;
+
         minionController.onChangeMinion -= ChangeUiMinion;
         minionController.onChangeMinionAtkUi -= ChangeMinionAtkUi;
         minionController.onChangeMinionShieldUi -= ChangeMinionShieldUi;
@@ -147,6 +160,7 @@ public class UiManager : MonoBehaviour
         //}
 
         Destroy(uiMinionsList[0].gameObject);
+        uiMinionsList.Remove(uiMinionsList[0]);
     }
 
     private void AddMinionAtkUi(GameObject icon)
@@ -182,6 +196,22 @@ public class UiManager : MonoBehaviour
         float currentItemFillAmount = (float)amount / (float)minionReloadUlti;
 
         minionItemFillAmount.fillAmount = currentItemFillAmount;
+    }
+
+    private void ResetMinionStatus(GameObject icon, int life)
+    {
+        minionLifeImage.fillAmount = 1;
+        minionAtkLifeImage = Instantiate(icon, minionIconLifeParent.transform);
+
+        minionLifetext.text = life + "/" + life;
+    }
+
+    private void MinionLifeDamage(int amount, int data)
+    {
+        float currentLife = (float)amount / (float)data;
+
+        minionLifeImage.fillAmount = currentLife;
+        minionLifetext.text = amount + "/" + data; 
     }
 
     private void NaveLifeDamage(int amount, int data)

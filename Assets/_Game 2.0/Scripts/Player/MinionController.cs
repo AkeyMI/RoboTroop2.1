@@ -24,6 +24,8 @@ public class MinionController : MonoBehaviour
     public event Action<GameObject> onChangeMinionItemUi;
     public event Action<int, int> onChangeFillAmountMinionItem;
     public event Action onMinionItemNoUsable;
+    public event Action<GameObject, int> onResetMinionStatus;
+    public event Action<int, int> onLifeChange;
 
     private GameObject minionAtk;
     private GameObject minionShield;
@@ -53,6 +55,7 @@ public class MinionController : MonoBehaviour
         atkMinions.Enqueue(minionAtk);
         atkMinionsList.Add(minion1);
         onAddMinionsAtkUi?.Invoke(minion1.minionUI);
+        onResetMinionStatus?.Invoke(minion1.minionUI, minion1.life);
         //onChangeMinionAtkUi?.Invoke(minion1.minionUI);
 
         minionShield = Instantiate(minion2.minionPrefab, Vector3.zero, Quaternion.identity);
@@ -160,6 +163,7 @@ public class MinionController : MonoBehaviour
         Destroy(minionAtk);
         minionAtk = Instantiate(atkMinionsList[0].minionPrefab);
         minionAtk.transform.SetParent(minionArt.transform, false);
+        onResetMinionStatus?.Invoke(atkMinionsList[0].minionUI, atkMinionsList[0].life);
         for (int i = 0; i < atkMinionsList.Count; i++)
         {
             onAddMinionsAtkUi?.Invoke(atkMinionsList[i].minionUI);
@@ -216,6 +220,7 @@ public class MinionController : MonoBehaviour
         minionAtk.transform.SetParent(minionArt.transform, false);
         //minionAtk.SetActive(true);
         //MinionData data = minionAtk.GetComponent<ShootController>().Data;
+        onResetMinionStatus?.Invoke(atkMinionsList[0].minionUI, atkMinionsList[0].life);
         onChangeMinionAtkUi?.Invoke();
     }
 
@@ -249,5 +254,10 @@ public class MinionController : MonoBehaviour
         reloadUltiUi = 0;
         onChangeMinionItemUi?.Invoke(data.minionUi);
         onChangeFillAmountMinionItem?.Invoke(reloadUltiUi, itemData.reloadUlti);
+    }
+
+    public void ChangeMinionLife(int amount, int life)
+    {
+        onLifeChange?.Invoke(amount, life);
     }
 }
