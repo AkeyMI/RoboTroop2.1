@@ -47,10 +47,12 @@ public class ComputerMinions : MonoBehaviour
     {
         boxMinions.SetActive(false);
         Time.timeScale = 1f;
+        FindObjectOfType<UiManager>().CheckIfIsOnComputer(false);
     }
 
     public void ActivateComputer()
     {
+        FindObjectOfType<UiManager>().CheckIfIsOnComputer(true);
         boxMinions.SetActive(true);
         Time.timeScale = 0f;
         MinionController minionController = FindObjectOfType<MinionController>();

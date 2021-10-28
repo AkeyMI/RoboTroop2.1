@@ -33,6 +33,8 @@ public class UiManager : MonoBehaviour
 
     private List<GameObject> uiMinionsList = new List<GameObject>();
 
+    private bool isOnComputer;
+
     private void Awake()
     {
         minionController = FindObjectOfType<MinionController>().GetComponent<MinionController>();
@@ -52,7 +54,7 @@ public class UiManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && !isOnComputer)
         {
             pauseMenu.SetActive(true);
             Time.timeScale = 0;
@@ -111,6 +113,11 @@ public class UiManager : MonoBehaviour
         naveController.onShieldChange -= NaveShieldDamage;
 
         minionController.onMinionItemNoUsable -= MinionItemNotUsable;
+    }
+
+    public void CheckIfIsOnComputer(bool value)
+    {
+        isOnComputer = value;
     }
 
     private void MinionItemNotUsable()
