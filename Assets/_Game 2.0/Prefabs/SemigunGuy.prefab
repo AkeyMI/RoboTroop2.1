@@ -31,7 +31,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7849458679229884669}
+  - {fileID: 437373208240165350}
   - {fileID: 6829882350515598147}
   - {fileID: 5523303710353868811}
   m_Father: {fileID: 0}
@@ -59,7 +59,7 @@ MonoBehaviour:
   automatic: 0
   bulletsXShoot: 3
   timeBetweenShoots: 0.075
-  gizmoMesh: {fileID: 5247717548940950464, guid: c77debadc4733314296f7624e23295ba, type: 3}
+  gizmoMesh: {fileID: 0}
   shotShakeIntensity: 1.5
 --- !u!95 &3474001343974493048
 Animator:
@@ -70,8 +70,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354599212422573440}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 77756c9e76ba27940bc03c2f0728acd5, type: 3}
-  m_Controller: {fileID: 9100000, guid: 1ed3634aeee01c04c88f6d3c895376b2, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 53a206a43c90c23489ac1fae6eca7a42, type: 3}
+  m_Controller: {fileID: 9100000, guid: 165be36cca0525a45822de3475e1d47f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -90,7 +90,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 41a56faba77d11543bc34458b7a55842, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -362,7 +362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6231163776040583893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.091}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9163952667559671790}
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1001 &7738407271484870422
+--- !u!1001 &115798232097945101
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -460,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53a206a43c90c23489ac1fae6eca7a42, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.928
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53a206a43c90c23489ac1fae6eca7a42, type: 3}
       propertyPath: m_LocalPosition.z
@@ -498,10 +498,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SemigunGuy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 53a206a43c90c23489ac1fae6eca7a42, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 53a206a43c90c23489ac1fae6eca7a42, type: 3}
---- !u!4 &7849458679229884669 stripped
+--- !u!4 &437373208240165350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 53a206a43c90c23489ac1fae6eca7a42, type: 3}
-  m_PrefabInstance: {fileID: 7738407271484870422}
+  m_PrefabInstance: {fileID: 115798232097945101}
   m_PrefabAsset: {fileID: 0}
