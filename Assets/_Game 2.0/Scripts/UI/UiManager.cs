@@ -23,7 +23,7 @@ public class UiManager : MonoBehaviour
     private GameObject minionAtkImage;
     private GameObject minionShieldImage;
     private GameObject minionItemImage;
-    private GameObject minionAtkLifeImage;
+    [SerializeField] Image minionAtkLifeImage;
 
     private Image minionItemFillAmount;
 
@@ -198,10 +198,10 @@ public class UiManager : MonoBehaviour
         minionItemFillAmount.fillAmount = currentItemFillAmount;
     }
 
-    private void ResetMinionStatus(GameObject icon, int life)
+    private void ResetMinionStatus(Sprite icon, int life)
     {
         minionLifeImage.fillAmount = 1;
-        minionAtkLifeImage = Instantiate(icon, minionIconLifeParent.transform);
+        minionAtkLifeImage.sprite = icon;
 
         minionLifetext.text = life + "/" + life;
     }

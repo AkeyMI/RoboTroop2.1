@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MinionController : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class MinionController : MonoBehaviour
     public event Action<GameObject> onChangeMinionItemUi;
     public event Action<int, int> onChangeFillAmountMinionItem;
     public event Action onMinionItemNoUsable;
-    public event Action<GameObject, int> onResetMinionStatus;
+    public event Action<Sprite, int> onResetMinionStatus;
     public event Action<int, int> onLifeChange;
 
     private GameObject minionAtk;
@@ -55,7 +56,7 @@ public class MinionController : MonoBehaviour
         atkMinions.Enqueue(minionAtk);
         atkMinionsList.Add(minion1);
         onAddMinionsAtkUi?.Invoke(minion1.minionUI);
-        onResetMinionStatus?.Invoke(minion1.minionUI, minion1.life);
+        onResetMinionStatus?.Invoke(minion1.sprite, minion1.life);
         //onChangeMinionAtkUi?.Invoke(minion1.minionUI);
 
         minionShield = Instantiate(minion2.minionPrefab, Vector3.zero, Quaternion.identity);
@@ -163,7 +164,7 @@ public class MinionController : MonoBehaviour
         Destroy(minionAtk);
         minionAtk = Instantiate(atkMinionsList[0].minionPrefab);
         minionAtk.transform.SetParent(minionArt.transform, false);
-        onResetMinionStatus?.Invoke(atkMinionsList[0].minionUI, atkMinionsList[0].life);
+        onResetMinionStatus?.Invoke(atkMinionsList[0].sprite, atkMinionsList[0].life);
         for (int i = 0; i < atkMinionsList.Count; i++)
         {
             onAddMinionsAtkUi?.Invoke(atkMinionsList[i].minionUI);
@@ -211,16 +212,21 @@ public class MinionController : MonoBehaviour
 
     public void NextMinion()
     {
+        currentMaxMinionsInQueue--;
+
+        if(currentMaxMinionsInQueue <= 0)
+        {
+            GameOver();
+        }
         atkMinionsList.Remove(minionAtk.GetComponent<ShootController>().Data);
         Destroy(minionAtk);
         minionAtk = Instantiate(atkMinionsList[0].minionPrefab);
-        currentMaxMinionsInQueue--;
 
         //minionAtk = atkMinions.Peek();
         minionAtk.transform.SetParent(minionArt.transform, false);
         //minionAtk.SetActive(true);
         //MinionData data = minionAtk.GetComponent<ShootController>().Data;
-        onResetMinionStatus?.Invoke(atkMinionsList[0].minionUI, atkMinionsList[0].life);
+        onResetMinionStatus?.Invoke(atkMinionsList[0].sprite, atkMinionsList[0].life);
         onChangeMinionAtkUi?.Invoke();
     }
 
@@ -241,6 +247,11 @@ public class MinionController : MonoBehaviour
         }
 
         onChangeMinionShieldUi?.Invoke(data.minionUi);
+    }
+
+    private void GameOver()
+    {
+        SceneManager.LoadScene(3);
     }
 
     public void ChangeItemMinion(MinionItemData data)
