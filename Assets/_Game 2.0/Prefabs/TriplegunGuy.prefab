@@ -105,8 +105,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354599212422573440}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 77756c9e76ba27940bc03c2f0728acd5, type: 3}
-  m_Controller: {fileID: 9100000, guid: 1ed3634aeee01c04c88f6d3c895376b2, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 3e8f3aada6394b34c8d45240161ed122, type: 3}
+  m_Controller: {fileID: 9100000, guid: 5e0c1e42d2c5b7a40a3cfbc9d1849a32, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -654,7 +654,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: TripleGuy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 3e8f3aada6394b34c8d45240161ed122, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e8f3aada6394b34c8d45240161ed122, type: 3}
 --- !u!4 &6310228402791729826 stripped
 Transform:

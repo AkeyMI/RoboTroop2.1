@@ -12,6 +12,7 @@ TagManager:
   - Obj
   - Ground
   - Walls
+  - Trap
   layers:
   - Default
   - TransparentFX

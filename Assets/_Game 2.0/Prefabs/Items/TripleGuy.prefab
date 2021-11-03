@@ -293,6 +293,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TripleGuy
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 3e8f3aada6394b34c8d45240161ed122, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5e0c1e42d2c5b7a40a3cfbc9d1849a32, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e8f3aada6394b34c8d45240161ed122, type: 3}
 --- !u!4 &3607327467067046414 stripped
