@@ -10004,6 +10004,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2463642210487357066, guid: 52e6ce3130d31534fb4a399c0ff6e988, type: 3}
+      propertyPath: dashKey
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 2463642210487357067, guid: 52e6ce3130d31534fb4a399c0ff6e988, type: 3}
       propertyPath: m_Name
       value: Player
@@ -10016,6 +10020,10 @@ PrefabInstance:
       propertyPath: minion1
       value: 
       objectReference: {fileID: 11400000, guid: 6cd372752bdad4641b1335d54bf8627f, type: 2}
+    - target: {fileID: 2463642210487357068, guid: 52e6ce3130d31534fb4a399c0ff6e988, type: 3}
+      propertyPath: shieldKey
+      value: 324
+      objectReference: {fileID: 0}
     - target: {fileID: 2463642210487357069, guid: 52e6ce3130d31534fb4a399c0ff6e988, type: 3}
       propertyPath: m_RootOrder
       value: 9

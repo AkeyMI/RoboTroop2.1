@@ -28,6 +28,8 @@ public class BulletEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.CompareTag("Obj")) other.GetComponent<DestructibleObject>().Damage(damage, transform);
+
         if (other.CompareTag("Enemy")) return;
 
         if (other.CompareTag("Nave"))
