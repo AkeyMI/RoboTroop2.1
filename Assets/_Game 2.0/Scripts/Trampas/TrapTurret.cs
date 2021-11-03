@@ -16,12 +16,12 @@ public class TrapTurret : MonoBehaviour
     int currentAmmo;
     float actualTimeBS;
     bool invencible;
-    public void Start()
+    public void WakeUP()
     {
         actualTimeBS = timeBetweenShots;
         alive = true;
         currentAmmo = maxAmmo;
-        animator.SetBool("Reloading", false);
+        //animator.SetBool("Reloading", false);
     }
 
     void FixedUpdate()
@@ -42,7 +42,7 @@ public class TrapTurret : MonoBehaviour
             GameObject newBullet = Instantiate(bullet, t);
             newBullet.GetComponent<BulletEnemy>().Init(damage);
         }
-        animator.SetBool("Shot", true);
+        //animator.SetBool("Shot", true);
         currentAmmo--;
         if (currentAmmo == 0)
             StartCoroutine(Reloading());
@@ -60,20 +60,20 @@ public class TrapTurret : MonoBehaviour
                 alive = false;
                 GetComponent<CapsuleCollider>().enabled = false;
                 GetComponent<NavMeshObstacle>().enabled = false;
-                animator.SetBool("Dead", true);
+                //animator.SetBool("Dead", true);
             }
         }
     }
 
     public IEnumerator Reloading ()
     {
-        animator.SetBool("Shot", false);
-        animator.SetBool("Reloading", true);
+        //animator.SetBool("Shot", false);
+        //animator.SetBool("Reloading", true);
         invencible = true;
         yield return new WaitForSeconds(2.5f);
         currentAmmo = maxAmmo;
         transform.Rotate(0,45,0);
-        animator.SetBool("Reloading", false);
+        //animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(0.5f);
         invencible = false;
         actualTimeBS = timeBetweenShots;

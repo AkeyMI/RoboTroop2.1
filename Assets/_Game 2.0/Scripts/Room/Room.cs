@@ -17,11 +17,11 @@ public class Room : MonoBehaviour
         {
             roomActivables[i].Activate();
         }
-        /*foreach(TrapTurret t in GetComponentsInChildren<TrapTurret>())
+        foreach(TrapTurret t in GetComponentsInChildren<TrapTurret>())
         {
             t.WakeUP();
         }
-        */
+        
     }
 
     private void RefreshIRoomActivablesReferences()
