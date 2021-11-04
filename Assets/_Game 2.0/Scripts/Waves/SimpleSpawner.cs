@@ -32,7 +32,7 @@ public class SimpleSpawner : MonoBehaviour
     IEnumerator Spawning ()
     {
         sp.GetParticle(particle, transform.position);
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(2.25f);
         GameObject go = Instantiate(prefab, transform.position, transform.rotation);
         if (!isATorreta)
         {
