@@ -13,6 +13,7 @@ public class WaveController : MonoBehaviour, IRoomActivables
     public void AddEnemy()
     {
         enemyCount++;
+        Debug.Log("La cantidad de enemigos es: " + enemyCount);
     }
 
     public void Activate()
