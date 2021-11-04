@@ -87,7 +87,7 @@ public class MinionController : MonoBehaviour
     private void ChangeMinion()
     {
         minionAtk.SetActive(minionChange);
-        onChangeMinion?.Invoke(minionChange);
+        //onChangeMinion?.Invoke(minionChange);
 
         minionChange = !minionChange;
 

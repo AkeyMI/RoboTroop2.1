@@ -51,7 +51,7 @@ public class ShieldController : MonoBehaviour
 
     public void ShieldDamage(int amount)
     {
-        currentLifeShield -= amount;
+        //currentLifeShield -= amount;
 
         if(currentLifeShield <= 0)
         {
