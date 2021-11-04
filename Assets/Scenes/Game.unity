@@ -29988,7 +29988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21ea5c7cb2b1d9409f5404046aa6408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7013116819961771625, guid: 57a05ad97a0459c44a4b80290dd0e51d, type: 3}
+  prefab: {fileID: 8489901242466351668, guid: f03c5d9b6f349e241aeb6362a93018d6, type: 3}
   isATorreta: 0
   particle: 14
 --- !u!1001 &1108472735
@@ -30191,7 +30191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21ea5c7cb2b1d9409f5404046aa6408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8489901242466351668, guid: 25f819fb0f131a148add67ca6e4a967e, type: 3}
+  prefab: {fileID: 8489901242466351668, guid: f03c5d9b6f349e241aeb6362a93018d6, type: 3}
   isATorreta: 0
   particle: 14
 --- !u!1001 &1110984258
@@ -32259,7 +32259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21ea5c7cb2b1d9409f5404046aa6408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7013116819961771625, guid: 57a05ad97a0459c44a4b80290dd0e51d, type: 3}
+  prefab: {fileID: 8489901242466351668, guid: f03c5d9b6f349e241aeb6362a93018d6, type: 3}
   isATorreta: 0
   particle: 14
 --- !u!1 &1191960893
@@ -46838,7 +46838,7 @@ PrefabInstance:
       objectReference: {fileID: 6766932777587085690, guid: 75c2ddae29f9486488a766e3d4051eef, type: 3}
     - target: {fileID: 1132739983544931769, guid: d53055721d60b034a95d6bc2475779d8, type: 3}
       propertyPath: particleData.Array.data[14].timeDestroy
-      value: 2.7
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 1132739983544931774, guid: d53055721d60b034a95d6bc2475779d8, type: 3}
       propertyPath: m_Name
@@ -51419,7 +51419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1962089557
 MonoBehaviour:
   m_ObjectHideFlags: 0
