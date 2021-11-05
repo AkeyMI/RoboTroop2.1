@@ -13,6 +13,7 @@ TagManager:
   - Ground
   - Walls
   - Trap
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -55,7 +55,7 @@ public class TrapTurret : MonoBehaviour
         if (!invencible)
         {
             life -= i;
-            if (life <= 0)
+            if (life <= 0 && alive)
             {
                 alive = false;
                 GetComponent<CapsuleCollider>().enabled = false;

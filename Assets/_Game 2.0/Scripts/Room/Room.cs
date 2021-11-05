@@ -35,5 +35,6 @@ public class Room : MonoBehaviour
         {
             roomActivables[i].Deactivate();
         }
+        FindObjectOfType<CharacterController>().key = true;
     }
 }

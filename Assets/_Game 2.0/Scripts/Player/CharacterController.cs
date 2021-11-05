@@ -36,6 +36,8 @@ public class CharacterController : MonoBehaviour
     private Stunable stunStatus;
 
     [SerializeField] ParticleSystem dashefect; //Particulas
+    [HideInInspector] public bool key = true;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
