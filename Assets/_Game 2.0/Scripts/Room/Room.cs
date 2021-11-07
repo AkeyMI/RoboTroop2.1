@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
+    [SerializeField] bool traps;
     IRoomActivables[] roomActivables;
 
     private void Awake()
@@ -17,9 +18,10 @@ public class Room : MonoBehaviour
         {
             roomActivables[i].Activate();
         }
-        foreach(TrapTurret t in GetComponentsInChildren<TrapTurret>())
+        if (traps)
         {
-            t.WakeUP();
+            foreach (Trap t in GetComponentsInChildren<Trap>())         
+                t.WakeUP();            
         }
         
     }

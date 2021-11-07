@@ -69,13 +69,11 @@ public class TrapTurret : MonoBehaviour
     {
         //animator.SetBool("Shot", false);
         //animator.SetBool("Reloading", true);
-        invencible = true;
         yield return new WaitForSeconds(2.5f);
         currentAmmo = maxAmmo;
         transform.Rotate(0,45,0);
         //animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(0.5f);
-        invencible = false;
         actualTimeBS = timeBetweenShots;
     }
 }

@@ -57,11 +57,8 @@ public class Bullet : MonoBehaviour
             Destruction();
         if (other.CompareTag("Trap"))
         {
-            if (other.GetComponent<TrapTurret>() != null)
-            {
-                other.GetComponent<TrapTurret>().Damage(damage);
-                Destruction();
-            }
+            other.GetComponent<Trap>().ReciveDamage(damage);
+            Destruction();
         }
     }
 
