@@ -23,6 +23,9 @@ public class Door : MonoBehaviour , IRoomActivables
 
     public void Deactivate()
     {
+        if(open)
+            animator.SetTrigger("Open");
+
         locked = false;
         waveTime = false;
     }
@@ -38,7 +41,7 @@ public class Door : MonoBehaviour , IRoomActivables
                 animator.SetTrigger("Open");
                 open = true;
             }
-            if (!locked && open)
+            if (!locked && !open)
             {
                 animator.SetTrigger("Open");
                 open = true;
