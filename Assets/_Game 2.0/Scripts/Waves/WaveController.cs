@@ -27,9 +27,11 @@ public class WaveController : MonoBehaviour, IRoomActivables
     {
         enemyCount--;
 
+        Debug.Log("Quedan " + enemyCount + " enemigos");
+
         if(enemyCount <= 0)
         {
-            //Debug.Log("Siguiente wave");
+            Debug.Log("Siguiente wave");
             NextWave();
         }
     }

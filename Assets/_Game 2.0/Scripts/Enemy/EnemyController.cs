@@ -129,7 +129,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     {
         life -= amount;
         objectToAttack = FindObjectOfType<CharacterController>().GetComponent<Collider>();
-        if (life <= 0)
+        if (life <= 0 && !isDead)
         {
             isDead = true;
             animator.SetTrigger("Hit");
@@ -140,10 +140,6 @@ public class EnemyController : MonoBehaviour, IDamagable
             cam.Shake(3.5f, 0.1f);
             cam.Offset(-0.5f);
             Destroy(this.gameObject);
-        }
-        else
-        {
-            isDead = false;
         }
     }
 }
