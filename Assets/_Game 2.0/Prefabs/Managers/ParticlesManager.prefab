@@ -63,8 +63,8 @@ MonoBehaviour:
     timeDestroy: 0
   - prefab: {fileID: 0}
     timeDestroy: 0
-  - prefab: {fileID: 0}
-    timeDestroy: 0
+  - prefab: {fileID: 6766932777587085690, guid: 8a40e3da6dc110f4eba7dddce3e6b904, type: 3}
+    timeDestroy: 0.55
   - prefab: {fileID: 6766932777587085690, guid: 5e3118651512c8549983a9458bf24ccd, type: 3}
     timeDestroy: 1.1
   - prefab: {fileID: 6766932777587085690, guid: 827162bc8bf11204ba430b2af0deeb00, type: 3}
@@ -73,8 +73,8 @@ MonoBehaviour:
     timeDestroy: 0.51
   - prefab: {fileID: 6766932777587085690, guid: 069c0130d0879b440a68584a5408bf9e, type: 3}
     timeDestroy: 0.35
-  - prefab: {fileID: 0}
-    timeDestroy: 0
+  - prefab: {fileID: 6766932777587085690, guid: 75c2ddae29f9486488a766e3d4051eef, type: 3}
+    timeDestroy: 3.2
 --- !u!114 &3422942365145403353
 MonoBehaviour:
   m_ObjectHideFlags: 0

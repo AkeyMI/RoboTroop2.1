@@ -8,7 +8,7 @@ public class DestructibleObject : MonoBehaviour
     [SerializeField] int life;    
     [SerializeField] int timeToDestroyFragments;
     [SerializeField] GameObject [] lod;
-
+    SpawnerPool sp;
     bool isdead = false;
     int a;
     int b;
@@ -20,7 +20,7 @@ public class DestructibleObject : MonoBehaviour
         a = life;
         b = lod.Length - 1;
         life = life * lod.Length;
-
+        sp = FindObjectOfType<SpawnerPool>();
         if (timeToDestroyFragments == 0)
             timeToDestroyFragments = 3;
     }
@@ -43,10 +43,11 @@ public class DestructibleObject : MonoBehaviour
                 {
                     Rigidbody[] rb = lod[b].GetComponentsInChildren<Rigidbody>();
 
-                    foreach (Rigidbody t in rb)
+                    foreach (Rigidbody r in rb)
                     {
-                        t.isKinematic = false;
-                        t.AddForce(or.forward * 5, ForceMode.VelocityChange);
+                        r.isKinematic = false;
+                        r.AddForce(or.forward * 5, ForceMode.VelocityChange);
+                        sp.GetParticle(9, r.GetComponent<Transform>().transform.position);
                     }
                     StartCoroutine(ToDestroy(timeToDestroyFragments, lod[b]));
                 }
@@ -57,8 +58,11 @@ public class DestructibleObject : MonoBehaviour
     }
 
     IEnumerator ToDestroy(int i, GameObject dg)
-    {
+    {       
         yield return new WaitForSeconds (i);
+        foreach(Transform t in dg.GetComponentsInChildren<Transform>())
+            sp.GetParticle(9, t.GetComponent<Transform>().transform.position);
+        
         dg.SetActive(false);
     }
 

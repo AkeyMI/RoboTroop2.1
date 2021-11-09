@@ -6,7 +6,6 @@ public class SimpleSpawner : MonoBehaviour
 {
     [SerializeField] GameObject prefab = default;
     [SerializeField] bool isATorreta = default;
-    [SerializeField] int particle;
     private WaveController waveController;
     SpawnerPool sp;
     private void Start()
@@ -31,7 +30,7 @@ public class SimpleSpawner : MonoBehaviour
 
     IEnumerator Spawning ()
     {
-        sp.GetParticle(particle, transform.position);
+        sp.GetParticle(14, transform.position);
         yield return new WaitForSeconds(2.25f);
         GameObject go = Instantiate(prefab, transform.position, transform.rotation);
         if (!isATorreta)
