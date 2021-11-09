@@ -8,6 +8,7 @@ public class Door : MonoBehaviour , IRoomActivables
     Animator animator;
     bool waveTime;
     bool open;
+    [SerializeField]GameObject shader;
     private void Awake()
     {
         animator = this.GetComponent<Animator>();
@@ -39,11 +40,13 @@ public class Door : MonoBehaviour , IRoomActivables
                 other.GetComponent<CharacterController>().key = false;
                 locked = false;
                 animator.SetTrigger("Open");
+                shader.GetComponent<MeshRenderer>().material.SetFloat("_status", -1);
                 open = true;
             }
             if (!locked && !open)
             {
                 animator.SetTrigger("Open");
+                shader.GetComponent<MeshRenderer>().material.SetFloat("_status", -1);
                 open = true;
             }
         }           

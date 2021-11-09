@@ -73,15 +73,20 @@ public class NaveController : MonoBehaviour, IDamagable
 
     public void Damage(int amount)
     {
-        currentLife -= amount;
-
-        onLifeChange?.Invoke(currentLife, life);
-
-        cam.Shake(2.5f, 0.1f);
-        if(currentLife <= 0)
+        if (currentShieldLife <= 0)
         {
-            SceneManager.LoadScene(3);
+            currentLife -= amount;
+
+            onLifeChange?.Invoke(currentLife, life);
+
+            cam.Shake(2.5f, 0.1f);
+            if (currentLife <= 0)
+            {
+                SceneManager.LoadScene(3);
+            }
         }
+        else
+            ShieldDamage(amount);
     }
 
     public void HealNave(int amount)

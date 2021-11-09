@@ -40,35 +40,61 @@ public class Trap : MonoBehaviour
     private void FixedUpdate()
     {
         if (minionStayOnTrigger && actuaTimeOnTrigerMinion >= 0)
+        {
             actuaTimeOnTrigerMinion -= Time.fixedDeltaTime;
+            if (actuaTimeOnTrigerMinion <= 0)
+            {
+                FindObjectOfType<ShootController>().Damage(damage);
+                actuaTimeOnTrigerMinion = timeToMakeDamage;
+            }
+        }
 
         if (naveStayOnTrigger && actuaTimeOnTrigerNave >= 0)
+        {
             actuaTimeOnTrigerNave -= Time.fixedDeltaTime;
+            if(actuaTimeOnTrigerNave <= 0)
+            {
+                FindObjectOfType<NaveController>().Damage(damage);
+                actuaTimeOnTrigerNave = timeToMakeDamage;
+            }
+        }
 
+ 
         if (actualTimeBS >= 0 && alive)
         {
             actualTimeBS -= Time.fixedDeltaTime;
             if (actualTimeBS <= 0)
                 Shot();
         }
-
- 
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("AtkMinion"))
+        if (_trapType != trapType.Turret)
         {
-            minionStayOnTrigger = true;
+            if (other.CompareTag("AtkMinion"))
+                minionStayOnTrigger = true;          
+
+            if (other.CompareTag("Nave"))
+                naveStayOnTrigger = true;
         }
-        else
-            minionStayOnTrigger = false;
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (_trapType != trapType.Turret)
+        {
+            if (other.CompareTag("AtkMinion"))
+            {
+                minionStayOnTrigger = false;
+                actuaTimeOnTrigerMinion = timeToMakeDamage;
+            }
 
-        if (other.CompareTag("Nave"))
-            naveStayOnTrigger = true;
-        else
-            naveStayOnTrigger = false;
-
+            if (other.CompareTag("Nave"))
+            {
+                naveStayOnTrigger = false; 
+                actuaTimeOnTrigerNave = timeToMakeDamage;
+            }
+        }
     }
     void Shot()
     {
