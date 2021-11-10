@@ -50,17 +50,20 @@ public class TrapEF : Trap
     {
         if (alive)
         { 
-            life -= i;            
-            if(life <= 0)
-            {
-                alive = false;
-                foreach(CapsuleCollider cc in GetComponents<CapsuleCollider>())
-                    cc.enabled = false;
-
-                boxTrigger.enabled = false;
-                electricFence.SetActive(false);
-            }
+            life -= i;
+            if (life <= 0)
+                Death();
         }
+    }
+
+    void Death()
+    {
+        alive = false;
+        foreach (CapsuleCollider cc in GetComponents<CapsuleCollider>())
+            cc.enabled = false;
+
+        boxTrigger.enabled = false;
+        electricFence.SetActive(false);
     }
 
     IEnumerator Reload()
