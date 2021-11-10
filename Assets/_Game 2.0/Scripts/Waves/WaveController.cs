@@ -10,6 +10,12 @@ public class WaveController : MonoBehaviour, IRoomActivables
 
     private int enemyCount;
 
+    CameraController cam;
+
+    private void Start()
+    {
+        cam = FindObjectOfType<CameraController>();
+    }
     public void AddEnemy()
     {
         enemyCount++;
@@ -26,12 +32,11 @@ public class WaveController : MonoBehaviour, IRoomActivables
     public void KilledEnemy()
     {
         enemyCount--;
-
-        Debug.Log("Quedan " + enemyCount + " enemigos");
+        cam.Shake(3.5f, 0.1f);
+        cam.Offset(-0.5f);
 
         if(enemyCount <= 0)
         {
-            Debug.Log("Siguiente wave");
             NextWave();
         }
     }

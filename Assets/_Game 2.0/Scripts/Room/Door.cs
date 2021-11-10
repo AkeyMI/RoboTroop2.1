@@ -20,13 +20,16 @@ public class Door : MonoBehaviour , IRoomActivables
             animator.SetTrigger("Close");
         waveTime = true;
         locked = true;
+        shader.GetComponent<MeshRenderer>().material.SetFloat("_status", 1);
     }
 
     public void Deactivate()
     {
-        if(open)
+        if (open)
+        {
             animator.SetTrigger("Open");
-
+            shader.GetComponent<MeshRenderer>().material.SetFloat("_status", -1);
+        }
         locked = false;
         waveTime = false;
     }

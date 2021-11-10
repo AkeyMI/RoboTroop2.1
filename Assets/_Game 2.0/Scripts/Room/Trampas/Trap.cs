@@ -1,43 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Trap : MonoBehaviour
 {
-    [SerializeField] public trapType _trapType;
-    [SerializeField] int damage;
-    [SerializeField] float timeToMakeDamage;
-    [SerializeField] int life;
-    
-    [Header("Atributos Especiales Torreta")]
-    [SerializeField] int maxAmmo;
-    [SerializeField] float reloadTime;
-    [SerializeField] GameObject bullet;
-    [SerializeField] Transform[] cannons;
-   
-    
-    bool alive;
-    bool minionStayOnTrigger;
-    float actuaTimeOnTrigerMinion;
-    bool naveStayOnTrigger;
-    float actuaTimeOnTrigerNave;
-    
-    int currentAmmo;
-    float actualTimeBS = -1;
-    public void WakeUP()
+    [SerializeField] protected int damage;
+    [SerializeField] protected float timeToMakeDamage;
+
+    [Header("Atibutos Condicionales")]
+    [SerializeField] protected int particles;
+    [SerializeField] protected int life;
+
+    protected SpawnerPool sp;
+    protected bool alive;
+    protected bool minionStayOnTrigger;
+    protected float actuaTimeOnTrigerMinion;
+    protected bool naveStayOnTrigger;
+    protected float actuaTimeOnTrigerNave;
+
+    protected private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        sp = FindObjectOfType<SpawnerPool>();
+    }
+    public virtual void WakeUP()
     {
         actuaTimeOnTrigerMinion = timeToMakeDamage;
         actuaTimeOnTrigerNave = timeToMakeDamage;
-        if (_trapType == trapType.Turret)
-        {
-            actualTimeBS = timeToMakeDamage;
-            alive = true;
-            currentAmmo = maxAmmo;
-        }
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (minionStayOnTrigger && actuaTimeOnTrigerMinion >= 0)
         {
@@ -58,82 +52,29 @@ public class Trap : MonoBehaviour
                 actuaTimeOnTrigerNave = timeToMakeDamage;
             }
         }
-
- 
-        if (actualTimeBS >= 0 && alive)
-        {
-            actualTimeBS -= Time.fixedDeltaTime;
-            if (actualTimeBS <= 0)
-                Shot();
-        }
     }
 
-    void OnTriggerEnter(Collider other)
+    virtual protected void OnTriggerEnter(Collider other)
     {
-        if (_trapType != trapType.Turret)
-        {
-            if (other.CompareTag("AtkMinion"))
-                minionStayOnTrigger = true;          
+        if (other.CompareTag("AtkMinion"))
+            minionStayOnTrigger = true;
 
-            if (other.CompareTag("Nave"))
-                naveStayOnTrigger = true;
-        }
+        if (other.CompareTag("Nave"))
+            naveStayOnTrigger = true;
     }
     void OnTriggerExit(Collider other)
     {
-        if (_trapType != trapType.Turret)
-        {
-            if (other.CompareTag("AtkMinion"))
-            {
-                minionStayOnTrigger = false;
-                actuaTimeOnTrigerMinion = timeToMakeDamage;
-            }
 
-            if (other.CompareTag("Nave"))
-            {
-                naveStayOnTrigger = false; 
-                actuaTimeOnTrigerNave = timeToMakeDamage;
-            }
-        }
-    }
-    void Shot()
-    {
-        foreach (Transform t in cannons)
+        if (other.CompareTag("AtkMinion"))
         {
-            GameObject newBullet = Instantiate(bullet, t);
-            newBullet.GetComponent<BulletEnemy>().Init(damage);
+            minionStayOnTrigger = false;
+            actuaTimeOnTrigerMinion = timeToMakeDamage;
         }
-        //animator.SetBool("Shot", true);
-        currentAmmo--;
-        if (currentAmmo == 0)
-            StartCoroutine(Reloading());
-        else
-            actualTimeBS = timeToMakeDamage;
-    }
-    public void ReciveDamage(int i)
-    { 
-        life -= i;
-        if (life <= 0 && alive)
+
+        if (other.CompareTag("Nave"))
         {
-            alive = false;
-            GetComponent<CapsuleCollider>().enabled = false;
-            GetComponent<NavMeshObstacle>().enabled = false;
-            //animator.SetBool("Dead", true);
-        }
-        
+            naveStayOnTrigger = false;
+            actuaTimeOnTrigerNave = timeToMakeDamage;
+        }      
     }
-
-    public IEnumerator Reloading()
-    {
-        //animator.SetBool("Shot", false);
-        //animator.SetBool("Reloading", true);
-        yield return new WaitForSeconds(reloadTime);
-        currentAmmo = maxAmmo;
-        transform.Rotate(0, 45, 0);
-        //animator.SetBool("Reloading", false);
-        yield return new WaitForSeconds(0.5f);
-        actualTimeBS = timeToMakeDamage;
-    }
-
-    public enum trapType { DangerZone, Mine, ElectricFence, Peaks, Turret }
 }

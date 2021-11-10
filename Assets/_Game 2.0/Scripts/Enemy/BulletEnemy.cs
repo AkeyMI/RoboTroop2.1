@@ -30,7 +30,7 @@ public class BulletEnemy : MonoBehaviour
     {
         if(other.CompareTag("Obj")) other.GetComponent<DestructibleObject>().Damage(damage, transform);
 
-        if (other.CompareTag("Enemy")) return;
+        if (other.CompareTag("Enemy") || other.CompareTag("Trap")) return;
 
         if (other.CompareTag("Nave"))
         {

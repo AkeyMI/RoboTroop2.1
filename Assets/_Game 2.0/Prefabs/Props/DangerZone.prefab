@@ -4893,7 +4893,7 @@ GameObject:
   - component: {fileID: 3823419892454676238}
   m_Layer: 0
   m_Name: DangerZone
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4906,7 +4906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4472691015840849659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.15999985}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8836761814515598829}
@@ -4939,14 +4939,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed429c21f9b61ac4e9b25a128d9de9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trapType: 0
   damage: 1
   timeToMakeDamage: 0.6
+  particles: 0
   life: 0
-  maxAmmo: 0
-  reloadTime: 0
-  bullet: {fileID: 0}
-  cannons: []
 --- !u!1 &6885319418337795059
 GameObject:
   m_ObjectHideFlags: 0
