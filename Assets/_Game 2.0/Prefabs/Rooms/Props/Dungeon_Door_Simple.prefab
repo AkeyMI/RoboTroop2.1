@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc7ab8bbb850ac4d98dffc301b06cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  locked: 1
   shader: {fileID: 5996793765444264174}
 --- !u!65 &3178185249399817801
 BoxCollider:

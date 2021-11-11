@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour , IRoomActivables
 {
-    public bool locked = true;
+    [SerializeField] bool locked;
     Animator animator;
     bool waveTime;
     bool open;

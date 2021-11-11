@@ -56,7 +56,7 @@ public class TrapEF : Trap
         }
     }
 
-    void Death()
+    public void Death()
     {
         alive = false;
         foreach (CapsuleCollider cc in GetComponents<CapsuleCollider>())
