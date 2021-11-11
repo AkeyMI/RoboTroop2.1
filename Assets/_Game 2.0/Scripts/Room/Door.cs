@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour , IRoomActivables
 {
-    bool locked = true;
+    public bool locked = true;
     Animator animator;
     bool waveTime;
     bool open;
