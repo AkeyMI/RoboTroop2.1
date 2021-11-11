@@ -9,6 +9,6 @@ public class HealingEffect : Effect
 
     public override void Apply()
     {
-        FindObjectOfType<NaveController>().HealNave(lifeToCure);
+        FindObjectOfType<ShootController>().HealMinion(lifeToCure);
     }
 }

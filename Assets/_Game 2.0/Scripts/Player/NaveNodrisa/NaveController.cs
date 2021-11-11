@@ -11,11 +11,18 @@ public class NaveController : MonoBehaviour, IDamagable
     [SerializeField] int shieldLife = 10;
     [SerializeField] GameObject shield = default;
     [SerializeField] NavMeshAgent agent = default;
+    [SerializeField] float timeDownForCure = 2f;
+    [SerializeField] float cooldownToCure = 0.5f;
+    [SerializeField] int autoHeal = 2;
     Transform mainObjective;
 
     public event Action<int, int> onLifeChange;
     public event Action<int, int> onShieldChange;
 
+    private float currentTimeForCure;
+    private float currentCooldownToCure;
+    private bool canCure;
+    private bool isHealing;
     private int currentLife;
     private int currentShieldLife;
     private CharacterController player;
@@ -34,6 +41,10 @@ public class NaveController : MonoBehaviour, IDamagable
         player = FindObjectOfType<CharacterController>();
         mainObjective = GameObject.Find("Nave Main Objective").transform;
         cam = FindObjectOfType<CameraController>();
+        currentTimeForCure = timeDownForCure;
+        currentCooldownToCure = cooldownToCure;
+        canCure = false;
+        isHealing = false;
     }
 
     private void Update()
@@ -47,7 +58,13 @@ public class NaveController : MonoBehaviour, IDamagable
         {
             agent.isStopped = false;
         }
-       
+
+        if (currentLife < life && !isHealing)
+        {
+            CooldownForCure();
+        }
+        
+        HealNave(autoHeal);
 
         MoveNave();
     }
@@ -76,6 +93,10 @@ public class NaveController : MonoBehaviour, IDamagable
         if (currentShieldLife <= 0)
         {
             currentLife -= amount;
+            currentTimeForCure = timeDownForCure;
+            isHealing = false;
+            canCure = false;
+            //Debug.Log("No se puede curar");
 
             onLifeChange?.Invoke(currentLife, life);
 
@@ -89,15 +110,45 @@ public class NaveController : MonoBehaviour, IDamagable
             ShieldDamage(amount);
     }
 
+    private void CooldownForCure()
+    {
+        currentTimeForCure -= Time.deltaTime;
+
+        //Debug.Log("Tiempo para curar: " + currentTimeForCure);
+
+        if(currentTimeForCure <= 0)
+        {
+            canCure = true;
+        }
+        else
+        {
+            canCure = false;
+        }
+    }
+
     public void HealNave(int amount)
     {
-        currentLife += amount;
-
-        onLifeChange?.Invoke(currentLife, life);
-
-        if (currentLife >= life)
+        if (canCure)
         {
-            currentLife = life;
+            isHealing = true;
+            //Debug.Log("Esta curando");
+
+            currentCooldownToCure -= Time.deltaTime;
+
+            if (currentCooldownToCure <= 0)
+            {
+                currentLife += amount;
+                currentCooldownToCure = cooldownToCure;
+
+                onLifeChange?.Invoke(currentLife, life);
+
+                if (currentLife >= life)
+                {
+                    currentLife = life;
+                    isHealing = false;
+                    canCure = false;
+                }
+            }
         }
     }
 

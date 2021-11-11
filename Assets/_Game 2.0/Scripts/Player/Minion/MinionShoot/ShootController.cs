@@ -173,6 +173,18 @@ public class ShootController : MonoBehaviour, IDamagable
         }
     }
 
+    public void HealMinion(int amount)
+    {
+        currentLife += amount;
+
+
+        if (currentLife >= data.life)
+        {
+            currentLife = data.life;
+        }
+        minionController.ChangeMinionLife(currentLife, data.life);
+    }
+
     private void Die()
     {
         FindObjectOfType<MinionController>().NextMinion();
