@@ -37,6 +37,14 @@ public class Room : MonoBehaviour
         {
             roomActivables[i].Deactivate();
         }
+        if (traps)
+        {
+            foreach (Trap t in GetComponentsInChildren<Trap>())
+            {
+                if (t.GetComponent<TrapEF>() != null)
+                    t.GetComponent<TrapEF>().Death();
+            }
+        }
         FindObjectOfType<CharacterController>().key = true;
     }
 }
