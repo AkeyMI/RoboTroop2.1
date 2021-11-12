@@ -9,38 +9,48 @@ public class ComputerMinions : MonoBehaviour
     [SerializeField] Image eImage = default;
     [SerializeField] GameObject boxMinions = default;
 
+    private bool isOpen =  false;
+
     private bool isClose;
 
     private void Update()
     {
         CheckIfThereIsPlayer();
 
-        if (Input.GetKeyDown(KeyCode.E) && isClose)
+        if (Input.GetKeyDown(KeyCode.E) && isClose && !isOpen)
         {
             ActivateComputer();
+            isOpen = true;
         }
     }
 
     private void CheckIfThereIsPlayer()
     {
+        bool isPlayerClose = false;
         Collider[] players = Physics.OverlapSphere(this.transform.position, distanceToActivate);
         foreach (var player in players)
         {
-            if (player.CompareTag("Player") || player.CompareTag("AtkMinion"))
+            if (player.CompareTag("AtkMinion"))
             {
-                isClose = true;
-                if (eImage != null)
-                    eImage.enabled = true;
-
-            }
-            else
-            {
-                isClose = false;
-                if (eImage != null)
-                    eImage.enabled = false;
+                isPlayerClose = true;
 
             }
         }
+
+        if(isPlayerClose)
+        {
+            isClose = true;
+            Debug.Log("Esta cerca");
+            if (eImage != null)
+                eImage.enabled = true;
+        }
+        else
+        {
+            isClose = false;
+            if (eImage != null)
+                eImage.enabled = false;
+        }
+
     }
 
     public void DesactivateBoxMinions()
@@ -48,6 +58,7 @@ public class ComputerMinions : MonoBehaviour
         boxMinions.SetActive(false);
         Time.timeScale = 1f;
         FindObjectOfType<UiManager>().CheckIfIsOnComputer(false);
+        isOpen = false;
     }
 
     public void ActivateComputer()

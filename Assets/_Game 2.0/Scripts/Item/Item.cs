@@ -28,23 +28,28 @@ public class Item : MonoBehaviour
 
     private void CheckIfThereIsPlayer()
     {
+        bool isPLayerColse = false;
         Collider[] players = Physics.OverlapSphere(this.transform.position, distanceToActivate);
         foreach (var player in players)
         {
-            if (player.CompareTag("Player") || player.CompareTag("AtkMinion"))
+            if (player.CompareTag("AtkMinion"))
             {
-                isClose = true;
-                if (eImage != null)
-                    eImage.enabled = true;
+                isPLayerColse = true;
                 
             }
-            else
-            {
-                isClose = false;
-                if (eImage != null)
-                    eImage.enabled = false;
-                
-            }
+        }
+
+        if(isPLayerColse)
+        {
+            isClose = true;
+            if (eImage != null)
+                eImage.enabled = true;
+        }
+        else
+        {
+            isClose = false;
+            if (eImage != null)
+                eImage.enabled = false;
         }
     }
 
