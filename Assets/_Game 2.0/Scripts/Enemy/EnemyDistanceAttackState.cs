@@ -40,7 +40,7 @@ public class EnemyDistanceAttackState : EnemyBaseState
         //        playerCollider = player;
         //        break;
         //    }
-        //    else if(player.CompareTag("AtkMinion"))
+        //    else if (player.CompareTag("AtkMinion"))
         //    {
         //        thereIsNotPLayer = false;
         //        playerCollider = player;

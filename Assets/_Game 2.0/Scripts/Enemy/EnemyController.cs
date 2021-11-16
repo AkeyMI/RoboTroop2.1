@@ -41,6 +41,8 @@ public class EnemyController : MonoBehaviour, IDamagable
     public readonly EnemyDistanceAttackState AttackDistanceState = new EnemyDistanceAttackState();
     //public readonly EnemyMeleeAttackState AttackMeleeState = new EnemyMeleeAttackState();
 
+    public readonly EnemyExplosive enemyExplosiveState = new EnemyExplosive();
+
     private Collider objectToAttack;
 
     public Collider ObjectToAttack => objectToAttack;

@@ -59,7 +59,10 @@ public class EnemyHuntState : EnemyBaseState
 
         if(dist <= enemyController.Stats.distanceAttack)
         {
-            enemyController.TransitionToState(enemyController.AttackDistanceState);
+            if(!enemyController.Stats.explosive)
+                enemyController.TransitionToState(enemyController.AttackDistanceState);
+            else
+                enemyController.TransitionToState(enemyController.enemyExplosiveState);
         }
     }
 
