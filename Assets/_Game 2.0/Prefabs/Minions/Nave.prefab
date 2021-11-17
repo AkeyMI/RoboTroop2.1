@@ -216,7 +216,7 @@ Transform:
   m_GameObject: {fileID: 5583059808156569565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8592, y: 1.8592, z: 1.8592}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 5583059808676931110}
   m_RootOrder: 0
@@ -315,7 +315,7 @@ Transform:
   m_GameObject: {fileID: 5583059808676931114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.38, y: 1.81, z: -11.14}
-  m_LocalScale: {x: 1.7354, y: 1.7354, z: 1.7354}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
   m_Children:
   - {fileID: 5583059808156569566}
   - {fileID: 4686671598571072177}
@@ -417,6 +417,9 @@ MonoBehaviour:
   shieldLife: 10
   shield: {fileID: 5583059808156569565}
   agent: {fileID: 5583059808676931105}
+  timeDownForCure: 4
+  cooldownToCure: 0.25
+  autoHeal: 1
 --- !u!114 &5583059808676931106
 MonoBehaviour:
   m_ObjectHideFlags: 0

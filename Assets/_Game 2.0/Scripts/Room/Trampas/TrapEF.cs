@@ -23,8 +23,8 @@ public class TrapEF : Trap
         alive = true;
         if (startActive)
         {
-            boxTrigger.enabled = false;
-            electricFence.SetActive(false);
+            boxTrigger.enabled = true;
+            electricFence.SetActive(true);
             currentTimeActive = timeActive;
         }
         else
@@ -48,19 +48,21 @@ public class TrapEF : Trap
 
     public void ReciveDamage(int i)
     {
+        return;
         if (alive)
         { 
             life -= i;
             if (life <= 0)
                 Death();
         }
+       
     }
 
     public void Death()
     {
         alive = false;
-        foreach (CapsuleCollider cc in GetComponents<CapsuleCollider>())
-            cc.enabled = false;
+        //foreach (CapsuleCollider cc in GetComponents<CapsuleCollider>())
+        //    cc.enabled = false;
 
         boxTrigger.enabled = false;
         electricFence.SetActive(false);
