@@ -12,6 +12,7 @@ public class MinionController : MonoBehaviour
     [SerializeField] GameObject minionArt = default;
     [SerializeField] GameObject spawnminionItem = default;
     [SerializeField] int maxMinionsInQueue = 5;
+    [SerializeField] bool firtsRound = true;
 
     private Queue<GameObject> atkMinions = new Queue<GameObject>();
     public List<MinionData> atkMinionsList = new List<MinionData>();
@@ -51,24 +52,24 @@ public class MinionController : MonoBehaviour
 
     private void Start()
     {
-        minionAtk = Instantiate(minion1.minionPrefab, Vector3.zero, Quaternion.identity);
-        minionAtk.transform.SetParent(minionArt.transform, false);
-        atkMinions.Enqueue(minionAtk);
-        atkMinionsList.Add(minion1);
-        onAddMinionsAtkUi?.Invoke(minion1.minionUI);
-        onResetMinionStatus?.Invoke(minion1.sprite, minion1.life);
-        //onChangeMinionAtkUi?.Invoke(minion1.minionUI);
+        if (firtsRound)
+        {
+            minionAtk = Instantiate(minion1.minionPrefab, Vector3.zero, Quaternion.identity);
+            minionAtk.transform.SetParent(minionArt.transform, false);
+            atkMinions.Enqueue(minionAtk);
+            atkMinionsList.Add(minion1);
+            onAddMinionsAtkUi?.Invoke(minion1.minionUI);
+            onResetMinionStatus?.Invoke(minion1.sprite, minion1.life);
+            itemData = minion3;
+            minionItem = Instantiate(minion3.minionPrefab, Vector3.zero, Quaternion.identity);
+            minionItem.SetActive(false);
+
+            currentMaxMinionsInQueue = 1;
+        }
 
         minionShield = Instantiate(minion2.minionPrefab, Vector3.zero, Quaternion.identity);
         minionShield.transform.SetParent(minionArt.transform, false);
         minionShield.SetActive(false);
-        //onChangeMinionShieldUi?.Invoke(minion2.minionUi);
-
-        itemData = minion3;
-        minionItem = Instantiate(minion3.minionPrefab, Vector3.zero, Quaternion.identity);
-        minionItem.SetActive(false);
-
-        currentMaxMinionsInQueue = 1;
     }
 
     private void Update()
