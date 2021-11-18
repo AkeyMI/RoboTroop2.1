@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1090a4548270e404185dbd647323231b, type: 3}
   m_Name: ShotGuy
   m_EditorClassIdentifier: 
-  minionName: TriplegunGuy
+  minionName: ShotGuy
   minionPrefab: {fileID: 1354599212422573440, guid: 6f69bf143a474854698a32fbd6d1d11c, type: 3}
   bulletPrefab: {fileID: 8591236588811397447, guid: a6d23b0f3c6d50d49be0aef177872b0d, type: 3}
   minionUI: {fileID: 5264934700255517403, guid: f8544ff23cf58a74b9f985e9b5d7f637, type: 3}
