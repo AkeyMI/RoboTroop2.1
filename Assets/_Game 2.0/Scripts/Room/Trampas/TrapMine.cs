@@ -31,10 +31,12 @@ public class TrapMine : Trap
         yield return new WaitForSeconds(timeToMakeDamage);
 
         sp.GetParticle(particles, transform.position);
+
         if (minionStayOnTrigger)
             FindObjectOfType<ShootController>().Damage(damage);
         if (naveStayOnTrigger)
             FindObjectOfType<NaveController>().Damage(damage);
+
         Destroy(this.gameObject);
     }
 }

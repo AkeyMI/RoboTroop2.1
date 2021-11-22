@@ -24,8 +24,8 @@ public class EnemyHuntState : EnemyBaseState
     {
         WereIsThePLayer();
         PlayerIsCloseToAttack();
-
-        HuntingPLayer(playercol);
+        if (!enemyController.IsATorreta)
+            HuntingPLayer(playercol);
     }
 
     private void WereIsThePLayer()
@@ -73,13 +73,12 @@ public class EnemyHuntState : EnemyBaseState
         //newPosition.y = enemyController.transform.position.y;
         //newDirection = newPosition - enemyController.transform.position;
         //enemyController.transform.LookAt(newPosition);
-        //enemyController.transform.position += newDirection * speed;
+        //enemyController.transform.position += newDirection * speed;   
+        agent = enemyController.Agent;
 
-        if (!enemyController.IsATorreta)
-        {
-            agent = enemyController.Agent;
-
+        if (enemyController.isDead)
+            agent.SetDestination(enemyController.transform.position);
+        else
             agent.SetDestination(player.transform.position);
-        }
     }
 }

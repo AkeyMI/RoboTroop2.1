@@ -13,11 +13,12 @@ public class TrapTurret : Trap
 
     int currentAmmo;
     float actualTimeBS = -1;
-
+    CapsuleCollider capsuleCollider;
     public override void WakeUP()
     {
+        capsuleCollider = GetComponent<CapsuleCollider>();
         alive = true;
-        StartCoroutine(Reloading());
+        StartCoroutine(Reloading()); 
     }
 
     protected override void FixedUpdate()
@@ -36,7 +37,7 @@ public class TrapTurret : Trap
             GameObject newBullet = Instantiate(bullet, t);
             newBullet.GetComponent<BulletEnemy>().Init(damage);
         }
-        //animator.SetBool("Shot", true);
+        animator.SetBool("Shot", true);
         currentAmmo--;
         if (currentAmmo == 0)
             StartCoroutine(Reloading());
@@ -50,22 +51,30 @@ public class TrapTurret : Trap
         if (life <= 0 && alive)
         {
             alive = false;
-            GetComponent<CapsuleCollider>().enabled = false;
-            GetComponent<NavMeshObstacle>().enabled = false;
-            //animator.SetBool("Dead", true);
+            StartCoroutine(Death());
         }
-
     }
 
     IEnumerator Reloading()
     {
-        //animator.SetBool("Shot", false);
-        //animator.SetBool("Reloading", true);
+        capsuleCollider.enabled = false;
+        animator.SetBool("Shot", false);
+        animator.SetBool("Reloading", true);
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
         transform.Rotate(0, 45, 0);
-        //animator.SetBool("Reloading", false);
+        animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(0.5f);
+        capsuleCollider.enabled = true;
         actualTimeBS = timeToMakeDamage;
+    }
+
+    IEnumerator Death()
+    {
+        capsuleCollider.enabled = false;
+        GetComponent<NavMeshObstacle>().enabled = false;
+        //animator.SetBool("Dead", true);
+        yield return new WaitForSeconds(0);
+        sp.GetParticle(10, transform.position);
     }
 }

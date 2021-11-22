@@ -12,6 +12,7 @@ public class EnemyExplosive : EnemyBaseState
     public override void EnterState(EnemyController enemy)
     {
         enemyController = enemy;
+        explotionRange = enemyController.Stats.distanceAttack * 1.5f;
     }
 
     public override void Update(EnemyController enemy)
@@ -20,13 +21,12 @@ public class EnemyExplosive : EnemyBaseState
 
         PlayerStillCloseToAttack();
 
-        if (!thereIsNotPLayer && !startAutoDestruction)
+        if ((!thereIsNotPLayer || enemyController.isDead) && !startAutoDestruction)
         {
-            startAutoDestruction = true;
             enemy.StartCoroutine(Autodestruction());
         }
+        
     }
-
     private void PlayerStillCloseToAttack()
     {
         float squareDistance = Vector3.SqrMagnitude(playerCollider.transform.position - enemyController.transform.position);
@@ -42,7 +42,8 @@ public class EnemyExplosive : EnemyBaseState
 
     IEnumerator Autodestruction()
     {
-        explotionRange = enemyController.Stats.distanceAttack *2;
+        enemyController.isDead = true;
+        startAutoDestruction = true;
         yield return new WaitForSeconds(enemyController.Stats.attackSpeed);
         Collider[] players = Physics.OverlapSphere(enemyController.transform.position, explotionRange);
 
@@ -53,6 +54,6 @@ public class EnemyExplosive : EnemyBaseState
                 damageable.Damage(enemyController.Stats.damage);
         }
 
-        enemyController.Damage(enemyController.Stats.life);
+        enemyController.Death();
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class WaveController : MonoBehaviour, IRoomActivables
 {
     [SerializeField] Wave[] waves;
-
     private int currentWave;
 
     private int enemyCount;

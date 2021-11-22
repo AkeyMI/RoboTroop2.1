@@ -18,7 +18,8 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     private WaveController waveController;
 
-    private bool isDead = false;
+    [HideInInspector]
+    public bool isDead = false;
 
     public bool IsATorreta => isATorreta;
 
@@ -132,11 +133,16 @@ public class EnemyController : MonoBehaviour, IDamagable
         {
             isDead = true;
             animator.SetTrigger("Hit");
-            waveController.KilledEnemy();
-            FindObjectOfType<MinionController>().ReloadUlti();
-            Instantiate(sound);
-            sp.GetParticle(particulas, transform.position);
-            Destroy(this.gameObject);
+            Death();
         }
+    }
+
+    public void Death()
+    {
+        waveController.KilledEnemy();
+        FindObjectOfType<MinionController>().ReloadUlti();
+        Instantiate(sound);
+        sp.GetParticle(particulas, transform.position);
+        Destroy(this.gameObject);
     }
 }

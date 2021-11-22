@@ -50,6 +50,6 @@ Material:
     m_Floats:
     - _status: 1
     m_Colors:
-    - Color_fe57f2d4fd1749cb87803b24cc8ac3b2: {r: 7.552344, g: 0, b: 5.8125353, a: 0}
-    - Color_fe57f2d4fd1749cb87803b24cc8ac3b2_1: {r: 0, g: 0.03500009, b: 5.6568537, a: 0}
+    - Color_fe57f2d4fd1749cb87803b24cc8ac3b2: {r: 4.867144, g: 0, b: 3.745917, a: 0}
+    - Color_fe57f2d4fd1749cb87803b24cc8ac3b2_1: {r: 0, g: 0.044367485, b: 4.237095, a: 0}
   m_BuildTextureStacks: []

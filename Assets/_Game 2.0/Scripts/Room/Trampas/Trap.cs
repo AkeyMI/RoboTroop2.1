@@ -7,7 +7,7 @@ public class Trap : MonoBehaviour
     [SerializeField] protected int damage;
     [SerializeField] protected float timeToMakeDamage;
 
-    [Header("Atibutos Condicionales")]
+    [Header("Conditional Atributes")]
     [SerializeField] protected int particles;
     [SerializeField] protected int life;
 
@@ -18,11 +18,12 @@ public class Trap : MonoBehaviour
     protected bool naveStayOnTrigger;
     protected float actuaTimeOnTrigerNave;
 
-    protected private Animator animator;
+    protected Animator animator;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        if(GetComponent<Animator>() != null)
+            animator = GetComponent<Animator>();
         sp = FindObjectOfType<SpawnerPool>();
     }
     public virtual void WakeUP()
