@@ -21,6 +21,21 @@ public class DataCollector : MonoBehaviour
         saveData = saveJson.Read_Jason();
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            SaveInformation();
+        }
+
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            GetInformation();
+            GetMinionsInBagData(FindObjectOfType<MinionController>());
+
+        }
+    }
+
     private void GetInformation()
     {
         saveData = saveJson.Read_Jason();
