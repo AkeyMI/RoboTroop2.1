@@ -66,6 +66,12 @@ public class MinionController : MonoBehaviour
 
             currentMaxMinionsInQueue = 1;
         }
+        else
+        {
+            DataCollector dataCollector = FindObjectOfType<DataCollector>();
+            dataCollector.GetMinionsInBagData(this);
+            dataCollector.GetMinionsInBoxData(this);
+        }
 
         minionShield = Instantiate(minion2.minionPrefab, Vector3.zero, Quaternion.identity);
         minionShield.transform.SetParent(minionArt.transform, false);
@@ -200,7 +206,7 @@ public class MinionController : MonoBehaviour
             //atkMinions.Enqueue(takentAtkMinion);
 
             currentMaxMinionsInQueue++;
-            Debug.Log(currentMaxMinionsInQueue);
+            //Debug.Log(currentMaxMinionsInQueue);
         }
         else
         {

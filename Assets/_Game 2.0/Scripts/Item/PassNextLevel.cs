@@ -11,5 +11,6 @@ public class PassNextLevel : Effect
     public override void Apply()
     {
         SceneManager.LoadScene(sceneNumber);
+        FindObjectOfType<DataCollector>().SaveInformation();
     }
 }

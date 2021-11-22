@@ -18,7 +18,12 @@ public class DataCollector : MonoBehaviour
 
     private void Start()
     {
-        saveData = new SaveData();
+        saveData = saveJson.Read_Jason();
+    }
+
+    private void GetInformation()
+    {
+        saveData = saveJson.Read_Jason();
     }
 
     public void GetPedestalData()
@@ -26,13 +31,52 @@ public class DataCollector : MonoBehaviour
 
     }
 
-    public void GetMinionsInBagData()
+    public void GetMinionsInBagData(MinionController mC)
     {
+        if (saveData == null)
+            GetInformation();
+
+        if (saveData.minionsInBag.Length <= 0)
+        {
+            Debug.Log("No hay nada en la lista");
+            return;
+        }
+
+        List<MinionData> data = new List<MinionData>();
+
+        for(int i = 0; i < saveData.minionsInBag.Length; i++)
+        {
+            for(int j = 0; j < minionDatas.Length; j++)
+            {
+                if (saveData.minionsInBag[i] == minionDatas[j].minionName)
+                {
+                    data.Add(minionDatas[j]);
+                }
+            }
+        }
+
+        mC.SendMinionList(data);
 
     }
 
-    public void GetMinionsInBoxData()
+    public void GetMinionsInBoxData(MinionController mC)
     {
+        if (saveData.minionsInBox.Length <= 0) return;
+
+        List<MinionData> data = new List<MinionData>();
+
+        for (int i = 0; i < saveData.minionsInBox.Length; i++)
+        {
+            for (int j = 0; j < minionDatas.Length; j++)
+            {
+                if (saveData.minionsInBox[i] == minionDatas[j].minionName)
+                {
+                    data.Add(minionDatas[j]);
+                }
+            }
+        }
+
+        mC.SendMinionBoxList(data);
 
     }
 
@@ -64,7 +108,14 @@ public class DataCollector : MonoBehaviour
         }
     }
 
-    public void SaveMinionsInBag()
+    public void SaveInformation()
+    {
+        SaveMinionsInBag();
+        SaveMinionsInBox();
+        saveJson.ConvertToJson(saveData);
+    }
+
+    private void SaveMinionsInBag()
     {
         List<MinionData> listMinionInBag = FindObjectOfType<MinionController>().GetMinionDataList();
         saveData.minionsInBag = new string[listMinionInBag.Count];
@@ -75,7 +126,7 @@ public class DataCollector : MonoBehaviour
         }
     }
 
-    public void SaveMinionsInBox()
+    private void SaveMinionsInBox()
     {
         List<MinionData> listMinionInBox = FindObjectOfType<MinionController>().GetMinionBoxDataList();
         saveData.minionsInBox = new string[listMinionInBox.Count];

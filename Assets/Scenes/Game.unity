@@ -19230,6 +19230,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714884507}
   m_CullTransparentMesh: 1
+--- !u!1 &715139888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 715139891}
+  - component: {fileID: 715139890}
+  - component: {fileID: 715139889}
+  m_Layer: 0
+  m_Name: Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &715139889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715139888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abd2aae0c4866f42ab4b40fb1a3c982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &715139890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715139888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdab80143e3a92e47bcf2d7717bcc1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minionDatas:
+  - {fileID: 11400000, guid: 6cd372752bdad4641b1335d54bf8627f, type: 2}
+  - {fileID: 11400000, guid: f132ec63a68bde1428a954d027b631ba, type: 2}
+  - {fileID: 11400000, guid: f7196e9b9ab460b409c18172b534823d, type: 2}
+  - {fileID: 11400000, guid: 113e39616d0adc542835320e0d800db3, type: 2}
+  - {fileID: 11400000, guid: e9fc1cf5fcf59244eaec8818427f6cc1, type: 2}
+  - {fileID: 11400000, guid: 7f0bc6b9c9ebb674c82e297046dd7354, type: 2}
+  - {fileID: 11400000, guid: 73dd3633b5a4ffd47b0c3901eb28b7f2, type: 2}
+  saveJson: {fileID: 715139889}
+--- !u!4 &715139891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715139888}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30.030306, y: -39.43285, z: 58.448853}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &717431103 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3112064914816650530, guid: 8fbf3ee16ec7d3e49aa288b1abf1abf7, type: 3}

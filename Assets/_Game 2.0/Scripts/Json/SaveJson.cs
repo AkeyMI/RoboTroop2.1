@@ -26,6 +26,7 @@ public class SaveJson : MonoBehaviour
 
         Debug.Log("JSON saved: " + filePath);
         File.WriteAllText(filePath, json);
+        Debug.Log(filePath);
     }
 
     public SaveData Read_Jason()
