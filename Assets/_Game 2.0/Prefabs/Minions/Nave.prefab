@@ -417,8 +417,8 @@ MonoBehaviour:
   shieldLife: 10
   shield: {fileID: 5583059808156569565}
   agent: {fileID: 5583059808676931105}
-  timeDownForCure: 4
-  cooldownToCure: 0.25
+  timeDownForCure: 5
+  cooldownToCure: 0.5
   autoHeal: 1
 --- !u!114 &5583059808676931106
 MonoBehaviour:
