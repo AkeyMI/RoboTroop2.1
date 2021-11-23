@@ -73,7 +73,7 @@ public class TrapTurret : Trap
     {
         capsuleCollider.enabled = false;
         GetComponent<NavMeshObstacle>().enabled = false;
-        //animator.SetBool("Dead", true);
+        animator.SetTrigger("Dead");
         yield return new WaitForSeconds(0);
         sp.GetParticle(10, transform.position);
     }

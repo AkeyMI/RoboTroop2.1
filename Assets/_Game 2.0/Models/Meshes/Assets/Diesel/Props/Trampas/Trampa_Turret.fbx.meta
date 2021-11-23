@@ -7,14 +7,17 @@ ModelImporter:
       74: 1827226128182048838
     second: A_Trampa_Torreta_Idle
   - first:
-      74: -7008743929829188846
+      74: 5201136953598694269
     second: A_Trampa_Torreta_Reload_Out
   - first:
-      74: -538519451645073663
-    second: A_Trampa_Torreta_Reoad_In
+      74: -7008743929829188846
+    second: A_Trampa_Torreta_Reload_In
   - first:
-      74: 4478433823034664377
-    second: A_Trampa_Torreta_Fire
+      74: 3699406722437148790
+    second: A_Trampa_Torreta_Shot
+  - first:
+      74: 1929307612136088974
+    second: A_Trampa_Torreta_Death
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -107,7 +110,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: A_Trampa_Torreta_Reoad_In
+      name: A_Trampa_Torreta_Reload_In
       takeName: Take 001
       internalID: 0
       firstFrame: 12
@@ -136,7 +139,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: A_Trampa_Torreta_Fire
+      name: A_Trampa_Torreta_Shot
       takeName: Take 001
       internalID: 0
       firstFrame: 25
@@ -148,6 +151,35 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: A_Trampa_Torreta_Death
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 31
+      lastFrame: 54
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
