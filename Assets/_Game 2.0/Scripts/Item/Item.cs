@@ -12,7 +12,8 @@ public class Item : MonoBehaviour
     [SerializeField] Effect[] effects;
     [SerializeField] Image eImage = default;
     [SerializeField] bool autoCollect = false;
-
+    [SerializeField] int particlesWhenTaked;
+    [SerializeField] int particlesOnMinion;
     private bool isClose;
 
     private void Update()
@@ -33,10 +34,7 @@ public class Item : MonoBehaviour
         foreach (var player in players)
         {
             if (player.CompareTag("AtkMinion"))
-            {
                 isPLayerColse = true;
-                
-            }
         }
 
         if(isPLayerColse)
@@ -54,8 +52,10 @@ public class Item : MonoBehaviour
     }
 
     public void Use()
-    { 
-        for(int i = 0; i <effects.Length; i++)
+    {
+        FindObjectOfType<SpawnerPool>().GetParticle(particlesWhenTaked, transform.position);
+        
+        for (int i = 0; i <effects.Length; i++)
         {
             effects[i].Apply();
         }

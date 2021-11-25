@@ -5,6 +5,7 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     [SerializeField] bool traps;
+    [SerializeField] GameObject[] reward = default;
     IRoomActivables[] roomActivables;
 
     private void Awake()
@@ -46,5 +47,13 @@ public class Room : MonoBehaviour
             }
         }
         FindObjectOfType<CharacterController>().key = true;
+        StartCoroutine(SpawnItem());
+    }
+
+    IEnumerator SpawnItem()
+    {
+        FindObjectOfType<SpawnerPool>().GetParticle(7 ,transform.position);
+        yield return new WaitForSeconds(0.75f);
+        Instantiate(reward[Random.Range(0, reward.Length - 1)], transform);
     }
 }

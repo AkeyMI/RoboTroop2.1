@@ -137,6 +137,10 @@ public class EnemyController : MonoBehaviour, IDamagable
         }
     }
 
+    public void Particles(Vector3 vector)
+    {
+        sp.GetParticle(11, vector);
+    }
     public void Death()
     {
         waveController.KilledEnemy();

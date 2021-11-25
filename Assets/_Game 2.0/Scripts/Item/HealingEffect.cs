@@ -9,6 +9,8 @@ public class HealingEffect : Effect
 
     public override void Apply()
     {
-        FindObjectOfType<ShootController>().HealMinion(lifeToCure);
+        ShootController minion = FindObjectOfType<ShootController>();
+        minion.HealMinion(lifeToCure);
+        FindObjectOfType<SpawnerPool>().GetParticle(8, minion.transform.position);
     }
 }

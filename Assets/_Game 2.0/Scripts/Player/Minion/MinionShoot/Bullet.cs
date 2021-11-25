@@ -38,6 +38,7 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             other.GetComponent<EnemyController>().Damage(damage);
+            other.GetComponent<EnemyController>().Particles(transform.position);
             if (bulletEffect != null)
             {
                 bulletEffect.Apply(this.gameObject, other.gameObject);
