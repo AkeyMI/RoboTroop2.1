@@ -7,12 +7,10 @@ public class Tuto_ShotPoint : MonoBehaviour
     [SerializeField] int life;
     Tuto tuto;
     SpawnerPool sp;
-    Animator animator;
     void Start()
     {
         tuto = FindObjectOfType<Tuto>();
         sp = FindObjectOfType<SpawnerPool>();
-        animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,7 +23,6 @@ public class Tuto_ShotPoint : MonoBehaviour
                 Death();
 
             sp.GetParticle(12, transform.position);
-            animator.SetTrigger("Hit");
             other.GetComponent<Bullet>().Destruction();
         }    
     }
