@@ -21,11 +21,11 @@ public class EnemyExplosive : EnemyBaseState
 
         PlayerStillCloseToAttack();
 
+
         if ((!thereIsNotPLayer || enemyController.isDead) && !startAutoDestruction)
         {
             enemy.StartCoroutine(Autodestruction());
         }
-        
     }
     private void PlayerStillCloseToAttack()
     {
@@ -55,5 +55,11 @@ public class EnemyExplosive : EnemyBaseState
         }
 
         enemyController.Death();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(enemyController.transform.position, explotionRange);  // o .DrawWireSphere
     }
 }
