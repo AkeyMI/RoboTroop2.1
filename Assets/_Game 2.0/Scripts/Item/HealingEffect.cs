@@ -11,6 +11,6 @@ public class HealingEffect : Effect
     {
         ShootController minion = FindObjectOfType<ShootController>();
         minion.HealMinion(lifeToCure);
-        FindObjectOfType<SpawnerPool>().GetParticle(8, minion.transform.position);
+        FindObjectOfType<CharacterController>().helUpEfect.Play();
     }
 }

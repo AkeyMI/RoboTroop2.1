@@ -61,8 +61,8 @@ MonoBehaviour:
     timeDestroy: 0
   - prefab: {fileID: 5898854508080550012, guid: 06841d9c58a1ab04d8a6dc80caea4190, type: 3}
     timeDestroy: 1.5
-  - prefab: {fileID: 6766932777587085690, guid: 5ada1a97a47dea34eb92fa9e4b92bb71, type: 3}
-    timeDestroy: 0.6
+  - prefab: {fileID: 0}
+    timeDestroy: 0
   - prefab: {fileID: 6766932777587085690, guid: 8a40e3da6dc110f4eba7dddce3e6b904, type: 3}
     timeDestroy: 0.55
   - prefab: {fileID: 6766932777587085690, guid: 5e3118651512c8549983a9458bf24ccd, type: 3}

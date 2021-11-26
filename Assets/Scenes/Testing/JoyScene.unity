@@ -800,7 +800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 1918914115}
   minionItem:
   - {fileID: 716417686}
 --- !u!1 &48362862
@@ -1484,7 +1483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 457058472}
   minionItem:
   - {fileID: 716417686}
 --- !u!1001 &75766444
@@ -7055,6 +7053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!1001 &323203656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11003,6 +11002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!1001 &486547571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12150,6 +12150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!1 &541939671
 GameObject:
   m_ObjectHideFlags: 0
@@ -12947,7 +12948,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 1228466439}
   minionItem:
   - {fileID: 355182916}
 --- !u!1 &575515019
@@ -13989,6 +13989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!4 &605725428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8783f6a115204ed4b941edc05bea84c3, type: 3}
@@ -14466,6 +14467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!4 &621357887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6028303268702168715, guid: 5987063bde5392744909a8c1c40c78ba, type: 3}
@@ -15374,7 +15376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 462045468}
   minionItem:
   - {fileID: 873570440}
 --- !u!1001 &644547290
@@ -16355,7 +16356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 1088710293}
   minionItem:
   - {fileID: 716417686}
 --- !u!1001 &698614091
@@ -16802,7 +16802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 1768235006}
   minionItem:
   - {fileID: 1942690052}
 --- !u!4 &706488024 stripped
@@ -17709,6 +17708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!1001 &743038458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19759,6 +19759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!1 &827959265
 GameObject:
   m_ObjectHideFlags: 0
@@ -21187,7 +21188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 1926833085}
   minionItem:
   - {fileID: 355182916}
 --- !u!1001 &890953360
@@ -23099,7 +23099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 1591272988}
   minionItem:
   - {fileID: 1196604141}
 --- !u!1001 &997690471
@@ -23344,7 +23343,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 2073162132}
   minionItem:
   - {fileID: 686136930}
 --- !u!1001 &1008162479
@@ -23947,7 +23945,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 157555609}
   minionItem:
   - {fileID: 536227870}
 --- !u!1001 &1030532073
@@ -28154,6 +28151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!1001 &1195036072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31579,6 +31577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!1001 &1340785193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31772,6 +31771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!1 &1347760856
 GameObject:
   m_ObjectHideFlags: 0
@@ -39117,6 +39117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!1001 &1646840250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42063,7 +42064,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6756907304995514344, guid: 8ee3cad8c3b135748a4c94f8f3be2777, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6756907304995514344, guid: 8ee3cad8c3b135748a4c94f8f3be2777, type: 3}
       propertyPath: m_LocalPosition.x
@@ -46367,6 +46368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!1001 &1929671236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48467,7 +48469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 1877288618}
   minionItem:
   - {fileID: 716417686}
 --- !u!1 &2015515943
@@ -49823,6 +49824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: 0
+  reward: []
 --- !u!1 &2097318481
 GameObject:
   m_ObjectHideFlags: 0
@@ -50568,7 +50570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 1725391988}
   minionItem:
   - {fileID: 716417686}
 --- !u!1001 &2137041598
@@ -50722,7 +50723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc31efc9d10a59b4bb51d709e754550e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosa: {fileID: 1212949826}
   minionItem:
   - {fileID: 716417686}
 --- !u!1001 &2141285088

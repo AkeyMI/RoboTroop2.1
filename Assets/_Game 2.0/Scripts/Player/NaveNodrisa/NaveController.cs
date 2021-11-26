@@ -14,6 +14,8 @@ public class NaveController : MonoBehaviour, IDamagable
     [SerializeField] float timeDownForCure = 2f;
     [SerializeField] float cooldownToCure = 0.5f;
     [SerializeField] int autoHeal = 2;
+    [SerializeField] ParticleSystem healUp;
+
     Transform mainObjective;
 
     public event Action<int, int> onLifeChange;
@@ -142,6 +144,7 @@ public class NaveController : MonoBehaviour, IDamagable
 
                 onLifeChange?.Invoke(currentLife, life);
 
+                healUp.Play();
                 if (currentLife >= life)
                 {
                     currentLife = life;
