@@ -23,7 +23,7 @@ public class Boss : MonoBehaviour
     IEnumerator wait()
     {
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1);
         ac.SetBool("Idle", true);
         
     }
