@@ -10,5 +10,6 @@ public class TakeAtkMinionEffect : Effect
     public override void Apply()
     {
         FindObjectOfType<MinionController>().ChangeAtkMinion(data);
+        FindObjectOfType<DataCollector>().SavePedestal(data.minionName);
     }
 }

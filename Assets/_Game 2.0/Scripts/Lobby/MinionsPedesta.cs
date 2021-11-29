@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class MinionsPedesta : MonoBehaviour
 {
-    [SerializeField] GameObject[] pedestals = default;
+    [SerializeField] GameObject canyonGuy;
+    [SerializeField] GameObject havyMachineGuy;
+    [SerializeField] GameObject machineGuy;
+    [SerializeField] GameObject semigunGuy;
+    [SerializeField] GameObject shotGuy;
+    [SerializeField] GameObject triplegunGuy;
 
     private DataCollector dataCollector;
     private SaveData save;
@@ -15,12 +20,64 @@ public class MinionsPedesta : MonoBehaviour
 
         save = dataCollector.GetPedestalData();
 
-
+        Pedestals();
     }
 
     private void Pedestals()
     {
+        if (save.canyonGuy)
+        {
+            canyonGuy.SetActive(true);
+        }
+        else
+        {
+            canyonGuy.SetActive(false);
+        }
 
+        if (save.havyMachineGuy)
+        {
+            havyMachineGuy.SetActive(true);
+        }
+        else
+        {
+            havyMachineGuy.SetActive(false);
+        }
+
+        if (save.machineGuy)
+        {
+            machineGuy.SetActive(true);
+        }
+        else
+        {
+            machineGuy.SetActive(false);
+        }
+
+        if (save.semigunGuy)
+        {
+            semigunGuy.SetActive(true);
+        }
+        else
+        {
+            semigunGuy.SetActive(false);
+        }
+
+        if (save.shotGuy)
+        {
+            shotGuy.SetActive(true);
+        }
+        else
+        {
+            shotGuy.SetActive(false);
+        }
+
+        if (save.triplegunGuy)
+        {
+            triplegunGuy.SetActive(true);
+        }
+        else
+        {
+            triplegunGuy.SetActive(false);
+        }
     }
 
 }
