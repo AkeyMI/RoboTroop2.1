@@ -41,9 +41,11 @@ public class DataCollector : MonoBehaviour
         saveData = saveJson.Read_Jason();
     }
 
-    public void GetPedestalData()
+    public SaveData GetPedestalData()
     {
+        GetInformation();
 
+        return saveData;
     }
 
     public void GetMinionsInBagData(MinionController mC)
