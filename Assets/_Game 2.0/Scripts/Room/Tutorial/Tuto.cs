@@ -36,6 +36,7 @@ public class Tuto : MonoBehaviour
         {
             doors[1].GetComponent<Door>().Deactivate(); 
             doors[2].GetComponent<Door>().Deactivate();
+            FindObjectOfType<CharacterController>().key = true;
         }
 
     }
