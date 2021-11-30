@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5d3c79c0be3b55d4487dff08bf7fbb6f
+guid: d5dda512425f218488c8d3fc04c6a315
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Assets_DieselPunk_1
-    second: {fileID: 2100000, guid: 471612d0cf245dc4d88c72434317beb1, type: 2}
+      name: M_Assets_DieselPunk_03
+    second: {fileID: 2100000, guid: d375c5f91c06e4c4b8aee7c1073fcb96, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +90,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 100
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
