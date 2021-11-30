@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 
 public class EnemyExplosive : EnemyBaseState
@@ -57,9 +60,15 @@ public class EnemyExplosive : EnemyBaseState
         enemyController.Death();
     }
 
-    private void OnDrawGizmos()
+    public override void DrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(enemyController.transform.position, explotionRange);  // o .DrawWireSphere
+#if UNITY_EDITOR
+        base.DrawGizmos();
+        Color _color = Color.red;
+        _color.a = 0.25f;
+        Handles.color = _color;
+        Handles.DrawSolidDisc(enemyController.transform.position, enemyController.transform.up, explotionRange);
+#endif
     }
+
 }
