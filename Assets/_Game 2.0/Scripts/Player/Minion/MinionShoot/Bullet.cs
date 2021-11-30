@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] AudioClip hitSound = default;
     [SerializeField] AudioSource audioSource = default;
     [SerializeField] GameObject sound = default;
+    [SerializeField] int life;
     private int damage;
     private Rigidbody rb;
     private float currentSpeed;
@@ -53,8 +54,12 @@ public class Bullet : MonoBehaviour
         }
 
         if (other.CompareTag("Walls"))
-            Destruction();
-
+        {
+            life--;
+            if(life <= 0)
+                Destruction();
+        }
+            
         if (other.CompareTag("Trap"))
         {
             if (other.GetComponent<TrapTurret>() != null)

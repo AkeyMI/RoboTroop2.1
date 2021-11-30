@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minionName: TriplegunGuy
   minionPrefab: {fileID: 1354599212422573440, guid: 98c4b92db020f22468894d7b0dae7b20, type: 3}
-  bulletPrefab: {fileID: 8591236588811397447, guid: a6d23b0f3c6d50d49be0aef177872b0d, type: 3}
+  bulletPrefab: {fileID: 8591236588811397447, guid: 8c7eb791d232c9043995ab47da83d9d8, type: 3}
   minionUI: {fileID: 5264934700255517403, guid: 374f72726d2fe95498b4f151d41fb9dd, type: 3}
   sprite: {fileID: 21300000, guid: 4b25a303a44d9f445a37a8f5b9fd5b77, type: 3}
   damage: 2
