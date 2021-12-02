@@ -29,6 +29,8 @@ public class MinionController : MonoBehaviour
     public event Action<Sprite, int> onResetMinionStatus;
     public event Action<int, int> onLifeChange;
 
+    public GameObject MinionAtk => minionAtk;
+
     private GameObject minionAtk;
     private GameObject minionShield;
     private GameObject minionItem;

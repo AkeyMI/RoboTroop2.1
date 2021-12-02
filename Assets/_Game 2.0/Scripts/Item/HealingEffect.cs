@@ -10,6 +10,12 @@ public class HealingEffect : Effect
     public override void Apply()
     {
         ShootController minion = FindObjectOfType<ShootController>();
+
+        if(minion == null)
+        {
+            minion = FindObjectOfType<MinionController>().MinionAtk.GetComponent<ShootController>();
+        }
+
         minion.HealMinion(lifeToCure);
         FindObjectOfType<CharacterController>().helUpEfect.Play();
     }
