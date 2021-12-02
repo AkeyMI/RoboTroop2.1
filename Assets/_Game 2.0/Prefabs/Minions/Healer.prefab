@@ -141,6 +141,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3177547514708248699}
     m_Modifications:
+    - target: {fileID: 1218705953677521762, guid: 5e12f5e6ed0f4c843bb37fa7f3483ac7, type: 3}
+      propertyPath: lengthInSec
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218705953677521762, guid: 5e12f5e6ed0f4c843bb37fa7f3483ac7, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218705953677521762, guid: 5e12f5e6ed0f4c843bb37fa7f3483ac7, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176420325505123616, guid: 5e12f5e6ed0f4c843bb37fa7f3483ac7, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176420325505123616, guid: 5e12f5e6ed0f4c843bb37fa7f3483ac7, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 4094374706197966959, guid: 5e12f5e6ed0f4c843bb37fa7f3483ac7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -188,6 +208,10 @@ PrefabInstance:
     - target: {fileID: 6766932777587085690, guid: 5e12f5e6ed0f4c843bb37fa7f3483ac7, type: 3}
       propertyPath: m_Name
       value: ParticulaAuraSanador
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411739094327301438, guid: 5e12f5e6ed0f4c843bb37fa7f3483ac7, type: 3}
+      propertyPath: SizeModule.curve.scalar
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6297650718430866809, guid: 5e12f5e6ed0f4c843bb37fa7f3483ac7, type: 3}
