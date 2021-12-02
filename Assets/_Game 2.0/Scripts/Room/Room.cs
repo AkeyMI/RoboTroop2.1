@@ -50,10 +50,20 @@ public class Room : MonoBehaviour
         StartCoroutine(SpawnItem());
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Nave"))
+        {
+            ActivateRoom();
+            GetComponent<BoxCollider>().enabled = false;
+        }
+    }
+
     IEnumerator SpawnItem()
     {
         FindObjectOfType<SpawnerPool>().GetParticle(7 ,transform.position);
         yield return new WaitForSeconds(0.75f);
-        Instantiate(reward[Random.Range(0, reward.Length - 1)], transform);
+        if(reward.Length > 0)
+            Instantiate(reward[Random.Range(0, reward.Length - 1)], transform);
     }
 }
