@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 8579850421227462200}
   - component: {fileID: 8579850421227462203}
   m_Layer: 0
-  m_Name: TripleGuy
+  m_Name: TripleGuy_Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

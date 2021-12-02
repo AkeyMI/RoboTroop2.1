@@ -66,4 +66,12 @@ public class Room : MonoBehaviour
         if(reward.Length > 0)
             Instantiate(reward[Random.Range(0, reward.Length - 1)], transform);
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, 0.6f);
+        Gizmos.DrawSphere(transform.position, 0.3f);
+    }
+
 }
