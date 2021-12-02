@@ -49,7 +49,7 @@ public class UiManager : MonoBehaviour
         minionShieldImage = minion2Ui;
 
         minionItemImage = minion3Ui;
-        minionItemFillAmount = minionItemImage.GetComponentInChildren<MinionItemUi>().GetFillAmount();
+        minionItemFillAmount = minionItemImage.GetComponent<MinionItemUi>().GetFillAmount();
     }
 
     private void Update()
