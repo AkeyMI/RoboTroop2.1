@@ -152,6 +152,6 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     private void OnDrawGizmos()
     {
-        currentState.DrawGizmos();
+        //currentState.DrawGizmos();
     }
 }
