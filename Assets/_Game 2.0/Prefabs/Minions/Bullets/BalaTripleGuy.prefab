@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be105d4d102b17a48aa01266d11d7c86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particulas: 0
+  particulas: 4
   bulletEffect: {fileID: 0}
   hitSound: {fileID: 8300000, guid: 1b1d78cb9b2dfd94cbd234bdbd37dace, type: 3}
   audioSource: {fileID: 1085932927264220804}

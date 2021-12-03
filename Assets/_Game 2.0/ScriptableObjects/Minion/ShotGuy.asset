@@ -20,6 +20,6 @@ MonoBehaviour:
   damage: 1
   ammo: 2
   timeToReload: 1
-  timeForAttack: 0.6
+  timeForAttack: 0.7
   bulletSpeed: 18
-  life: 3
+  life: 6

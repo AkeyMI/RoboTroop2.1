@@ -17,5 +17,5 @@ MonoBehaviour:
   distanceAttack: 5
   speed: 6
   bullet: {fileID: 0}
-  damage: 5
+  damage: 6
   explosive: 1
