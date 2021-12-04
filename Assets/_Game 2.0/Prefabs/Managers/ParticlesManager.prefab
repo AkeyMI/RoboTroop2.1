@@ -54,15 +54,15 @@ MonoBehaviour:
   - prefab: {fileID: 6766932777587085690, guid: c9bbad92ba8867f419eeed5097075f24, type: 3}
     timeDestroy: 0.51
   - prefab: {fileID: 2263020529160333643, guid: 44fd7c334f7f96147a039a0c7f624e4b, type: 3}
-    timeDestroy: 0.3
+    timeDestroy: 0.9
   - prefab: {fileID: 0}
     timeDestroy: 0
   - prefab: {fileID: 0}
     timeDestroy: 0
   - prefab: {fileID: 5898854508080550012, guid: 06841d9c58a1ab04d8a6dc80caea4190, type: 3}
     timeDestroy: 1.5
-  - prefab: {fileID: 0}
-    timeDestroy: 0
+  - prefab: {fileID: 6766932777587085690, guid: 5e12f5e6ed0f4c843bb37fa7f3483ac7, type: 3}
+    timeDestroy: 3
   - prefab: {fileID: 6766932777587085690, guid: 8a40e3da6dc110f4eba7dddce3e6b904, type: 3}
     timeDestroy: 0.55
   - prefab: {fileID: 6766932777587085690, guid: 5e3118651512c8549983a9458bf24ccd, type: 3}

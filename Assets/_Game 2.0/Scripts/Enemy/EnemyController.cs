@@ -14,6 +14,9 @@ public class EnemyController : MonoBehaviour, IDamagable
     [SerializeField] GameObject sound = default;
     [SerializeField] int particulas;
     [SerializeField] bool isATorreta = default;
+
+    [Header("")]
+    public GameObject _gameObject;
     SpawnerPool sp;
 
     private WaveController waveController;
@@ -129,10 +132,10 @@ public class EnemyController : MonoBehaviour, IDamagable
     {
         life -= amount;
         objectToAttack = FindObjectOfType<CharacterController>().GetComponent<Collider>();
+        animator.SetTrigger("Hit");
         if (life <= 0 && !isDead)
         {
-            isDead = true;
-            animator.SetTrigger("Hit");
+            isDead = true;           
             Death();
         }
     }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180745d32b26a124f8f7ac3d619f2ab5, type: 3}
   m_Name: Heal_MinionEffect
   m_EditorClassIdentifier: 
-  lifeToCure: 5
+  lifeToCure: 2

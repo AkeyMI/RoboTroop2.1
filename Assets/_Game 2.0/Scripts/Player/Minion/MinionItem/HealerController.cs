@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class HealerController : MonoBehaviour
 {
-    [SerializeField] float timeForCure = 1f;
     [SerializeField] MinionItemData data = default;
 
     Animator ac;
     private bool firstTime = true;
-
     //private MinionItemData data;
     private void Start()
     {
         ac = GetComponent<Animator>();
         ac.SetBool("Heal", true);
+        
     }
     public void Init(MinionItemData itemData)
     {
@@ -34,14 +33,14 @@ public class HealerController : MonoBehaviour
 
     private IEnumerator CureCoroutine()
     {
-
-        yield return new WaitForSeconds(timeForCure);
-
-        data.effect.Apply();
-        Debug.Log("Hizo el efecto de curacion");
+        FindObjectOfType<SpawnerPool>().GetParticle(8, transform.position);
+        for (int i = 0; i < 4; i++)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Debug.Log(i);
+            data.effect.Apply();
+        }
 
         this.gameObject.SetActive(false);
-
-        //Destroy(this.gameObject);
     }
 }

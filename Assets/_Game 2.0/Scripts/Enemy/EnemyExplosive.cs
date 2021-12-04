@@ -11,11 +11,11 @@ public class EnemyExplosive : EnemyBaseState
     bool thereIsNotPLayer;
     Collider playerCollider;
     bool startAutoDestruction = false;
-    float explotionRange;
+    float explotionRange = 6;
     public override void EnterState(EnemyController enemy)
     {
         enemyController = enemy;
-        explotionRange = enemyController.Stats.distanceAttack * 1.5f;
+        //explotionRange = enemyController.Stats.distanceAttack * 1.5f;
     }
 
     public override void Update(EnemyController enemy)
@@ -47,6 +47,7 @@ public class EnemyExplosive : EnemyBaseState
     {
         enemyController.isDead = true;
         startAutoDestruction = true;
+        enemyController._gameObject.SetActive(true);
         yield return new WaitForSeconds(enemyController.Stats.attackSpeed);
         Collider[] players = Physics.OverlapSphere(enemyController.transform.position, explotionRange);
 
