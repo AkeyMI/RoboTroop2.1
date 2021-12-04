@@ -153,9 +153,4 @@ public class EnemyController : MonoBehaviour, IDamagable
         sp.GetParticle(particulas, transform.position);
         Destroy(this.gameObject);
     }
-
-    private void OnDrawGizmos()
-    {
-        //currentState.DrawGizmos();
-    }
 }
