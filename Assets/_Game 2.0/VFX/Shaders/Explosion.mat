@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ExplosinCenter
+  m_Name: Explosion
   m_Shader: {fileID: -6465566751694194690, guid: 8c41bec9c74e3594e9856b06f289f04a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -36,6 +36,6 @@ Material:
     - Vector1_1b6763a73b37441a8fa6a468379b126f: 18.61
     - Vector1_35660b165fd3461a95bd91e8158c895e: 0
     m_Colors:
-    - Color_684f56b687274392bd9ed1fe8d1e0de5: {r: 15.70609, g: 3.9930737, b: 16.94838, a: 1}
-    - Vector2_34fec51175a045aca9bf1b095de5b31c: {r: -0.13, g: 0.05, b: 0, a: 0}
+    - Color_684f56b687274392bd9ed1fe8d1e0de5: {r: 8.29672, g: 1.8190669, b: 8.962232, a: 1}
+    - Vector2_34fec51175a045aca9bf1b095de5b31c: {r: -1.48, g: 0.25, b: 0, a: 0}
   m_BuildTextureStacks: []

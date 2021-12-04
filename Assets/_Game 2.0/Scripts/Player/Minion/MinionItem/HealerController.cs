@@ -37,7 +37,6 @@ public class HealerController : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             yield return new WaitForSeconds(0.5f);
-            Debug.Log(i);
             data.effect.Apply();
         }
 

@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class AutoDestructionParticles : MonoBehaviour
 {
-    [SerializeField] float lifeTime;
-    void Start()
+    float currentTime;
+   private void FixedUpdate()
     {
-        if (lifeTime == 0)
-            lifeTime = 5;
-        StartCoroutine(AutoDestruction(lifeTime));
-    }
-
-    IEnumerator AutoDestruction(float i)
-    {
-        yield return new WaitForSeconds(i);
-        Destroy(this.gameObject);
+        if(currentTime <= 6)
+        {
+            currentTime += Time.fixedDeltaTime * 5;
+            transform.localScale = new Vector3( currentTime, 0, currentTime);
+        }
     }
 }

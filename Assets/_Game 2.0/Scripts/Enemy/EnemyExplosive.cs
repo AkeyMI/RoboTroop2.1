@@ -48,7 +48,9 @@ public class EnemyExplosive : EnemyBaseState
         enemyController.isDead = true;
         startAutoDestruction = true;
         enemyController._gameObject.SetActive(true);
-        yield return new WaitForSeconds(enemyController.Stats.attackSpeed);
+        yield return new WaitForSeconds(enemyController.Stats.attackSpeed - 0.3f);
+        enemyController.sp.GetParticle(15, enemyController.transform.position);
+        yield return new WaitForSeconds(0.3f);
         Collider[] players = Physics.OverlapSphere(enemyController.transform.position, explotionRange);
 
         foreach (var player in players)
@@ -60,7 +62,6 @@ public class EnemyExplosive : EnemyBaseState
 
         enemyController.Death();
     }
-
     public override void DrawGizmos()
     {
 #if UNITY_EDITOR

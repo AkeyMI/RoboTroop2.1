@@ -17,7 +17,8 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     [Header("")]
     public GameObject _gameObject;
-    SpawnerPool sp;
+    [HideInInspector]
+    public SpawnerPool sp;
 
     private WaveController waveController;
 
@@ -135,7 +136,7 @@ public class EnemyController : MonoBehaviour, IDamagable
         animator.SetTrigger("Hit");
         if (life <= 0 && !isDead)
         {
-            isDead = true;           
+            isDead = true;
             Death();
         }
     }
