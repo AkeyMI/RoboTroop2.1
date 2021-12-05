@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 268f47a0ef87af645b42262846541fd4, type: 3}
-  m_Name: Shoot_Basic
+  m_Name: Enemy_Shotgun
   m_EditorClassIdentifier: 
-  life: 4
-  attackSpeed: 1.5
-  distanceAttack: 8
-  speed: 0.3
-  bullet: {fileID: 4724464782366420276, guid: 0a63077a7b211644582a858599343dc0, type: 3}
-  damage: 1
+  life: 6
+  attackSpeed: 3
+  distanceAttack: 7
+  speed: 12
+  bullet: {fileID: 4724464782366420276, guid: cdead2995eaeceb4cb6c383bac00a7b2, type: 3}
+  damage: 2
   explosive: 0
