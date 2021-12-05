@@ -333,8 +333,8 @@ MonoBehaviour:
   groundedRaycastDistance: 10
   groundOffset: 2
   speed: 10
-  dashTime: 0.3
-  dashDistance: 5
+  dashTime: 0.25
+  dashDistance: 4
   timeBetweenDash: 0.1
   minionArt: {fileID: 2463642212173215789}
   groundRaycastMask:

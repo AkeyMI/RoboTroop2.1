@@ -25471,18 +25471,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5943931717197886959, guid: 8ee3cad8c3b135748a4c94f8f3be2777, type: 3}
-      propertyPath: particleData.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 5943931717197886959, guid: 8ee3cad8c3b135748a4c94f8f3be2777, type: 3}
-      propertyPath: particleData.Array.data[15].prefab
-      value: 
-      objectReference: {fileID: 6766932777587085690, guid: 6fd338fd6769d9449b5416a33513b192, type: 3}
-    - target: {fileID: 5943931717197886959, guid: 8ee3cad8c3b135748a4c94f8f3be2777, type: 3}
-      propertyPath: particleData.Array.data[15].timeDestroy
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6756907304995514344, guid: 8ee3cad8c3b135748a4c94f8f3be2777, type: 3}
       propertyPath: m_RootOrder
       value: 2

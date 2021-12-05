@@ -75,6 +75,8 @@ MonoBehaviour:
     timeDestroy: 0.35
   - prefab: {fileID: 6766932777587085690, guid: 75c2ddae29f9486488a766e3d4051eef, type: 3}
     timeDestroy: 3.2
+  - prefab: {fileID: 6766932777587085690, guid: 6fd338fd6769d9449b5416a33513b192, type: 3}
+    timeDestroy: 0.5
 --- !u!114 &3422942365145403353
 MonoBehaviour:
   m_ObjectHideFlags: 0
