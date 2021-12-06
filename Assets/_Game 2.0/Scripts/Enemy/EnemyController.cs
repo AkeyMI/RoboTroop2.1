@@ -45,6 +45,9 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     private int cargador;
     private float currentTimeToReload;
+    private bool isReloading;
+
+    public bool IsReloading => isReloading;
 
     //public readonly EnemyPatrolState PatrolState = new EnemyPatrolState();
     public readonly EnemyHuntState HuntState = new EnemyHuntState();
@@ -119,6 +122,8 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     public void CreateBullet()
     {
+        if (isReloading) return;
+
         if (cargador > 0)
         {
             foreach (GameObject go in spawnPointBullet)
@@ -131,11 +136,11 @@ public class EnemyController : MonoBehaviour, IDamagable
             audioSource.PlayOneShot(shootSound);
             animator.SetBool("Shooting", true);
             StartCoroutine(Shooting());
-        }
-        else
-        {
-            ReloadGun();
-            Debug.Log("Esta recargadon el enemigo");
+
+            if(cargador <= 0)
+            {
+                StartCoroutine(ReloadGun());
+            }
         }
     }
 
@@ -145,20 +150,23 @@ public class EnemyController : MonoBehaviour, IDamagable
         animator.SetBool("Shooting", false);
     }
 
-    private void ReloadGun()
+    IEnumerator ReloadGun()
     {
         currentTimeToReload = enemyStats.timeToReload;
-        reloadBarImage.enabled = true;
+        isReloading = true;
+
         while (currentTimeToReload > 0)
         {
+            reloadBarImage.enabled = true;
             currentTimeToReload -= Time.deltaTime;
             reloadBarImage.fillAmount = (currentTimeToReload / enemyStats.timeToReload);
+            yield return null;
         }
 
         cargador = enemyStats.cargador;
         reloadBarImage.enabled = false;
         reloadBarImage.fillAmount = 1;
-        Debug.Log("Termino de recargar");
+        isReloading = false;
     }
 
     public void Damage(int amount)

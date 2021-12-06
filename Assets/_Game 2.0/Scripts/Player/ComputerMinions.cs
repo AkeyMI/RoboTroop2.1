@@ -8,6 +8,7 @@ public class ComputerMinions : MonoBehaviour
     [SerializeField] float distanceToActivate = 2f;
     [SerializeField] Image eImage = default;
     [SerializeField] GameObject boxMinions = default;
+    [SerializeField] GameObject[] desativateThings = default;
 
     private bool isOpen =  false;
 
@@ -59,10 +60,20 @@ public class ComputerMinions : MonoBehaviour
         Time.timeScale = 1f;
         FindObjectOfType<UiManager>().CheckIfIsOnComputer(false);
         isOpen = false;
+
+        for (int i = 0; i < desativateThings.Length; i++)
+        {
+            desativateThings[i].SetActive(true);
+        }
     }
 
     public void ActivateComputer()
     {
+        for(int i = 0; i < desativateThings.Length; i++)
+        {
+            desativateThings[i].SetActive(false);
+        }
+
         FindObjectOfType<UiManager>().CheckIfIsOnComputer(true);
         boxMinions.SetActive(true);
         Time.timeScale = 0f;

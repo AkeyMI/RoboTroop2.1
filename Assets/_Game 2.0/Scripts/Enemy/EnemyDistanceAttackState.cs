@@ -74,7 +74,7 @@ public class EnemyDistanceAttackState : EnemyBaseState
         Vector3 position = new Vector3(playerCollider.transform.position.x, enemyController.transform.position.y, playerCollider.transform.position.z);
         enemyController.transform.LookAt(position);
 
-        if (currentTime <= 0)
+        if (currentTime <= 0 && !enemyController.IsReloading)
         {
             enemyController.CreateBullet();
             currentTime = enemyController.Stats.attackSpeed;
