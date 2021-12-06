@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour, IDamagable
 {
@@ -14,6 +15,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     [SerializeField] GameObject sound = default;
     [SerializeField] int particulas;
     [SerializeField] bool isATorreta = default;
+    [SerializeField] Image reloadBarImage = default;
 
     [Header("")]
     public GameObject _gameObject;
@@ -41,6 +43,9 @@ public class EnemyController : MonoBehaviour, IDamagable
     private int life;
     //private float timeToChangeType = 6f;
 
+    private int cargador;
+    private float currentTimeToReload;
+
     //public readonly EnemyPatrolState PatrolState = new EnemyPatrolState();
     public readonly EnemyHuntState HuntState = new EnemyHuntState();
     public readonly EnemyDistanceAttackState AttackDistanceState = new EnemyDistanceAttackState();
@@ -62,6 +67,8 @@ public class EnemyController : MonoBehaviour, IDamagable
         animator = this.GetComponent<Animator>();
         LocatePLayer();
         sp = FindObjectOfType<SpawnerPool>();
+        cargador = enemyStats.cargador;
+        currentTimeToReload = enemyStats.timeToReload;
     }
 
     public void Init(WaveController waveController)
@@ -112,21 +119,46 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     public void CreateBullet()
     {
-        foreach (GameObject go in spawnPointBullet)
+        if (cargador > 0)
         {
-            GameObject bullet = Instantiate(enemyStats.bullet, go.transform.position, go.transform.rotation); 
-            bullet.GetComponent<BulletEnemy>().Init(enemyStats.damage);
-        }
+            foreach (GameObject go in spawnPointBullet)
+            {
+                GameObject bullet = Instantiate(enemyStats.bullet, go.transform.position, go.transform.rotation);
+                bullet.GetComponent<BulletEnemy>().Init(enemyStats.damage);
+            }
+            cargador--;
 
-        audioSource.PlayOneShot(shootSound);
-        animator.SetBool("Shooting", true);
-        StartCoroutine(Shooting());
+            audioSource.PlayOneShot(shootSound);
+            animator.SetBool("Shooting", true);
+            StartCoroutine(Shooting());
+        }
+        else
+        {
+            ReloadGun();
+            Debug.Log("Esta recargadon el enemigo");
+        }
     }
 
     IEnumerator Shooting()
     {
         yield return new WaitForSeconds(.1f);
         animator.SetBool("Shooting", false);
+    }
+
+    private void ReloadGun()
+    {
+        currentTimeToReload = enemyStats.timeToReload;
+        reloadBarImage.enabled = true;
+        while (currentTimeToReload > 0)
+        {
+            currentTimeToReload -= Time.deltaTime;
+            reloadBarImage.fillAmount = (currentTimeToReload / enemyStats.timeToReload);
+        }
+
+        cargador = enemyStats.cargador;
+        reloadBarImage.enabled = false;
+        reloadBarImage.fillAmount = 1;
+        Debug.Log("Termino de recargar");
     }
 
     public void Damage(int amount)

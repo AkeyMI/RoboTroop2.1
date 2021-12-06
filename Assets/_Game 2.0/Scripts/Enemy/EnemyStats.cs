@@ -12,4 +12,6 @@ public class EnemyStats : ScriptableObject
     public GameObject bullet = default;
     public int damage = 1;
     public bool explosive;
+    public int cargador = 8;
+    public float timeToReload = 1f;
 }
