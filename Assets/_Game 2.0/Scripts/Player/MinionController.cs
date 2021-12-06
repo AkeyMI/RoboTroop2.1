@@ -73,6 +73,7 @@ public class MinionController : MonoBehaviour
             DataCollector dataCollector = FindObjectOfType<DataCollector>();
             dataCollector.GetMinionsInBagData(this);
             dataCollector.GetMinionsInBoxData(this);
+            dataCollector.GetMinionItem(this);
         }
 
         minionShield = Instantiate(minion2.minionPrefab, Vector3.zero, Quaternion.identity);
@@ -155,6 +156,18 @@ public class MinionController : MonoBehaviour
     {
         //Agregar los minions de la mochila
         return atkMinionsList;
+    }
+
+    public MinionItemData GetMinionItemData()
+    {
+        return itemData;
+    }
+
+    public void SendMinionItem(MinionItemData dataItem)
+    {
+        itemData = dataItem;
+        minionItem = Instantiate(itemData.minionPrefab, Vector3.zero, Quaternion.identity);
+        minionItem.SetActive(false);
     }
 
     public void SendMinionBoxList(List<MinionData> list)

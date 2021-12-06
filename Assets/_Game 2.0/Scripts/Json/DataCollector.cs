@@ -5,6 +5,7 @@ using UnityEngine;
 public class DataCollector : MonoBehaviour
 {
     [SerializeField] MinionData[] minionDatas = default;
+    [SerializeField] MinionItemData[] minionItemData = default;
     [SerializeField] SaveJson saveJson = default;
 
     private string canyonGuy = "Cañon";
@@ -97,6 +98,19 @@ public class DataCollector : MonoBehaviour
 
     }
 
+    public void GetMinionItem(MinionController mC)
+    {
+        if (saveData.minionItem == null) return;
+
+        for(int i = 0; i < minionItemData.Length; i++)
+        {
+            if(saveData.minionItem == minionItemData[i].minionName)
+            {
+                mC.SendMinionItem(minionItemData[i]);
+            }
+        }
+    }
+
     public void SavePedestal(string minionName)
     {
         if(minionName == canyonGuy)
@@ -129,6 +143,7 @@ public class DataCollector : MonoBehaviour
     {
         SaveMinionsInBag();
         SaveMinionsInBox();
+        SaveMinionItem();
         saveJson.ConvertToJson(saveData);
     }
 
@@ -152,5 +167,10 @@ public class DataCollector : MonoBehaviour
         {
             saveData.minionsInBox[i] = listMinionInBox[i].minionName;
         }
+    }
+
+    private void SaveMinionItem()
+    {
+        saveData.minionItem = FindObjectOfType<MinionController>().GetMinionItemData().minionName;
     }
 }

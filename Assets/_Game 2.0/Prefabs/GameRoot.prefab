@@ -1554,6 +1554,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e9fc1cf5fcf59244eaec8818427f6cc1, type: 2}
   - {fileID: 11400000, guid: 7f0bc6b9c9ebb674c82e297046dd7354, type: 2}
   - {fileID: 11400000, guid: 73dd3633b5a4ffd47b0c3901eb28b7f2, type: 2}
+  minionItemData:
+  - {fileID: 11400000, guid: 336cdd89bf573e143bc72dd21b622aa9, type: 2}
+  - {fileID: 11400000, guid: 5b1047ed03ff1624cb31ea5a98b27491, type: 2}
   saveJson: {fileID: 6756907304090859327}
 --- !u!114 &6756907304090859327
 MonoBehaviour:

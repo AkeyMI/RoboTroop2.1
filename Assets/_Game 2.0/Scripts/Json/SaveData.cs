@@ -14,4 +14,5 @@ public class SaveData
 
     public string[] minionsInBag;
     public string[] minionsInBox;
+    public string minionItem;
 }
