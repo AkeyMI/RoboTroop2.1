@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    [SerializeField] bool traps;
     [SerializeField] GameObject[] reward = default;
     IRoomActivables[] roomActivables;
 
@@ -18,13 +17,7 @@ public class Room : MonoBehaviour
         for (int i = 0; i < roomActivables.Length; i++)
         {
             roomActivables[i].Activate();
-        }
-        if (traps)
-        {
-            foreach (Trap t in GetComponentsInChildren<Trap>())         
-                t.WakeUP();            
-        }
-        
+        }     
     }
 
     private void RefreshIRoomActivablesReferences()
@@ -37,14 +30,6 @@ public class Room : MonoBehaviour
         for (int i = 0; i < roomActivables.Length; i++)
         {
             roomActivables[i].Deactivate();
-        }
-        if (traps)
-        {
-            foreach (Trap t in GetComponentsInChildren<Trap>())
-            {
-                if (t.GetComponent<TrapEF>() != null)
-                    t.GetComponent<TrapEF>().Death();
-            }
         }
         FindObjectOfType<CharacterController>().key = true;
         StartCoroutine(SpawnItem());

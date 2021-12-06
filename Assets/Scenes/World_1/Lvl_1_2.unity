@@ -1520,7 +1520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb282f6fb8624fa4d9ae09ec50829584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  traps: 0
   reward:
   - {fileID: 8579850421227462202, guid: d7d60087c67574c4ebfa7d412cdb3b73, type: 3}
   - {fileID: 8579850421227462202, guid: d7d60087c67574c4ebfa7d412cdb3b73, type: 3}
@@ -2117,7 +2116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb282f6fb8624fa4d9ae09ec50829584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  traps: 1
   reward:
   - {fileID: 8579850421227462202, guid: 6b3bd0aca10aa1c49b517d97e17868d8, type: 3}
 --- !u!1001 &79490867
@@ -2986,7 +2984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb282f6fb8624fa4d9ae09ec50829584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  traps: 1
   reward:
   - {fileID: 3646577352427167659, guid: 17e6ffddcfb75d44887affb465d7549c, type: 3}
   - {fileID: 3646577352427167659, guid: 17e6ffddcfb75d44887affb465d7549c, type: 3}
@@ -19944,7 +19941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb282f6fb8624fa4d9ae09ec50829584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  traps: 1
   reward:
   - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
   - {fileID: 1391347490889972079, guid: c14d35a0f3b076246ae43bb1ceb72667, type: 3}
@@ -31395,7 +31391,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb282f6fb8624fa4d9ae09ec50829584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  traps: 0
   reward:
   - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
   - {fileID: 3646577352427167659, guid: 17e6ffddcfb75d44887affb465d7549c, type: 3}
@@ -33918,7 +33913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb282f6fb8624fa4d9ae09ec50829584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  traps: 1
   reward:
   - {fileID: 1391347490889972079, guid: c14d35a0f3b076246ae43bb1ceb72667, type: 3}
   - {fileID: 1391347490889972079, guid: c14d35a0f3b076246ae43bb1ceb72667, type: 3}
@@ -37805,7 +37799,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb282f6fb8624fa4d9ae09ec50829584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  traps: 1
   reward:
   - {fileID: 8579850421227462202, guid: d7d60087c67574c4ebfa7d412cdb3b73, type: 3}
   - {fileID: 3646577352427167659, guid: 17e6ffddcfb75d44887affb465d7549c, type: 3}
@@ -42543,7 +42536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb282f6fb8624fa4d9ae09ec50829584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  traps: 1
   reward:
   - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
   - {fileID: 8579850421227462202, guid: 6b3bd0aca10aa1c49b517d97e17868d8, type: 3}
@@ -56243,6 +56235,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 823030696}
     m_Modifications:
+    - target: {fileID: 3178185249399817801, guid: 24f3b4a7dcd80ab4caafbacda51b0f43, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7314967160916864519, guid: 24f3b4a7dcd80ab4caafbacda51b0f43, type: 3}
       propertyPath: m_Name
       value: Dungeon_Door_Simple
@@ -63483,7 +63479,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb282f6fb8624fa4d9ae09ec50829584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  traps: 1
   reward:
   - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
   - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
@@ -79113,7 +79108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb282f6fb8624fa4d9ae09ec50829584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  traps: 1
   reward:
   - {fileID: 1391347490889972079, guid: c14d35a0f3b076246ae43bb1ceb72667, type: 3}
   - {fileID: 3646577352427167659, guid: 17e6ffddcfb75d44887affb465d7549c, type: 3}
@@ -79226,7 +79220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb282f6fb8624fa4d9ae09ec50829584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  traps: 0
   reward:
   - {fileID: 8579850421227462202, guid: d7d60087c67574c4ebfa7d412cdb3b73, type: 3}
 --- !u!65 &1792890942

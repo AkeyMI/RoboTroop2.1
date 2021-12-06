@@ -8,50 +8,53 @@ public class Door : MonoBehaviour , IRoomActivables
     Animator animator;
     bool waveTime;
     bool open;
-    [SerializeField]GameObject shader;
-    private void Awake()
-    {
-        animator = this.GetComponent<Animator>();
-    }
+    [SerializeField] GameObject shader;
+    [SerializeField] bool stillCloseOnExit; 
+    private void Awake() => animator = this.GetComponent<Animator>();
 
     public void Activate()
     {
-        if(!locked)
-            animator.SetTrigger("Close");
         waveTime = true;
         locked = true;
+        animator.SetBool("Open", false);
         shader.GetComponent<MeshRenderer>().material.SetFloat("_status", 1);
     }
 
     public void Deactivate()
     {
         if (open)
-        {
-            animator.SetTrigger("Open");
-            shader.GetComponent<MeshRenderer>().material.SetFloat("_status", -1);
-        }
+            Status(true);
         locked = false;
         waveTime = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !waveTime)
         {
             if (locked && other.GetComponent<CharacterController>().key)
             {
-                other.GetComponent<CharacterController>().key = false;
                 locked = false;
-                animator.SetTrigger("Open");
-                shader.GetComponent<MeshRenderer>().material.SetFloat("_status", -1);
-                open = true;
+                other.GetComponent<CharacterController>().key = false;
+                Status(true);
             }
             if (!locked && !open)
-            {
-                animator.SetTrigger("Open");
-                shader.GetComponent<MeshRenderer>().material.SetFloat("_status", -1);
-                open = true;
-            }
+                Status(true);
         }           
+    }
+
+    void Status(bool status)
+    {
+        animator.SetBool("Loked", !status);
+        animator.SetBool("Open", status);
+        open = status;
+        if(shader != null)
+            shader.GetComponent<MeshRenderer>().material.SetFloat("_status", -1);
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player") && !waveTime && !locked && open && stillCloseOnExit)
+            Status(false);
     }
 }

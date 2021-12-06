@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TrapMine : Trap
 {
-    public override void WakeUP(){}
+    public override void Activate(){}
     protected override void FixedUpdate(){}
+    public override void Deactivate(){}
     protected override void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("AtkMinion") || other.CompareTag("Nave"))

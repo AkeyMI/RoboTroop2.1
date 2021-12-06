@@ -14,7 +14,9 @@ public class TrapTurret : Trap
     int currentAmmo;
     float actualTimeBS = -1;
     CapsuleCollider capsuleCollider;
-    public override void WakeUP()
+
+    public override void Deactivate(){}
+    public override void Activate()
     {
         capsuleCollider = GetComponent<CapsuleCollider>();
         alive = true;

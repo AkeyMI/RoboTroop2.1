@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trap : MonoBehaviour
+public class Trap : MonoBehaviour, IRoomActivables
 {
     [SerializeField] protected int damage;
     [SerializeField] protected float timeToMakeDamage;
@@ -26,12 +26,15 @@ public class Trap : MonoBehaviour
             animator = GetComponent<Animator>();
         sp = FindObjectOfType<SpawnerPool>();
     }
-    public virtual void WakeUP()
+    public virtual void Activate()
     {
         actuaTimeOnTrigerMinion = timeToMakeDamage;
         actuaTimeOnTrigerNave = timeToMakeDamage;
     }
+    public virtual void Deactivate()
+    {
 
+    }
     protected virtual void FixedUpdate()
     {
         if (minionStayOnTrigger && actuaTimeOnTrigerMinion >= 0)

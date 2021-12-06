@@ -18,7 +18,7 @@ public class TrapEF : Trap
         electricFence.SetActive(false);
 
     }
-    public override void WakeUP()
+    public override void Activate()
     {
         alive = true;
         if (startActive)
@@ -53,12 +53,11 @@ public class TrapEF : Trap
         { 
             life -= i;
             if (life <= 0)
-                Death();
-        }
-       
+                Deactivate();
+        }      
     }
 
-    public void Death()
+    public override void Deactivate()
     {
         alive = false;
         //foreach (CapsuleCollider cc in GetComponents<CapsuleCollider>())
