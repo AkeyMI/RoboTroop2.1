@@ -5127,6 +5127,8 @@ MonoBehaviour:
   sound: {fileID: 9221009860981528530, guid: ee3ac88f4553f2d408a95562181f0f78, type: 3}
   particulas: 0
   isATorreta: 0
+  reloadBarImage: {fileID: 0}
+  isAKamikase: 1
   _gameObject: {fileID: 275086600884369201}
   sp: {fileID: 0}
   isDead: 0

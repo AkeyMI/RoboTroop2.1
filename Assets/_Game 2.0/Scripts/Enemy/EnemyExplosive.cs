@@ -22,7 +22,8 @@ public class EnemyExplosive : EnemyBaseState
     {
         playerCollider = enemyController.ObjectToAttack;
 
-        PlayerStillCloseToAttack();
+        if(!enemy.isDead)
+            PlayerStillCloseToAttack();
 
 
         if ((!thereIsNotPLayer || enemyController.isDead) && !startAutoDestruction)

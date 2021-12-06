@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     [SerializeField] int particulas;
     [SerializeField] bool isATorreta = default;
     [SerializeField] Image reloadBarImage = default;
+    [SerializeField] bool isAKamikase = false;
 
     [Header("")]
     public GameObject _gameObject;
@@ -83,6 +84,10 @@ public class EnemyController : MonoBehaviour, IDamagable
     private void Update()
     {
         if (!isDead)
+        {
+            currentState.Update(this);
+        }
+        else if(isAKamikase)
         {
             currentState.Update(this);
         }
@@ -177,7 +182,15 @@ public class EnemyController : MonoBehaviour, IDamagable
         if (life <= 0 && !isDead)
         {
             isDead = true;
-            Death();
+            if (isAKamikase)
+            {
+                TransitionToState(enemyExplosiveState);
+            }
+            else
+            {
+                Death();
+            }
+
         }
     }
 
