@@ -1846,11 +1846,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reward:
   - {fileID: 8579850421227462202, guid: d7d60087c67574c4ebfa7d412cdb3b73, type: 3}
-  - {fileID: 8579850421227462202, guid: d7d60087c67574c4ebfa7d412cdb3b73, type: 3}
-  - {fileID: 3646577352427167659, guid: 17e6ffddcfb75d44887affb465d7549c, type: 3}
   - {fileID: 3646577352427167659, guid: 17e6ffddcfb75d44887affb465d7549c, type: 3}
   - {fileID: 8579850421227462202, guid: 6b3bd0aca10aa1c49b517d97e17868d8, type: 3}
   - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
+  - {fileID: 8579850421227462202, guid: d6d031370bcdad547bb061406f0c44ee, type: 3}
+  - {fileID: 8579850421227462202, guid: d6d031370bcdad547bb061406f0c44ee, type: 3}
 --- !u!1 &68012731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2340146608176679029, guid: fd171a22b11ae11409f11cac9f09b4ee, type: 3}
@@ -42779,7 +42779,7 @@ MonoBehaviour:
   - {fileID: 3646577352427167659, guid: 17e6ffddcfb75d44887affb465d7549c, type: 3}
   - {fileID: 1391347490889972079, guid: c14d35a0f3b076246ae43bb1ceb72667, type: 3}
   - {fileID: 1391347490889972079, guid: c14d35a0f3b076246ae43bb1ceb72667, type: 3}
-  - {fileID: 1391347490889972079, guid: c14d35a0f3b076246ae43bb1ceb72667, type: 3}
+  - {fileID: 8579850421227462202, guid: d6d031370bcdad547bb061406f0c44ee, type: 3}
 --- !u!1001 &675184441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71862,8 +71862,8 @@ MonoBehaviour:
   - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
   - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
   - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
-  - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
-  - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
+  - {fileID: 8579850421227462202, guid: d6d031370bcdad547bb061406f0c44ee, type: 3}
+  - {fileID: 8579850421227462202, guid: d6d031370bcdad547bb061406f0c44ee, type: 3}
   - {fileID: 8579850421227462202, guid: 6b3bd0aca10aa1c49b517d97e17868d8, type: 3}
 --- !u!1001 &1307757251
 PrefabInstance:

@@ -9,15 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268f47a0ef87af645b42262846541fd4, type: 3}
-  m_Name: Explosivo
+  m_Script: {fileID: 11500000, guid: b17c43b143e3b9a4da0bd9d9e4b07a82, type: 3}
+  m_Name: Take_NaveShield
   m_EditorClassIdentifier: 
-  life: 15
-  attackSpeed: 2.5
-  distanceAttack: 5
-  speed: 5.5
-  bullet: {fileID: 0}
-  damage: 6
-  explosive: 1
-  cargador: 8
-  timeToReload: 1

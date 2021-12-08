@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Enemy_Rocket
   m_EditorClassIdentifier: 
   life: 8
-  attackSpeed: 2.4
+  attackSpeed: 0.25
   distanceAttack: 12
-  speed: 10
+  speed: 8
   bullet: {fileID: 4724464782366420276, guid: 35ddbea3833d26c41b3d2aaf03e7e1e4, type: 3}
   damage: 3
   explosive: 0
+  cargador: 1
+  timeToReload: 3

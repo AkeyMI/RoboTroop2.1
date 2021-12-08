@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Enemy_Shotgun
   m_EditorClassIdentifier: 
   life: 6
-  attackSpeed: 3
+  attackSpeed: 4
   distanceAttack: 7
   speed: 12
   bullet: {fileID: 4724464782366420276, guid: cdead2995eaeceb4cb6c383bac00a7b2, type: 3}
   damage: 2
   explosive: 0
-  cargador: 1
-  timeToReload: 5
+  cargador: 4
+  timeToReload: 3

@@ -155,12 +155,13 @@ public class NaveController : MonoBehaviour, IDamagable
         }
     }
 
-    public void RepairShield(int amount)
+    public void RepairShield()
     {
-        currentShieldLife += amount;
+        currentShieldLife = shieldLife;
 
         onShieldChange?.Invoke(currentShieldLife, shieldLife);
 
+        shield.SetActive(true);
         if (currentShieldLife >= shieldLife)
         {
             currentShieldLife = shieldLife;

@@ -16,4 +16,4 @@ MonoBehaviour:
   minionPrefab: {fileID: 3177547514708248692, guid: 5950d71bdacb9ee488059f55173d3dd2, type: 3}
   minionUi: {fileID: 947703004339123691, guid: 2b4f1e6689b3cf14ba4e21028f21964e, type: 3}
   effect: {fileID: 11400000, guid: ead14fe1c9832f24186a4650cb8b965f, type: 2}
-  reloadUlti: 3
+  reloadUlti: 5

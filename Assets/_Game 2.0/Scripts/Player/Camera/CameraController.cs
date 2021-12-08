@@ -30,9 +30,6 @@ public class CameraController : MonoBehaviour
 
         if (distnce < 0)
             distnce = 0;
-
-        Debug.Log(distnce);
-
     }
 
     private void FixedUpdate()

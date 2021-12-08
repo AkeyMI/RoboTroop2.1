@@ -570,6 +570,7 @@ MonoBehaviour:
   particulas: 10
   isATorreta: 0
   reloadBarImage: {fileID: 5520702816530517890}
+  isAKamikase: 0
   _gameObject: {fileID: 0}
   sp: {fileID: 0}
   isDead: 0
@@ -795,7 +796,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemigo_Medusa
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 2277f2e0e8370254a837bd7708a9b322, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2277f2e0e8370254a837bd7708a9b322, type: 3}
 --- !u!4 &2003082743192508177 stripped
 Transform:

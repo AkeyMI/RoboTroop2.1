@@ -240,6 +240,7 @@ MonoBehaviour:
   particulas: 10
   isATorreta: 0
   reloadBarImage: {fileID: 3449685573164398971}
+  isAKamikase: 0
   _gameObject: {fileID: 0}
   sp: {fileID: 0}
   isDead: 0
@@ -540,7 +541,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemigo_Cohete
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 4314150670d91f54f92fd1f59f621686, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4314150670d91f54f92fd1f59f621686, type: 3}
 --- !u!4 &732436111971424691 stripped
 Transform:

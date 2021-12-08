@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Enemy_Helicoptero
   m_EditorClassIdentifier: 
   life: 3
-  attackSpeed: 0.6
+  attackSpeed: 0.35
   distanceAttack: 15
-  speed: 0.45
+  speed: 15
   bullet: {fileID: 4724464782366420276, guid: 0a63077a7b211644582a858599343dc0, type: 3}
   damage: 1
   explosive: 0
+  cargador: 3
+  timeToReload: 1.5

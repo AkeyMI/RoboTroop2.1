@@ -379,6 +379,7 @@ MonoBehaviour:
   particulas: 10
   isATorreta: 0
   reloadBarImage: {fileID: 2650084525903364964}
+  isAKamikase: 0
   _gameObject: {fileID: 0}
   sp: {fileID: 0}
   isDead: 0
@@ -393,7 +394,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 200
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 2

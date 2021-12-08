@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Enemy_Medusa
   m_EditorClassIdentifier: 
   life: 6
-  attackSpeed: 3
-  distanceAttack: 11
-  speed: 10
+  attackSpeed: 1.5
+  distanceAttack: 12
+  speed: 8
   bullet: {fileID: 4724464782366420276, guid: cdead2995eaeceb4cb6c383bac00a7b2, type: 3}
   damage: 2
   explosive: 0
+  cargador: 4
+  timeToReload: 2.5
