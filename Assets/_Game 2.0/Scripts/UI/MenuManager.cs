@@ -7,13 +7,13 @@ public class MenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Lobby");
         Time.timeScale = 1f;
     }
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MenuScene");
     }
 
     public void BackToGame()
@@ -28,6 +28,6 @@ public class MenuManager : MonoBehaviour
 
     public void OpenCredits()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Creditos");
     }
 }

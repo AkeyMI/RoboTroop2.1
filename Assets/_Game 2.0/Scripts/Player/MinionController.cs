@@ -273,7 +273,7 @@ public class MinionController : MonoBehaviour
 
     private void GameOver()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Game Over");
     }
 
     public void ChangeItemMinion(MinionItemData data)
