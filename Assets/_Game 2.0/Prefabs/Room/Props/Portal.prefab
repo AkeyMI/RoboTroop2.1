@@ -4993,9 +4993,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToActivate: 2
   effects:
-  - {fileID: 11400000, guid: 4d2426d5c7ba8424dbc7671cabf591a6, type: 2}
+  - {fileID: 11400000, guid: 93bb06921eeb9804cb621825d0bfc380, type: 2}
   eImage: {fileID: 2336961223355896172}
   autoCollect: 0
+  particlesWhenTaked: 0
+  particlesOnMinion: 0
 --- !u!1 &8034654905157813250
 GameObject:
   m_ObjectHideFlags: 0
