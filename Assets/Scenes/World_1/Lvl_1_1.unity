@@ -18004,8 +18004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reward:
   - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
-  - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
-  - {fileID: 1391347490889972079, guid: c14d35a0f3b076246ae43bb1ceb72667, type: 3}
+  - {fileID: 8579850421227462202, guid: d6d031370bcdad547bb061406f0c44ee, type: 3}
 --- !u!1001 &517373373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23804,7 +23803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward:
-  - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
+  - {fileID: 8579850421227462202, guid: d6d031370bcdad547bb061406f0c44ee, type: 3}
 --- !u!1001 &672904442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65694,6 +65693,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameRoot
       objectReference: {fileID: 0}
+    - target: {fileID: 9220494533646615111, guid: 8ee3cad8c3b135748a4c94f8f3be2777, type: 3}
+      propertyPath: firtsRound
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee3cad8c3b135748a4c94f8f3be2777, type: 3}
 --- !u!1001 &1772323111
@@ -72135,7 +72138,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward:
+  - {fileID: 8579850421227462202, guid: d6d031370bcdad547bb061406f0c44ee, type: 3}
   - {fileID: 1391347490889972079, guid: c14d35a0f3b076246ae43bb1ceb72667, type: 3}
+  - {fileID: 1391347490889972079, guid: c14d35a0f3b076246ae43bb1ceb72667, type: 3}
+  - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
+  - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
 --- !u!1 &1910493219
 GameObject:
   m_ObjectHideFlags: 0
@@ -72402,7 +72409,7 @@ MonoBehaviour:
   reward:
   - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
   - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
-  - {fileID: 5751676503047518682, guid: c77bcf161bab95d47a94732ccda13769, type: 3}
+  - {fileID: 8579850421227462202, guid: d6d031370bcdad547bb061406f0c44ee, type: 3}
   - {fileID: 3646577352427167659, guid: 17e6ffddcfb75d44887affb465d7549c, type: 3}
 --- !u!1 &1919366626
 GameObject:

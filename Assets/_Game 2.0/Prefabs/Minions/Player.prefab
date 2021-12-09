@@ -362,7 +362,7 @@ MonoBehaviour:
   minionArt: {fileID: 2463642212173215789}
   spawnminionItem: {fileID: 553780566}
   maxMinionsInQueue: 5
-  firtsRound: 1
+  firtsRound: 0
   atkMinionsList: []
   atkMinionsBox: []
   shieldKey: 324
