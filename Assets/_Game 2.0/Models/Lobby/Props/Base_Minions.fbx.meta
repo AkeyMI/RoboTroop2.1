@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: fe4d4e246d8d163479bc6b48bffc2c05
+guid: 770c1a191a86bbb4d9b48d1abeabcca9
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Assets_Lobby
+    second: {fileID: 2100000, guid: 5b2d751c954359348966e78dc8650435, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -34,7 +39,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 150
+    globalScale: 125
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -85,7 +90,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1.5
+    globalScale: 1.25
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
