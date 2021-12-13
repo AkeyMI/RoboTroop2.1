@@ -139,6 +139,32 @@ public class DataCollector : MonoBehaviour
         }
     }
 
+    public void SaveLevels(int level)
+    {
+        switch(level)
+        {
+            case 1:
+                saveData.level1 = true;
+                break;
+
+            case 2:
+                saveData.level2 = true;
+                break;
+
+            case 3:
+                saveData.level3 = true;
+                break;
+
+            case 4:
+                saveData.level4 = true;
+                break;
+
+            case 5:
+                saveData.level5 = true;
+                break;
+        }
+    }
+
     public void SaveInformation()
     {
         SaveMinionsInBag();

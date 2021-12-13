@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.172768, g: 0.21589169, b: 0.29782546, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276807, g: 0.21589197, b: 0.29782572, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -656,6 +656,11 @@ MonoBehaviour:
   semigunGuy: {fileID: 2000057682}
   shotGuy: {fileID: 256019326}
   triplegunGuy: {fileID: 682695751}
+  portalLevel1: {fileID: 570822882}
+  portalLevel2: {fileID: 2032457738}
+  portalLevel3: {fileID: 750527232}
+  portalLevel4: {fileID: 1580803707}
+  portalLevel5: {fileID: 566521115}
 --- !u!4 &255489448
 Transform:
   m_ObjectHideFlags: 0
@@ -1338,6 +1343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
+--- !u!1 &566521115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5116498915323183310, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
+  m_PrefabInstance: {fileID: 566521114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &570822881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1399,6 +1409,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
+--- !u!1 &570822882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5116498915323183310, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
+  m_PrefabInstance: {fileID: 570822881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &574160360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8e146122a1076f34984c874e5b0cfd4c, type: 3}
@@ -1927,6 +1942,11 @@ PrefabInstance:
 --- !u!4 &750527231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2003178407542109683, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
+  m_PrefabInstance: {fileID: 750527230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &750527232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5116498915323183310, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
   m_PrefabInstance: {fileID: 750527230}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &751249828 stripped
@@ -4521,6 +4541,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2003178407542109683, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
   m_PrefabInstance: {fileID: 1580803705}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1580803707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5116498915323183310, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
+  m_PrefabInstance: {fileID: 1580803705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1611022090 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 80a433bc69637db468f35e661c56def1, type: 3}
@@ -5668,6 +5693,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
+--- !u!1 &2032457738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5116498915323183310, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
+  m_PrefabInstance: {fileID: 2032457737}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2053634075
 PrefabInstance:
   m_ObjectHideFlags: 0

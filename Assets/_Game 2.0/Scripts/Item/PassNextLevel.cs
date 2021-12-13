@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class PassNextLevel : Effect
 {
     [SerializeField] string sceneName;
+    [SerializeField] int level;
 
     public override void Apply()
     {
         SceneManager.LoadScene(sceneName);
+        FindObjectOfType<DataCollector>().SaveLevels(level);
         FindObjectOfType<DataCollector>().SaveInformation();
     }
 }

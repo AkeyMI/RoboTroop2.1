@@ -11,6 +11,12 @@ public class MinionsPedesta : MonoBehaviour
     [SerializeField] GameObject shotGuy;
     [SerializeField] GameObject triplegunGuy;
 
+    [SerializeField] GameObject portalLevel1;
+    [SerializeField] GameObject portalLevel2;
+    [SerializeField] GameObject portalLevel3;
+    [SerializeField] GameObject portalLevel4;
+    [SerializeField] GameObject portalLevel5;
+
     private DataCollector dataCollector;
     private SaveData save;
 
@@ -21,6 +27,55 @@ public class MinionsPedesta : MonoBehaviour
         save = dataCollector.GetPedestalData();
 
         Pedestals();
+        Portals();
+    }
+
+    private void Portals()
+    {
+        if(save.level1)
+        {
+            portalLevel1.SetActive(true);
+        }
+        else
+        {
+            portalLevel1.SetActive(false);
+        }
+
+        if (save.level2)
+        {
+            portalLevel2.SetActive(true);
+        }
+        else
+        {
+            portalLevel2.SetActive(false);
+        }
+
+        if (save.level3)
+        {
+            portalLevel3.SetActive(true);
+        }
+        else
+        {
+            portalLevel3.SetActive(false);
+        }
+
+        if (save.level4)
+        {
+            portalLevel4.SetActive(true);
+        }
+        else
+        {
+            portalLevel4.SetActive(false);
+        }
+
+        if (save.level5)
+        {
+            portalLevel5.SetActive(true);
+        }
+        else
+        {
+            portalLevel5.SetActive(false);
+        }
     }
 
     private void Pedestals()
