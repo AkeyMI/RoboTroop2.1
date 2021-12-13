@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268f47a0ef87af645b42262846541fd4, type: 3}
   m_Name: Enemy_Simple
   m_EditorClassIdentifier: 
-  life: 4
+  life: 5
   attackSpeed: 1.25
   distanceAttack: 8
   speed: 10

@@ -19,7 +19,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 933a1933de146da4aa018c2fe4305ffc, type: 3}
   damage: 1
   ammo: 20
-  timeToReload: 1.5
-  timeForAttack: 0.05
+  timeToReload: 1.7
+  timeForAttack: 0.06
   bulletSpeed: 20
   life: 6

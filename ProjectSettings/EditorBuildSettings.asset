@@ -30,9 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/World_1/Lvl_1_1.unity
     guid: 5a4444867dbabc44893231983e0cb09f
   - enabled: 0
-    path: Assets/Scenes/Testing/Grenias.unity
-    guid: 8dd043cf080d3f348b11f9a21d2c511d
-  - enabled: 0
     path: Assets/Scenes/Testing/Game.unity
     guid: 1f44318d578f77e45a4ecb944c98527e
   - enabled: 0

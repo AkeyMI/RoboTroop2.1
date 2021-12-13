@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268f47a0ef87af645b42262846541fd4, type: 3}
   m_Name: Torreta_Machingun
   m_EditorClassIdentifier: 
-  life: 5
+  life: 6
   attackSpeed: 0.5
-  distanceAttack: 15
+  distanceAttack: 25
   speed: 0
   bullet: {fileID: 4724464782366420276, guid: fe85bf5d1bcc9bc488216792ac673e70, type: 3}
   damage: 2

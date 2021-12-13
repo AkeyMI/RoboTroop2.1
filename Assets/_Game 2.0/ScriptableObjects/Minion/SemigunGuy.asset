@@ -21,5 +21,5 @@ MonoBehaviour:
   ammo: 15
   timeToReload: 1
   timeForAttack: 0.6
-  bulletSpeed: 25
+  bulletSpeed: 27
   life: 5
