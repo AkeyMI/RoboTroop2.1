@@ -16,7 +16,6 @@ public class SaveData
     public string[] minionsInBox;
     public string minionItem;
 
-    public bool level1;
     public bool level2;
     public bool level3;
     public bool level4;

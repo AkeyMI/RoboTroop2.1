@@ -11,7 +11,6 @@ public class MinionsPedesta : MonoBehaviour
     [SerializeField] GameObject shotGuy;
     [SerializeField] GameObject triplegunGuy;
 
-    [SerializeField] GameObject portalLevel1;
     [SerializeField] GameObject portalLevel2;
     [SerializeField] GameObject portalLevel3;
     [SerializeField] GameObject portalLevel4;
@@ -32,15 +31,6 @@ public class MinionsPedesta : MonoBehaviour
 
     private void Portals()
     {
-        if(save.level1)
-        {
-            portalLevel1.SetActive(true);
-        }
-        else
-        {
-            portalLevel1.SetActive(false);
-        }
-
         if (save.level2)
         {
             portalLevel2.SetActive(true);

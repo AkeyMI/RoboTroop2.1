@@ -143,10 +143,6 @@ public class DataCollector : MonoBehaviour
     {
         switch(level)
         {
-            case 1:
-                saveData.level1 = true;
-                break;
-
             case 2:
                 saveData.level2 = true;
                 break;

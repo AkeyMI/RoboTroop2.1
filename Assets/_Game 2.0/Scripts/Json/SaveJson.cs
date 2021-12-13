@@ -64,8 +64,6 @@ public class SaveJson : MonoBehaviour
         data.shotGuy = false;
         data.triplegunGuy = false;
 
-        data.level1 = true;
-
         return data;
     }
 }
