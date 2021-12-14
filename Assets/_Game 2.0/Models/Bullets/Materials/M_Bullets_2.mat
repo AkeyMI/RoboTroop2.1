@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4019913864893110931
+--- !u!114 &-4799223729595277676
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,40 +20,21 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Lobby_Floor
-  m_Shader: {fileID: -6465566751694194690, guid: bea0ee98be6ff4349885ca05f76f8eb8, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_Name: M_Bullets_2
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_090d4c03a6884d1fb7cf743fc874c0cb:
-        m_Texture: {fileID: 2800000, guid: 27f5074bd481481478b285a3c6c551b3, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_250821674c1a462b861601b70cf57d1d:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_42a08844e98b4afab38a922550fea9be:
-        m_Texture: {fileID: 2800000, guid: cfc929e76ebf9834ea38285716100ab5, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_a1e362242a564430bf6dd20460918e89:
-        m_Texture: {fileID: 2800000, guid: b435652e1b480734d8049de91bbe3ebd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_ece4b7881d8c480bbc2ded637405df02:
-        m_Texture: {fileID: 2800000, guid: 24bcd7b78465f5c42a1c5d591c783241, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8f0363c442b99a44e86e50575cc1653b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -73,11 +54,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9cbc4ad571def46409866dd143cf8524, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8f0363c442b99a44e86e50575cc1653b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -89,10 +70,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_bbef744089f347db857c126583d1f060_Texture_1:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -113,9 +90,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2e7f82a7cf7d4629b10735b7b45a60a4: 0.1
-    - Vector1_e63d4e1381884f4aa71e5c38b76a4c6a: 90
-    - Vector1_f301f2d5c657488d83ab178840fb5c3f: 5
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -143,11 +117,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_74be6f2969f4429db261a076dec47ef5: {r: 0, g: 0, b: 0, a: 1}
-    - Color_a6484edd9698424db1a46b3c133d4e1b: {r: 0.764151, g: 0.764151, b: 0.764151, a: 0}
-    - Vector2_99d136b1a687429c8af0e6af45a97b14: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 3.482202, g: 3.482202, b: 3.482202, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

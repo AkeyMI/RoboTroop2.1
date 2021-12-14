@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minionName: ShotGuy
   minionPrefab: {fileID: 1354599212422573440, guid: 6f69bf143a474854698a32fbd6d1d11c, type: 3}
-  bulletPrefab: {fileID: 8591236588811397447, guid: a6d23b0f3c6d50d49be0aef177872b0d, type: 3}
+  bulletPrefab: {fileID: 8591236588811397447, guid: f4363b8080362004f8c0d01fd3e47816, type: 3}
   minionUI: {fileID: 5264934700255517403, guid: f8544ff23cf58a74b9f985e9b5d7f637, type: 3}
   sprite: {fileID: 21300000, guid: 4e0b81a9da3a0b84fb2836e4bc041a0f, type: 3}
   damage: 2

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276807, g: 0.21589197, b: 0.29782572, a: 1}
+  m_IndirectSpecularColor: {r: 0.172768, g: 0.21589169, b: 0.29782546, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -656,7 +656,6 @@ MonoBehaviour:
   semigunGuy: {fileID: 2000057682}
   shotGuy: {fileID: 256019326}
   triplegunGuy: {fileID: 682695751}
-  portalLevel1: {fileID: 570822882}
   portalLevel2: {fileID: 2032457738}
   portalLevel3: {fileID: 750527232}
   portalLevel4: {fileID: 1580803707}
@@ -1409,11 +1408,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
---- !u!1 &570822882 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5116498915323183310, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
-  m_PrefabInstance: {fileID: 570822881}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &574160360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8e146122a1076f34984c874e5b0cfd4c, type: 3}
@@ -6059,6 +6053,10 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 9220494533646615111, guid: 8ee3cad8c3b135748a4c94f8f3be2777, type: 3}
+      propertyPath: minion1
+      value: 
+      objectReference: {fileID: 11400000, guid: 6cd372752bdad4641b1335d54bf8627f, type: 2}
     - target: {fileID: 9220494533646615111, guid: 8ee3cad8c3b135748a4c94f8f3be2777, type: 3}
       propertyPath: firtsRound
       value: 1

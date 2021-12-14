@@ -55,10 +55,10 @@ MonoBehaviour:
     timeDestroy: 0.51
   - prefab: {fileID: 2263020529160333643, guid: 44fd7c334f7f96147a039a0c7f624e4b, type: 3}
     timeDestroy: 0.9
-  - prefab: {fileID: 0}
-    timeDestroy: 0
-  - prefab: {fileID: 0}
-    timeDestroy: 0
+  - prefab: {fileID: 6766932777587085690, guid: e6e126550f518c54492164df915ba7e8, type: 3}
+    timeDestroy: 1.2
+  - prefab: {fileID: 2263020529160333643, guid: 29fc565863f9ec34899d66263d3d0053, type: 3}
+    timeDestroy: 1.25
   - prefab: {fileID: 5898854508080550012, guid: 06841d9c58a1ab04d8a6dc80caea4190, type: 3}
     timeDestroy: 1.5
   - prefab: {fileID: 6766932777587085690, guid: 5e12f5e6ed0f4c843bb37fa7f3483ac7, type: 3}
