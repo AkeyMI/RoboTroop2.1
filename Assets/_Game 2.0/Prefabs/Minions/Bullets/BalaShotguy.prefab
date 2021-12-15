@@ -79,10 +79,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.17
-  m_Height: 0.6486689
+  m_Radius: 0.15
+  m_Height: 0.75
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -0.043230534}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &1085932927264220804
 AudioSource:
   m_ObjectHideFlags: 0
@@ -216,19 +216,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 414792de737841c4eaf18d7fa1026930, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -5.0532154e-16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 414792de737841c4eaf18d7fa1026930, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 6.123234e-17
+      value: -0.0000014603136
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 414792de737841c4eaf18d7fa1026930, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 414792de737841c4eaf18d7fa1026930, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -6.123234e-17
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 414792de737841c4eaf18d7fa1026930, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -236,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 414792de737841c4eaf18d7fa1026930, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 414792de737841c4eaf18d7fa1026930, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

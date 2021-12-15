@@ -42046,6 +42046,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4012498842192322747, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
+      propertyPath: effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d2426d5c7ba8424dbc7671cabf591a6, type: 2}
+    - target: {fileID: 4012498842192322747, guid: cdd76f10317508e4186cdad33b1d3206, type: 3}
       propertyPath: effects.Array.data[1]
       value: 
       objectReference: {fileID: 0}
