@@ -5,7 +5,9 @@ using UnityEngine;
 public class SpawnerPool : MonoBehaviour
 {
     [SerializeField] SpawnData[] particleData;
-
+    [Space(10)]
+    [SerializeField] GameObject audioPrefab;
+    [SerializeField] ClipSettings[] clipData;
     private void Start()
     {
         foreach(SpawnData sp in particleData)
@@ -13,6 +15,7 @@ public class SpawnerPool : MonoBehaviour
             if(sp.prefab !=null)
                 ObjectPooling.PreLoad(sp.prefab , 1);
         }
+        ObjectPooling.PreLoad(audioPrefab, 5);
     }
 
     public void GetParticle(int i , Vector3 t)
@@ -21,6 +24,17 @@ public class SpawnerPool : MonoBehaviour
         c.transform.position = t;
         c.GetComponentInChildren<ParticleSystem>().Play();
         StartCoroutine (Despawn(particleData[i].prefab, c, particleData[i].timeDestroy));
+    }
+
+    public void GetSound(int s)
+    {
+        GameObject c = ObjectPooling.GetObj(audioPrefab);
+        AudioSource audio = c.GetComponent<AudioSource>();
+        audio.clip = clipData[s].clip;
+        audio.pitch = Random.Range(clipData[s].minPitch, clipData[s].maxPitch);
+        audio.volume = clipData[s].volume;
+        audio.Play();
+        StartCoroutine(Despawn(audioPrefab, c, clipData[s].clip.length));
     }
 
     IEnumerator Despawn(GameObject prefab,GameObject instance , float i)
@@ -36,4 +50,13 @@ public struct SpawnData
 {
     public GameObject prefab;
     public float timeDestroy;
+}
+
+[System.Serializable]
+public struct ClipSettings
+{
+    public AudioClip clip;
+    public float volume;
+    public float minPitch;
+    public float maxPitch;
 }
