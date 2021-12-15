@@ -56,13 +56,13 @@ public class BoxMInion : MonoBehaviour
         List<MinionData> atkMinionsList = new List<MinionData>();
         List<MinionData> atkMinionsBoxList = new List<MinionData>();
 
-        for(int i = 0; i < mContainerArray.Length; i++)
+        for (int i = 0; i < mContainerArray.Length; i++)
         {
-            if(mContainerArray[i].MinionUiBox?.Data != null)
+            if (mContainerArray[i].MinionUiBox?.Data != null)
             {
                 atkMinionsList.Add(mContainerArray[i].MinionUiBox.Data);
                 MinionUiBox minionUiBox = mContainerArray[i].GetComponentInChildren<MinionUiBox>();
-                if(minionUiBox != null)
+                if (minionUiBox != null)
                     Destroy(minionUiBox.gameObject);
             }
 
@@ -82,5 +82,12 @@ public class BoxMInion : MonoBehaviour
 
         minionController.SendMinionBoxList(atkMinionsBoxList);
         minionController.SendMinionList(atkMinionsList);
+
+        ComputerMinions[] comp = FindObjectsOfType<ComputerMinions>();
+
+        for(int i = 0; i < comp.Length; i++)
+        {
+            comp[i].ChangeIsOpen();
+        }
     }
 }

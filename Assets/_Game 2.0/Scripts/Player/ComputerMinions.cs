@@ -10,9 +10,9 @@ public class ComputerMinions : MonoBehaviour
     [SerializeField] GameObject boxMinions = default;
     [SerializeField] GameObject[] desativateThings = default;
 
-    private bool isOpen =  false;
+    [SerializeField] bool isOpen =  false;
 
-    private bool isClose;
+    [SerializeField] bool isClose;
 
     private void Update()
     {
@@ -59,12 +59,16 @@ public class ComputerMinions : MonoBehaviour
         boxMinions.SetActive(false);
         Time.timeScale = 1f;
         FindObjectOfType<UiManager>().CheckIfIsOnComputer(false);
-        isOpen = false;
 
         for (int i = 0; i < desativateThings.Length; i++)
         {
             desativateThings[i].SetActive(true);
         }
+    }
+
+    public void ChangeIsOpen()
+    {
+        isOpen = false;
     }
 
     public void ActivateComputer()
