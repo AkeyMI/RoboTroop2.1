@@ -10,7 +10,7 @@ public class TrapTurret : Trap
     [SerializeField] float reloadTime;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform[] cannons;
-
+    [SerializeField] int ShotSound;
     int currentAmmo;
     float actualTimeBS = -1;
     CapsuleCollider capsuleCollider;
@@ -38,7 +38,9 @@ public class TrapTurret : Trap
         {
             GameObject newBullet = Instantiate(bullet, t);
             newBullet.GetComponent<BulletEnemy>().Init(damage);
+            sp.GetSound(ShotSound);
         }
+
         animator.SetBool("Shot", true);
         currentAmmo--;
         if (currentAmmo == 0)

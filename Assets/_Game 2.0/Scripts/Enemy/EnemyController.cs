@@ -10,10 +10,9 @@ public class EnemyController : MonoBehaviour, IDamagable
     [SerializeField] EnemyStats enemyStats = default;
     [SerializeField] NavMeshAgent agent = default;
     [SerializeField] Animator animator;
-    [SerializeField] AudioClip shootSound = default;
-    [SerializeField] AudioSource audioSource = default;
-    [SerializeField] GameObject sound = default;
     [SerializeField] int particulas;
+    [SerializeField] public int shotSound;
+    [SerializeField] int deathSound;
     [SerializeField] bool isATorreta = default;
     [SerializeField] Image reloadBarImage = default;
     [SerializeField] bool isAKamikase = false;
@@ -138,14 +137,12 @@ public class EnemyController : MonoBehaviour, IDamagable
             }
             cargador--;
 
-            audioSource.PlayOneShot(shootSound);
             animator.SetBool("Shooting", true);
             StartCoroutine(Shooting());
+            sp.GetSound(shotSound);
 
-            if(cargador <= 0)
-            {
-                StartCoroutine(ReloadGun());
-            }
+            if(cargador <= 0)           
+                StartCoroutine(ReloadGun());   
         }
     }
 
@@ -202,7 +199,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     {
         waveController.KilledEnemy();
         FindObjectOfType<MinionController>().ReloadUlti();
-        Instantiate(sound);
+        sp.GetSound(deathSound);
         sp.GetParticle(particulas, transform.position);
         Destroy(this.gameObject);
     }

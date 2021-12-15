@@ -46,6 +46,7 @@ public class EnemyExplosive : EnemyBaseState
 
     IEnumerator Autodestruction()
     {
+        enemyController.sp.GetSound(enemyController.shotSound);
         enemyController.isDead = true;
         startAutoDestruction = true;
         enemyController._gameObject.SetActive(true);

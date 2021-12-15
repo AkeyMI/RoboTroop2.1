@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TrapMine : Trap
 {
+    [SerializeField] int explotionSound;
     public override void Activate(){}
     protected override void FixedUpdate(){}
     public override void Deactivate(){}
@@ -32,7 +33,7 @@ public class TrapMine : Trap
         yield return new WaitForSeconds(timeToMakeDamage);
 
         sp.GetParticle(particles, transform.position);
-
+        sp.GetSound(explotionSound);
         if (minionStayOnTrigger)
             FindObjectOfType<ShootController>().Damage(damage);
         if (naveStayOnTrigger)

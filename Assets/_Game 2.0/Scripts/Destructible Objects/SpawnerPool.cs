@@ -34,7 +34,7 @@ public class SpawnerPool : MonoBehaviour
         audio.pitch = Random.Range(clipData[s].minPitch, clipData[s].maxPitch);
         audio.volume = clipData[s].volume;
         audio.Play();
-        StartCoroutine(Despawn(audioPrefab, c, clipData[s].clip.length));
+        StartCoroutine(Despawn(audioPrefab, c, clipData[s].clip.length + 0.2f));
     }
 
     IEnumerator Despawn(GameObject prefab,GameObject instance , float i)

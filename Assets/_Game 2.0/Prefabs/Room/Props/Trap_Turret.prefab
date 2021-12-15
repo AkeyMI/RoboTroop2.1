@@ -1516,6 +1516,7 @@ MonoBehaviour:
   - {fileID: 4873112079646901634}
   - {fileID: 6243321508376205319}
   - {fileID: 3815932525329906435}
+  ShotSound: 9
 --- !u!136 &1282149781189461208
 CapsuleCollider:
   m_ObjectHideFlags: 0

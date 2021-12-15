@@ -10,8 +10,7 @@ public class ShootController : MonoBehaviour, IDamagable
     [SerializeField] MinionData data;
     [SerializeField] float timeShootOff;
     [SerializeField] Image reloadBarImage = default;
-    [SerializeField] AudioClip shootSound = default;
-    [SerializeField] AudioSource audioSource = default;
+    [SerializeField] int shotSound = default;
     [SerializeField] bool automatic;
     [SerializeField] int bulletsXShoot;
     [SerializeField] float timeBetweenShoots;
@@ -21,7 +20,7 @@ public class ShootController : MonoBehaviour, IDamagable
     private int currentAmmo;
     private bool isReloading = false;
     CameraController cam;
-
+    SpawnerPool sp;
     public MinionData Data => data;
 
     private float timeOfLastAttack;
@@ -32,6 +31,7 @@ public class ShootController : MonoBehaviour, IDamagable
 
     private void Start()
     {
+        sp = FindObjectOfType<SpawnerPool>();
         cam = FindObjectOfType<CameraController>();
         animator = GetComponent<Animator>();
         currentAmmo = data.ammo;
@@ -133,7 +133,7 @@ public class ShootController : MonoBehaviour, IDamagable
                     GameObject bullet = Instantiate(data.bulletPrefab, i.transform.position, i.transform.rotation);
                     bullet.GetComponent<Bullet>().Init(data.damage, data.bulletSpeed);
                 }
-                audioSource.PlayOneShot(shootSound);
+                sp.GetSound(shotSound);
                 timeOfLastAttack = Time.time + data.timeForAttack;
                 currentAmmo--;               
                 if (!automatic)
@@ -151,7 +151,7 @@ public class ShootController : MonoBehaviour, IDamagable
                 GameObject bullet = Instantiate(data.bulletPrefab, y.transform.position, y.transform.rotation);
                 bullet.GetComponent<Bullet>().Init(data.damage, data.bulletSpeed);
             }
-            audioSource.PlayOneShot(shootSound);
+            sp.GetSound(shotSound);
             timeOfLastAttack = Time.time + data.timeForAttack;
             currentAmmo--;
             if (!automatic)

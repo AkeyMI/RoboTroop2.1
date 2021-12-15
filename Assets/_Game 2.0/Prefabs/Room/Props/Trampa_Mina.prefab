@@ -277,3 +277,4 @@ MonoBehaviour:
   timeToMakeDamage: 0.5
   particles: 10
   life: 0
+  explotionSound: 10

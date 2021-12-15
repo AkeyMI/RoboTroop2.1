@@ -7,10 +7,8 @@ public class Bullet : MonoBehaviour
     //[SerializeField] float speed = 8f;
     [SerializeField] int particulas;
     [SerializeField] BulletEffect bulletEffect = default;
-    [SerializeField] AudioClip hitSound = default;
-    [SerializeField] AudioSource audioSource = default;
-    [SerializeField] GameObject sound = default;
     [SerializeField] int life;
+    [SerializeField] int destroySound;
     private int damage;
     private Rigidbody rb;
     private float currentSpeed;
@@ -78,7 +76,7 @@ public class Bullet : MonoBehaviour
     public void Destruction()
     {
         sp.GetParticle(particulas, transform.position);
-        Instantiate(sound);
+        sp.GetSound(destroySound);
         Destroy(this.gameObject);
     }
 }

@@ -33,6 +33,7 @@ public class SimpleSpawner : MonoBehaviour
     IEnumerator Spawning ()
     {
         sp.GetParticle(14, transform.position);
+        sp.GetSound(8);
         cam.Offset(0.5f);
         yield return new WaitForSeconds(2.25f);
         GameObject go = Instantiate(prefab, transform.position, transform.rotation);
