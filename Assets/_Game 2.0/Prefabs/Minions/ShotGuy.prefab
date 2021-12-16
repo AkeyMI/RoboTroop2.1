@@ -91,7 +91,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 7f0bc6b9c9ebb674c82e297046dd7354, type: 2}
   timeShootOff: 0.25
   reloadBarImage: {fileID: 5031335433219866611}
-  shotSound: 0
+  shotSound: 15
   automatic: 0
   bulletsXShoot: 0
   timeBetweenShoots: 0

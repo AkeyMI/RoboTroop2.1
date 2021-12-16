@@ -132,8 +132,8 @@ public class ShootController : MonoBehaviour, IDamagable
                 {
                     GameObject bullet = Instantiate(data.bulletPrefab, i.transform.position, i.transform.rotation);
                     bullet.GetComponent<Bullet>().Init(data.damage, data.bulletSpeed);
+                    sp.GetSound(shotSound);
                 }
-                sp.GetSound(shotSound);
                 timeOfLastAttack = Time.time + data.timeForAttack;
                 currentAmmo--;               
                 if (!automatic)

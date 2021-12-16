@@ -18,5 +18,6 @@ public class HealingEffect : Effect
 
         minion.HealMinion(lifeToCure);
         FindObjectOfType<CharacterController>().helUpEfect.Play();
+        FindObjectOfType<SpawnerPool>().GetSound(7);
     }
 }

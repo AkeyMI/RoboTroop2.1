@@ -77,6 +77,7 @@ public class Bullet : MonoBehaviour
     {
         sp.GetParticle(particulas, transform.position);
         sp.GetSound(destroySound);
+        sp.GetSound(0);
         Destroy(this.gameObject);
     }
 }

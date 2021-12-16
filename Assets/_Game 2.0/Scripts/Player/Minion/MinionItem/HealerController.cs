@@ -5,15 +5,16 @@ using UnityEngine;
 public class HealerController : MonoBehaviour
 {
     [SerializeField] MinionItemData data = default;
-
+    SpawnerPool sp;
     Animator ac;
     private bool firstTime = true;
     //private MinionItemData data;
+    private void Awake() => sp = FindObjectOfType<SpawnerPool>();
+
     private void Start()
     {
         ac = GetComponent<Animator>();
-        ac.SetBool("Heal", true);
-        
+        ac.SetBool("Heal", true);      
     }
     public void Init(MinionItemData itemData)
     {
@@ -33,7 +34,8 @@ public class HealerController : MonoBehaviour
 
     private IEnumerator CureCoroutine()
     {
-        FindObjectOfType<SpawnerPool>().GetParticle(8, transform.position);
+        sp.GetSound(6);
+        sp.GetParticle(8, transform.position);
         for (int i = 0; i < 4; i++)
         {
             yield return new WaitForSeconds(0.5f);
