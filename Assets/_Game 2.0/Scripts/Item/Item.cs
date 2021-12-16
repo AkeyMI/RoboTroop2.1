@@ -50,9 +50,7 @@ public class Item : MonoBehaviour
 
     IEnumerator Use()
     {
-        taked = true;
-        FindObjectOfType<SpawnerPool>().GetParticle(particlesWhenTaked, transform.position);
-      
+        taked = true;    
         for (int i = 0; i <effects.Length; i++)
             effects[i].Apply();
 
@@ -63,6 +61,7 @@ public class Item : MonoBehaviour
             transform.localScale -= new Vector3(n * 0.5f, n * 0.5f, n * 0.5f); 
             yield return null;
         }
+        FindObjectOfType<SpawnerPool>().GetParticle(particlesWhenTaked, transform.position += new Vector3(0, 0.5f, 0));
         Destroy(this.gameObject);
     }
 

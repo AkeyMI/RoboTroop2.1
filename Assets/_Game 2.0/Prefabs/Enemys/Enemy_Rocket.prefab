@@ -234,7 +234,7 @@ MonoBehaviour:
   agent: {fileID: 3395241239868411483}
   animator: {fileID: -592469958129696116}
   particulas: 10
-  shotSound: 0
+  shotSound: 17
   deathSound: 10
   isATorreta: 0
   reloadBarImage: {fileID: 3449685573164398971}

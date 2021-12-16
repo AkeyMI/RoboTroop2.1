@@ -5112,10 +5112,6 @@ PrefabInstance:
       propertyPath: audioPrefab
       value: 
       objectReference: {fileID: 649814465462866762, guid: dcb04cd2e9be6d14bba39aefc47daece, type: 3}
-    - target: {fileID: 1132739983544931769, guid: d53055721d60b034a95d6bc2475779d8, type: 3}
-      propertyPath: clipData.Array.data[9].volume
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 1132739983544931774, guid: d53055721d60b034a95d6bc2475779d8, type: 3}
       propertyPath: m_Name
       value: ParticlesManager

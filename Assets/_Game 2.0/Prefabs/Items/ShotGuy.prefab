@@ -239,7 +239,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5083ceb6d9c4989489f0b919811fa81c, type: 2}
   eImage: {fileID: 1988000407490788435}
   autoCollect: 0
-  particlesWhenTaked: 0
+  particlesWhenTaked: 6
   particlesOnMinion: 0
 --- !u!1001 &431319852649471811
 PrefabInstance:

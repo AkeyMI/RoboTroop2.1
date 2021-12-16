@@ -164,7 +164,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1b3303f7f673f2c409c61b3a45700584, type: 2}
   eImage: {fileID: 133955789625985482}
   autoCollect: 0
-  particlesWhenTaked: 0
+  particlesWhenTaked: 1
   particlesOnMinion: 0
 --- !u!1 &9144726510546233079
 GameObject:

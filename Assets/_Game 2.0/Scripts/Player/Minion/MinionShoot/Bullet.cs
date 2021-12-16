@@ -56,6 +56,8 @@ public class Bullet : MonoBehaviour
             life--;
             if(life <= 0)
                 Destruction();
+            else
+                sp.GetSound(destroySound);
         }
             
         if (other.CompareTag("Trap"))

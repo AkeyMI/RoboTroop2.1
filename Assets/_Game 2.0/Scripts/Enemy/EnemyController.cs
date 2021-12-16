@@ -176,18 +176,14 @@ public class EnemyController : MonoBehaviour, IDamagable
         life -= amount;
         objectToAttack = FindObjectOfType<CharacterController>().GetComponent<Collider>();
         animator.SetTrigger("Hit");
+        sp.GetSound(20);
         if (life <= 0 && !isDead)
         {
             isDead = true;
             if (isAKamikase)
-            {
                 TransitionToState(enemyExplosiveState);
-            }
             else
-            {
                 Death();
-            }
-
         }
     }
 
