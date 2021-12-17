@@ -47,6 +47,7 @@ public class NaveController : MonoBehaviour, IDamagable
         currentCooldownToCure = cooldownToCure;
         canCure = false;
         isHealing = false;
+        onLifeChange?.Invoke(currentLife, life);
     }
 
     private void Update()

@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Techo
-    second: {fileID: 2100000, guid: 6712b5c956a143d45b2c8264cf4129a7, type: 2}
+    second: {fileID: 2100000, guid: e67cbe63efed5624d93a247aed281220, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

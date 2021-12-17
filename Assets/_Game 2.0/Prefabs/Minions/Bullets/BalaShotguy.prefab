@@ -49,7 +49,7 @@ MonoBehaviour:
   particulas: 6
   bulletEffect: {fileID: 0}
   life: 0
-  destroySound: 0
+  destroySound: 13
 --- !u!54 &7488763556270888079
 Rigidbody:
   m_ObjectHideFlags: 0

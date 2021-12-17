@@ -14,17 +14,17 @@ public class UiManager : MonoBehaviour
     [SerializeField] GameObject minionIconParent;
     [SerializeField] GameObject minionItemIconParent;
     [SerializeField] GameObject pauseMenu = default;
-    [SerializeField] Image naveLifeImage = default;
-    [SerializeField] Image minionLifeImage = default;
+    [SerializeField] GameObject naveLifeImage = default;
+    [SerializeField] GameObject minionLifeTrasform = default;
     [SerializeField] TMP_Text minionLifetext = default;
     [SerializeField] GameObject minionIconLifeParent = default;
     [SerializeField] Image naveShieldLifeImage = default;
-
+    [SerializeField] GameObject pointLifePrefab;
     private GameObject minionAtkImage;
     private GameObject minionShieldImage;
     private GameObject minionItemImage;
     [SerializeField] Image minionAtkLifeImage;
-
+    [SerializeField] GameObject pointLifeMinionPrefab;
     private Image minionItemFillAmount;
 
     private MinionController minionController;
@@ -35,6 +35,8 @@ public class UiManager : MonoBehaviour
 
     private bool isOnComputer;
 
+    int currentLifePoints;
+    int naveLifePoints;
     private void Awake()
     {
         minionController = FindObjectOfType<MinionController>().GetComponent<MinionController>();
@@ -207,25 +209,60 @@ public class UiManager : MonoBehaviour
 
     private void ResetMinionStatus(Sprite icon, int life)
     {
-        minionLifeImage.fillAmount = 1;
+        
+        if (life > currentLifePoints)
+        {
+            int lastsLifePoints = currentLifePoints;
+            for (int i = lastsLifePoints; i < life; i++)
+            {
+                currentLifePoints++;              
+                Instantiate(pointLifeMinionPrefab, minionLifeTrasform.transform);
+            }
+            minionLifetext.text = life + "/" + life;
+        }
+        else
+            MinionLifeDamage(life, currentLifePoints);
+        
         minionAtkLifeImage.sprite = icon;
-
-        minionLifetext.text = life + "/" + life;
     }
 
     private void MinionLifeDamage(int amount, int data)
     {
-        float currentLife = (float)amount / (float)data;
+        minionLifetext.text = amount + "/" + data;
+        Image[] ilist = minionLifeTrasform.GetComponentsInChildren<Image>();
 
-        minionLifeImage.fillAmount = currentLife;
-        minionLifetext.text = amount + "/" + data; 
+        for (int i = data - 1; i >= 0; i--)
+        {
+            if (i < amount)
+                ilist[i].enabled = true;
+            else
+                ilist[i].enabled = false;
+        }
     }
 
     private void NaveLifeDamage(int amount, int data)
     {
-        float currentlife = (float)amount / (float)data;
+        if(naveLifePoints < data)
+        {
+            int lastsLifePoints = naveLifePoints;
+            for (int i = lastsLifePoints; i < data; i++)
+            {
+                naveLifePoints++;
+                Instantiate(pointLifePrefab, naveLifeImage.transform);
+            }
+        }
+        else
+        {
+            Image[] ilist = naveLifeImage.GetComponentsInChildren<Image>();
 
-        naveLifeImage.fillAmount = currentlife;
+            for (int i = data - 1; i >= 0; i--)
+            {
+                if (i < amount)
+                    ilist[i].color = new Vector4(255, 255, 255, 255);
+                else
+                    ilist[i].color = new Vector4(255, 255, 255, 0);
+            }
+        }
     }
 
     private void NaveShieldDamage(int amount, int data)
