@@ -17,7 +17,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Assets_Lobby
-    second: {fileID: 2100000, guid: 5b2d751c954359348966e78dc8650435, type: 2}
+    second: {fileID: 2100000, guid: 72845a6ffffbdeb4bb872cba4def050c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

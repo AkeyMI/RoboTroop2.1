@@ -9,7 +9,11 @@ public class Door : MonoBehaviour , IRoomActivables
     bool waveTime;
     bool open;
     [SerializeField] GameObject shader;
-    [SerializeField] bool stillCloseOnExit; 
+    [SerializeField] bool stillCloseOnExit;
+
+    SpawnerPool sp;
+    private void Start() => sp = FindObjectOfType<SpawnerPool>();
+
     private void Awake() => animator = this.GetComponent<Animator>();
 
     public void Activate()
@@ -48,6 +52,7 @@ public class Door : MonoBehaviour , IRoomActivables
         animator.SetBool("Loked", !status);
         animator.SetBool("Open", status);
         open = status;
+        sp.GetSound(21);
         if(shader != null)
             shader.GetComponent<MeshRenderer>().material.SetFloat("_status", -1);
     }
