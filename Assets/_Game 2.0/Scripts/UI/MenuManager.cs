@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    private void Awake() => Application.targetFrameRate = 30;
     public void StartGame()
     {
         SceneManager.LoadScene("Lobby");
